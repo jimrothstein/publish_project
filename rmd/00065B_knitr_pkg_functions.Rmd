@@ -72,6 +72,13 @@ all_patterns
 label  <- "TAGS"
 knitr::knit_code$get(label)
 ```
+```{r knit_expand}
+knit_expand(
+            text='Area of radius {{r}} is {{pi*r^2}}, 
+            r=5)
+
+```
+
 
 
 
@@ -92,11 +99,19 @@ knitr::knit_exit()
 file  <- here("rmd", "00065B_knitr_pkg_functions.Rmd")
 
 file
+file  <- tools::file_path_sans_ext(file, full.names=FALSE)
+out  <- here("docs",basename(file))
+basename(file)
+out
+
+             
+out  <- here("docs", "out")
+
 # in general, pdf will look nicer
 rmarkdown::render(file,
                   #output_format = "pdf_document",
                   output_format = "html_document",
-#                  output_file="out")
-                  output_file = "~/Downloads/print_and_delete/out")
+                  output_file=out)
+#                  output_file = "~/Downloads/print_and_delete/out")
 
 ```
