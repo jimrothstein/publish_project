@@ -218,10 +218,14 @@ render from code, to html
 file  <- "00064_knitr_chunk_practice.Rmd"
 file  <- here("rmd", file)
 file
+out  <- here("out.html")
+out
 rmarkdown::render(
 	file, 
 	rmarkdown::html_document(), 
 #	rmarkdown::pdf_document() ,
-  output_file="~/Downloads/print_and_delete/out") 
+  output_file=out)
+
+  #output_file="~/Downloads/print_and_delete/out") 
 ```
 
