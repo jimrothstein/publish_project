@@ -302,7 +302,7 @@ knitr::knit_patterns$get()
 <div id="retrieve-tags" class="section level3">
 <h3>retrieve TAGS</h3>
 <pre class="r"><code>knitr::knit_patterns$get(label == &quot;TAGS&quot;)
-      ## Error in knitr::knit_patterns$get(label == &quot;TAGS&quot;): object &#39;label&#39; not found</code></pre>
+      ## [1] &quot;^[\t &gt;]*```+\\s*\\{([a-zA-Z0-9_]+( *[ ,].*)?)\\}\\s*$&quot;</code></pre>
 </div>
 <div id="find-labels-which-match-criteria" class="section level3">
 <h3>find labels which match criteria</h3>
@@ -334,14 +334,11 @@ knitr::knit_code$get(label)
       ## attr(,&quot;chunk_opts&quot;)$echo
       ## [1] FALSE</code></pre>
 <pre class="r"><code>x  &lt;- knit_expand(
-            text=&#39;Area of radius {{r}} is {{pi*r^2}}, 
+            text=&#39;Area of radius {{r}} is {{pi*r^2}}&#39;, 
             r=5)
 
 x
-      ## Error: &lt;text&gt;:2:18: unexpected INCOMPLETE_STRING
-      ## 4: 
-      ## 5: x
-      ##                     ^</code></pre>
+      ## [1] &quot;Area of radius 5 is 78.5398163397448&quot;</code></pre>
 <pre class="r"><code>knitr::knit_exit()</code></pre>
 </div>
 

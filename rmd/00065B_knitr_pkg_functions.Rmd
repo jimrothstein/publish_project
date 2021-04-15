@@ -74,7 +74,7 @@ knitr::knit_code$get(label)
 ```
 ```{r knit_expand}
 x  <- knit_expand(
-            text='Area of radius {{r}} is {{pi*r^2}}, 
+            text='Area of radius {{r}} is {{pi*r^2}}', 
             r=5)
 
 x
