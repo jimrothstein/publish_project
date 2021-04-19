@@ -1,0 +1,89 @@
+---
+title:  "`r knitr::current_input()`"  
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"   
+output:   
+  html_document:  
+    code_folding: show
+    #code_folding: hide
+    toc: true 
+    toc_depth: 2
+    toc_float: true
+  pdf_document:   
+    latex_engine: xelatex  
+    toc: true
+    toc_depth:  2   
+    fontsize: 11pt   
+    geometry: margin=0.5in,top=0.25in   
+TAGS:  knitr::opts_chunk,root_dir,source
+---
+
+knitr functions (pdf): https://cran.r-project.org/web//packages/knitr/knitr.pdf
+
+knitr home:  https://yihui.org/knitr/ and various sections
+source code:  https://github.com/yihui/knitr/tree/master/R
+
+
+### knitr::opts_chunk is object
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      root_dir= "~/code/code_publish" ,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = TRUE   ) # FALSE  easier to read
+library(knitr)
+
+# include only problems!    
+# by default,  everything is a problem!
+is_problem  <- TRUE
+```
+```{r}
+
+if (FALSE) print(root_dir)   # error
+
+print(knitr::opts_chunk$get("root_dir"))
+```
+https://bookdown.org/yihui/rmarkdown-cookbook/source-script.html
+
+### Two ways to source external .R files;  keeps things nice and neat.
+```{r, source  }
+
+source(here("rmd", "0900_script_for_0220.R"), local = knitr::knit_global())
+
+# or sys.source("your-script.R", envir = knitr::knit_global())
+```
+
+
+
+### LEGACY
+
+```{r exit}
+knitr::knit_exit()
+```
+
+
+
+
+
+```{r render, eval=FALSE, include=FALSE}
+# TODO:  file is found when knitr runs (see above)
+
+# file must be of form:
+# dir/name_of_this_file    where dir is relative to project root
+file  <- "0220_source_external_scripts.Rmd"
+file  <- here("rmd", file)
+
+file
+# file  <- tools::file_path_sans_ext(file, full.names=FALSE)
+out  <- here("docs", "out")
+out
+             
+
+# in general, pdf will look nicer
+rmarkdown::render(file,
+                  #output_format = "pdf_document",
+                  output_format = "html_document",
+                  output_file=out)
+#                  output_file = "~/Downloads/print_and_delete/out")
+
+```

@@ -1,0 +1,141 @@
+---
+title:  "`r knitr::current_input()`"  
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"   
+output:   
+  html_document:  
+    code_folding: show
+    #code_folding: hide
+    toc: true 
+    toc_depth: 2
+    toc_float: true
+  pdf_document:   
+    latex_engine: xelatex  
+    toc: true
+    toc_depth:  2   
+    fontsize: 11pt   
+    geometry: margin=0.5in,top=0.25in   
+TAGS:  knit_patterns,get,set
+---
+
+knitr functions (pdf): https://cran.r-project.org/web//packages/knitr/knitr.pdf
+
+knitr home:  https://yihui.org/knitr/ and various sections
+source code:  https://github.com/yihui/knitr/tree/master/R
+
+
+### knitr::opts_chunk is object
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      root_dir= "~/code/code_publish" ,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = TRUE   ) # FALSE  easier to read
+library(knitr)
+
+# include only problems!    
+# by default,  everything is a problem!
+is_problem  <- TRUE
+```
+```{r}
+
+if (FALSE) print(root_dir)   # error
+
+print(knitr::opts_chunk$get("root_dir"))
+```
+
+
+
+
+### LEGACY
+
+```{r exit}
+knitr::knit_exit()
+```
+
+
+```{r patterns}
+old  <- knit_patterns$get()
+old
+```
+```{r all_patterns}
+apats  <- all_patterns
+str(apats)
+
+```
+
+```{r specific_pattern, include=problem}
+knit_patterns$get(c('chunk.begin', 'chunk.end'))
+```
+
+```{r change_pattern,include=problem}
+knit_patterns$set(apats[['rnw']])
+knit_patterns$get(c('chunk.begin', 'chunk.end'))
+
+```
+
+```{r reset}
+knit_patterns$set(old)
+```
+
+```{r new_pattern, include=!problem}
+# save old
+old  <- knit_patterns$get()
+
+# empty
+knit_patterns$restore()
+
+# create
+knit_patterns$set(list(chunk.begin = '^<!--helloR\\s+(.*)',
+                       chunk.end = '^byeR-->'))
+
+# knit_patterns$set(list(chunk.begin='<!--',
+                        chunk.end='^bye-bye-->')
+
+knit_patterns$get(c('chunk.begin', 'chunk.end'))
+
+str(knit_patterns$get())
+
+# return to original
+knit_patterns$set(old)
+```
+
+
+
+
+
+LEGACY
+```{r exit2}
+knitr::knit_exit()
+```
+
+
+
+
+
+
+
+
+```{r render, eval=FALSE, include=FALSE}
+# TODO:  file is found when knitr runs (see above)
+
+# file must be of form:
+# dir/name_of_this_file    where dir is relative to project root
+
+file  <- "0210_opts_chunks_examples.Rmd"
+file  <- here("rmd", file)
+
+file
+# file  <- tools::file_path_sans_ext(file, full.names=FALSE)
+out  <- here("docs", "out")
+out
+             
+
+# in general, pdf will look nicer
+rmarkdown::render(file,
+                  #output_format = "pdf_document",
+                  output_format = "html_document",
+                  output_file=out)
+#                  output_file = "~/Downloads/print_and_delete/out")
+
+```

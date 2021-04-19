@@ -1,0 +1,118 @@
+---
+title:  "`r knitr::current_input()`"  
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"   
+output:   
+  html_document:  
+    code_folding: show
+    #code_folding: hide
+    toc: true 
+    toc_depth: 2
+    toc_float: true
+  pdf_document:   
+    latex_engine: xelatex  
+    toc: true
+    toc_depth:  2   
+    fontsize: 11pt   
+    geometry: margin=0.5in,top=0.25in   
+TAGS:  knit_patterns,get,set
+---
+
+
+
+
+##  YAML  - first RMD to probe, collect, read/write, modify YAML
+
+
+
+knitr functions (pdf): https://cran.r-project.org/web//packages/knitr/knitr.pdf
+
+knitr home:  https://yihui.org/knitr/ and various sections
+source code:  https://github.com/yihui/knitr/tree/master/R
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      root_dir = ".",
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = TRUE   ) # FALSE  easier to read
+setwd("~/code/code_publish")
+getwd()
+library(knitr)
+here()
+```
+
+```{r}
+RMD_files  <- list.files(here("rmd"))
+RMD_files
+
+file  <- RMD_files[[1]]
+file
+
+lines  <- readLines(here("rmd", file))
+line  <- grep("^TAGS:", lines)
+line
+
+TAG_line  <- lines[line]
+x  <- strsplit(TAG_line, split=":")
+x
+y  <- unlist(x)
+
+z  <- strsplit(y[2], split=",")
+
+tags  <- unlist(z)
+
+tags
+
+
+
+library(data.table)
+dt  <- data.table(file = file, 
+                  date = format(Sys.Date(), 
+                               ' %d %B %Y'), 
+                  tags = tags[1])
+dt
+```
+
+
+
+
+
+
+
+LEGACY
+```{r exit}
+knitr::knit_exit()
+```
+
+
+
+
+
+
+
+
+```{r render, eval=FALSE, include=FALSE}
+# TODO:  file is found when knitr runs (see above)
+
+# file must be of form:
+# dir/name_of_this_file    where dir is relative to project root
+
+file  <- "0300_yaml.Rmd"
+file  <- here("rmd", file)
+
+
+file
+# file  <- tools::file_path_sans_ext(file, full.names=FALSE)
+out  <- here("docs", "out")
+out
+             
+
+# in general, pdf will look nicer
+rmarkdown::render(file,
+                  #output_format = "pdf_document",
+                  output_format = "html_document",
+                  output_file=out)
+#                  output_file = "~/Downloads/print_and_delete/out")
+
+```

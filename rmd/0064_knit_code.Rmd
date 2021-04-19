@@ -79,15 +79,13 @@ knitr::knit_exit()
 ```
 ```{r render, eval=FALSE}
 
-file  <- "0064_knit_code.Rmd"
-file  <- here("rmd", file)
+file  <- here("rmd", "0064_knit_code.Rmd")
 file
 rmarkdown::render(
 	file, 
 	rmarkdown::html_document(), 
 #	rmarkdown::pdf_document() ,
   output_file="~/Downloads/print_and_delete/out") 
-
 ```
 ### LEGACY
 
