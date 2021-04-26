@@ -1,25 +1,25 @@
+---
+title:  "0399A_yaml_utils.R"
+date:   "some date" 
+TAGS:  yaml,tags,lapply examples
+---
 
-# 0399_yaml_utils.R
-#
 
 
 
 
+###  PURPOSE:   From all *.R, *.RMD files in a folder, extract `TAGS:`, a yaml
+  ###  header and put into database
+
+### REF
 # from bookdown::   file=utils.R
-
-# REMOVE
-library(blogdown)
-library(bookdown)
-library(yaml)
 
 
 # match top and bottom '---'
 # grep returns int vector indices
 # USAGE:   x  <-  c('---', 'a;lkdjf;asl ' , '999', 'af---', '---')
 # match_dashes(x)
-#
-
-x  <-  c('---', 'a;lkdjf;asl ' , '999', 'af---', '---')
+x  <-  c('---', 'a;lkdjf;asl ' , '999', 'af---', '---'
 match_dashes = function(x) grep('^---\\s*$', x)
 
 
@@ -29,128 +29,160 @@ fetch_yaml = function(x) {
   if (length(i) >= 2) x[(i[1]):(i[2])]
 }
 
-#  read file, 
-#  read_utf8(f)
-#
+g  <- function() { return() }
 
 
-## change the default of full.names and recursive in list.files() because these
-# values are used much more frequently than the original defaults
-# Other list.files params
-# @params path defualt is "."
-# @params pattern default is NULL
-# @params include.dirs default is FALSE
-#
-#
-#
-#  returns character vector of tags between `---` inclusive, for file f 
-fetch_yaml  <- function(f) {
-  bookdown:::fetch_yaml(read_utf8(f))
-}
+#'  @title get_RMD_files
+#'
+#'  @description  Given a path and pattern, return char vector of file names.
+#'  Ignores files that begin with '_'
+#'  @param path  Directory to query. 
+#'  @param pattern regex pattern to match files 
+#'  @return 
+#'  @export
+   get_RMD_files  <- function (path = ".", pattern = NULL, recursive = FALSE) {
+     files  <- list.files(path  =  path, pattern = pattern, recursive = recursive)
 
-list_files = function(..., full.names = TRUE, recursive = TRUE) {
-  list.files(..., full.names = full.names, recursive = recursive, no.. = TRUE)
-}
-  rmd_pattern  <- '[.][Rr](md|markdown)$'
-  md_pattern  <- '[.][Rr]?(md|markdown)$'
+     # exclude files begin with _
+     files  <- files[!grepl('^_', basename(files)) | 
+                     !grepl('^_index[.]', basename(files)) ]
+   }
 
 
-
-
-# blogdown::render.R   includes list_rmds()
-  #
-  #
-  #
-#    @param full.names defaul is FALSE and reason for names like "./0300yaml.R"
-#    @return files character vector
-  list_rmds = function(dir = ".", pattern = NULL, check = FALSE) {
-      files = list.files(dir, pattern, recursive = TRUE, full.names = TRUE)
-      # exclude Rmd that starts with _ (preserve these names for, e.g., child docs)
-      # but include _index.Rmd/.md
-      files = files[!grepl('^_', basename(files)) | grepl('^_index[.]', basename(files))]
-      # do not allow special characters in filenames so dependency names are more
-      # predictable, e.g. foo_files/
-      #
-      # (jr:  skip \code{check} for now)
-      if (check) bookdown:::check_special_chars(files)
+### BETGIN HERE:    clean up yaml header before proceeding
+#'  @title fetch_yaml_header
+#'  @description  Actual work:  Given a file name, return yaml header as
+#'  character vector, one element per line.
+#'  @param f name of file
+#'  @return 
+#'  @export
+  fetch_yaml_header  <- function(f) {
+#  returns character vector of  between `---` inclusive, for file f 
+      yaml  <-   bookdown:::fetch_yaml(read_utf8(f))
+      list(file=f, header=yaml)
 }
 
 
-  # char vector of files
-  scan_yaml  <- function(warn = TRUE) {
+#'  @title get_tags_line
+  #'
+#'  @description Given a yaml header (everything between `---` inclusive),
+#'  return the line begins with `TAGS:` 
+#'  @param yaml char vector with each element of one line of yaml header
+#'  @keywords yaml
+#'  @return 
+#'  @export
+ get_TAGS_line  <- function (header = null) {
+   file  <- header$f
+   yaml   <- header$header
+   if (length(yaml) == 0 ) return()
 
-    files  <- tryCatch(list_rmds(pattern = rmd_pattern), 
-                       error = function(e) NULL)
+ # drop the elements with `---`
+  yaml = yaml[-c(1, length(yaml))]
 
-    if (length(files) == 0) return (list())
-    files
-  }
+  # returns a NULL
+  if (length(yaml) == 0) return()
+
+  line  <- grep("^TAGS:", yaml)
+
+  if (length(line) == 0) return()
+  list(file = file, 
+       date = format(Sys.Date(), "%Y_%m_%d"), 
+       TAGS = yaml[line])
+  # yaml[line]
+ }
 
 
 
-files  <-   scan_yaml()
+#'  @title remove_null
+#  Given a list, return list (subset) without null entries
+#  fals for lapply, why?
+remove_null  <- function (l = NULL) {
+  l[!sapply(l, is.null)]
+  ### STUDY
+  ###
+## NOTE:
+# removes outter most 'list', leaving just the elment (in this case, a list)
+# lines[[1]]
+# unlist(lines)
+}
+
+
+
+# FOR REAL
+# ==========
+#   USE   ,rd  setwd("~/code/publish_project/rmd/")
+library(microbenchmark)
+
+res  <- microbenchmark(NULL, {
+rmd_pattern  <- '[.][Rr](md|markdown)$'
+md_pattern  <- '[.][Rr]?(md|markdown)$'
+
+files  <- get_RMD_files(path = ".", pattern = rmd_pattern)
 files
 
-#   res is list, each elemtn is char vector, one vector for each f
-      res  <- lapply(files, function(f) {
+# list:   each element is list $f=  $header = 
+headers  <- lapply(files, fetch_yaml_header)
+headers
 
-                       # yaml is character vector of all lines between ---
-                       yaml  <- fetch_yaml(f)
-                       if (length(yaml) == 0) return()
-
-                       # drop the elements with `---`
-                       yaml = yaml[-c(1, length(yaml))]
-
-                       if (length(yaml) == 0) return()
-
-                       yaml
-                       
-                       })
-# named list
-res  <- setNames(res, files)
-res
-x  <- lapply(res, function(f) {
-         # 0 or 1 string for each f
-         line  <- grep("^TAGS:", f)
-         if (length(line) == 0) return()
-         f[line] }
-       )
-
-# char vector
-TAG_lines  <- unlist(x)
-# string
+# list of TAG_line s
+# lines looks like:   list( list(x= .., date=...), list2(x= ..., date= ..)
+# ....listn(x= ..., date= ...))
+lines <- lapply(headers, get_TAGS_line)
+lines
 
 
-TAG_lines
-TAG_line  <- TAG_lines[1]
-TAG_line
-# list  
-x  <- strsplit(TAG_line, split=":")
-typeof(x)
-length(x)
-names(x)
-typeof(unlist(x))
-
-# 1st elment of list, its 2nd elemen
-x[[1]][[2]]
-
-#  split
-  lapply(TAG_lines, strsplit(x,  split=":"))
-x
-y  <- unlist(x)
-
-z  <- strsplit(y[2], split=",")
-
-tags  <- unlist(z)
-
-tags
+# remove NULL lines
+# list, each element has $f $date $TAGS,  none are NULL
+lines  <- remove_null(lines)
+lines
 
 
 
+})
+
+# we now have list, 1 entry for every file, file, date + TAGS line
+lines
+
+# But we want to create vectors, specifically columns in df
+#
+#  list
+lapply(lines, function(e) e$file)
+
+# ah, now as vector!
+files  <- sapply(lines, function(e) e$file)
+files
+
+
+dates  <- sapply(lines, function(e) e$date)
+dates
+
+TAGS  <- sapply(lines, function(e) e$TAGS)
+TAGS
+
+#
+## CONTINUE TO save tags
+##
+##
+## TODO (res)
+##
 library(data.table)
-dt  <- data.table(file = file, 
-                  date = format(Sys.Date(), 
-                               ' %d %B %Y'), 
-                  tags = tags[1])
+dt  <- data.table(file = files,
+                  date = dates,
+                  TAGS = TAGS)
 dt
+
+file_name  <- paste0("TAGS_", format(Sys.Date(), "%d%b%Y"))
+file_name
+
+saveRDS(dt, file_name)
+readRDS(file_name)
+
+## TO DO 
+l  <- list(a="jim", b="joe", c="cindi")
+
+names  <- names(l)
+names
+
+tags  <- vapply(l, `[`, character(1), USE.NAMES=FALSE)
+tags
 
