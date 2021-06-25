@@ -1,0 +1,115 @@
+
+---
+title: "`r knitr::current_input()`"
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"
+output:   
+  html_document:  
+        code_folding: show
+        toc: true 
+        toc_depth: 2
+        toc_float: true
+  pdf_document:   
+    latex_engine: xelatex  
+    toc: true
+    toc_depth:  2   
+    extra_dependencies: ["amssymb", "bbm", "threeparttable"]
+fontsize: 11pt   
+geometry: margin=0.5in,top=0.25in   
+---
+
+
+### Embed `modified` latex equations inside Rmd; compile with knitr
+### Seems to work Great (as long as no latex packages needed)
+? How does next line work?    It is not in $$ ... $$
+
+
+
+##  Misc math
+
+$$ \Sigma $$
+$$ \chi $$
+$$ \chi^2 $$
+$$ \infty $$
+$$ \exists $$
+$$ \forall $$
+
+
+\begin{equation*}
+Y = X_{i}^2
+\end{equation*}
+
+
+$$X \sim \mathcal{N}(0, 1)$$
+
+$$X \sim N(0,1)$$
+
+\begin{equation}
+y = x^2
+\end{equation}
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = FALSE   ) # easier to read
+library(here)
+```
+
+
+```{r library, include=FALSE		}
+file  <- knitr::current_input() 
+``` 
+
+
+
+***
+
+```{r knit_exit(), include = FALSE  , eval=FALSE } 
+# knitr::knit_exit()
+```
+
+
+hello $\emph{world}$.
+
+
+###  Summations
+
+### Without Indices
+
+$\sum x_{i}$
+
+$\sum x_{i}^2$
+
+$\sum x_{i}y_{i}$
+
+#### With Indices - Inline Form
+
+$\sum_{i=1}^n x_{i}$
+
+$\sum_{i=1}^n x_{i}^2$
+
+$\sum_{i=1}^n x_{i}y_{i}$
+
+#### With Indices - Display Form
+
+$$\sum_{i=1}^n x_{i}y_{i}$$
+
+```{r render, eval=FALSE, include=FALSE 	} 
+# TODO:  file is found when knitr runs (see above)
+
+# file must be of form:
+# dir/name_of_this_file    where dir is relative to project root
+
+file  <- "0005_chi_squared.Rmd"
+
+# NOTE:   .tex only works with PDF
+# NOTE:    tex will NOT work with html
+# in general, pdf will look nicer
+
+
+rmarkdown::render(file,
+                  output_format = "pdf_document",
+                  #output_format = "html_document",
+                  output_file = "~/Downloads/print_and_delete/out")
+# html works!
+```

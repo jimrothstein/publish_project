@@ -1,41 +1,37 @@
 --- 
-title: Template for .Rmd 
+title: "0200_math_latex.Rmd"
 date: "`r paste('last updated', 
     format(lubridate::now(), '%H:%M, %d %B %Y'))`"
 output: 
-  html_document
+    html_document:
+      mathjax: default
+
 #   pdf_document: 
 #     latex_engine: xelatex
 #     toc: TRUE 
 #     toc_depth:  4 
 fontsize: 10pt 
 geometry: margin=0.5in,top=0.25in 
+TAGS:  mathjax,latex,
 ---
 
-## Simple latex
-## Works in both .pdf and .html
+### Simple latex (pdf + html)
+### To render html:
+  (1) include mathjax in yaml
+  (2) view in firefox (not w3m)
+##            
+
 ### rmarkdown knows to use math_jax for html
 REF: https://gist.github.com/derekmcloughlin/896da22518ef2f3d81b0
-<!-- 
-set cul   "cursorline
-cc=+1			"colorcolumn is 1 more than tw
-
-vim: to format all urls for md
-s/https.*/[&]()/g
--->
 
 ```{r setup, include=FALSE		}
 knitr::opts_chunk$set(echo = TRUE,
                       comment = "      ##",
                       error = TRUE,
                       collapse = TRUE)
+library(jimTools)
 ```
 
-<!--  RENDER:  see bottom -->
-
-```{r library, include=FALSE		}
-library(jimTools)
-``` 
 
 $\sum x_{i}$
 ```{r begin}
@@ -50,23 +46,22 @@ $$\mu_{\bar{x_{1}} - \bar{x_{2}}} = \mu_{1} - \mu_{2}$$
 $$s_{e} = \sqrt \frac {SSResid}{n - 2}$$
 ***
 
-```{r knit_exit()} 
+```{r knit_exit(), include=F, eval=F} 
 knitr::knit_exit()
 ```
 
-/newpage
 
 ```{r render, eval=FALSE	} 
-# here() is useless
-# how to easily change R direcctory,  WHEN I can vim's ?
 
 setwd("~/code/r_try_things_here")
 getwd()
 
 file <- "0200_math_latex.Rmd"
 file  <- basename(file)
-dir <- "rmd"
+file  <- here("rmd", file)
+file
 
-rmarkdown::render(here(dir, file), 
-                  output_dir="~/Downloads/print_and_delete/")
+rmarkdown::render(file)
+                
+                  #output_dir="~/Downloads/print_and_delete/")
 ```
