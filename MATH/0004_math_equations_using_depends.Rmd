@@ -7,33 +7,68 @@ output:
   html_document:  
         code_folding: show
         toc: true 
-        toc_depth: 2
+        toc_depth: 4
         toc_float: true
+        mathjax: default
   pdf_document:   
     latex_engine: xelatex  
     toc: true
-    toc_depth:  2   
+    toc_depth:  4 
     extra_dependencies: ["amssymb", "bbm", "threeparttable"]
 fontsize: 11pt   
 geometry: margin=0.5in,top=0.25in   
+TAGS:  math, latex
 ---
 
+## This file:  mostly cheat sheet.
+## More equations in 0004B
 
-### Embed `modified` latex equations inside Rmd; compile with knitr
-### Seems to work Great (as long as no latex packages needed)
-? How does next line work?    It is not in $$ ... $$
+#### Embed `modified` latex equations inside Rmd; compile with knitr
+Seems to work Great (as long as no latex packages needed)
+
+  *  REF: https://gist.github.com/derekmcloughlin/896da22518ef2f3d81b0
+  *  Best, so far:   https://www.overleaf.com/learn
 
 
+### Special
+<!--
+Does not work:
+$\newcommand{\Z}{\mathbb{Z}}$
+$\Z$
 
+$\N \quad \Z \quad \Q \quad \R \quad \C$
+-->
+
+In unicode-math,
+
+$$
+\BbbZ, \mathbb{Z}, \symbb{Z}, ℤ and ^^^^2124 all work.
+$$
+
+<!-- flushleft does not work -->
 ##  Misc math
+\begin{flushleft} 
+$$\Sigma$$
+\end{flushleft} 
 
+
+Inline:  $\chi$
 $$ \Sigma $$
-$$ \chi $$
 $$ \chi^2 $$
 $$ \infty $$
 $$ \exists $$
 $$ \forall $$
+$$ \varTheta $$
+$$ \varOmega $$
+$$ \varLambda $$
+$$ \lambda $$
+$\lambda$
+$$ \binom{n}{k} $$
+$$ a^{-1} $$
 
+\begin{equation}
+N_0(\lambda;\varOmega)
+\end{equation}
 
 \begin{equation*}
 Y = X_{i}^2
@@ -51,24 +86,14 @@ y = x^2
 knitr::opts_chunk$set(echo = TRUE,
                       comment = "      ##",
                       error = TRUE,
-                      collapse = FALSE   ) # easier to read
+                      collapse = T   ) # easier to read
 ```
 
 
-```{r library, include=FALSE		}
-file  <- knitr::current_input() 
-``` 
 
-
-
-***
-
-```{r knit_exit(), include = FALSE  , eval=FALSE } 
-# knitr::knit_exit()
-```
-
-
-hello $\emph{world}$.
+emphasis means italics
+$$\text{hello \emph{world}} $$
+hello $\emph{world}$
 
 
 ###  Summations
@@ -93,117 +118,78 @@ $\sum_{i=1}^n x_{i}y_{i}$
 
 $$\sum_{i=1}^n x_{i}y_{i}$$
 
-### Independent Samples
-
-$$\mu_{\bar{x_{1}} - \bar{x_{2}}} = \mu_{1} - \mu_{2}$$
-
-$$\sigma_{\bar{x_{1}} - \bar{x_{2}}}^2 = \frac {\sigma_{1}^2}{n_{1}} + \frac{\sigma_{2}^2}{n_{2}}$$
-
-$$\mu_{\hat{p}_{1} - \hat{p}_{2}} = p_{1} - p_{2}$$
-
-$$\sigma_{\hat{p}_{1} - \hat{p}_{2}}^2 = \frac {p_{1}(1 - p_{1})}{n_{1}} + \frac {p_{2}(1 - p_{2})}{n_{2}}$$
 
 
-### Pooled Sample Variance
+### Sets
 
-$$s_{p}^2 = \frac {(n_{1} - 1)s_{1}^2 + (n_{2} - 1)s_{2}^2}{n_{1} + n_{2} - 2}$$
+## requires package (with amsmath? included in yaml at top?) 
+  *  knit to pdf has no problem !
+  *  knit to html has no problem !  astouding!
 
-### Pooled Sample Proportion
-
-$$\hat{p} = \frac {n_{1}\hat{p}_1 + n_{2}\hat{p}_{2}}{n_{1} + n_{2}}$$
-
-### Chi-Square Test
-
-$$\chi^2 = \sum \frac {(O - E)^2}{E}$$
-
-
-### Correlations
-
-$${SS}_{xx} = \sum (x - \bar{x})^2 = \sum x^2 - \frac {(\sum x)^2}{n}$$
-
-$${SS}_{xy} = \sum (x - \bar{x})(y - \bar{y}) = \sum xy - \frac {(\sum x)(\sum y)}{n}$$
-
-$$r = \frac {{SS}_{xy}}{\sqrt {{SS}_{xx}{SS}_{yy}}}$$
+$$ \mathbb{Z} $$
+$$ \mathbb{pZ} $$
+$$ \frac{\mathbb{Z}}{\mathbb{pZ}} $$
+$$ Set \{0, 1, 2 , 3 , 4 \}  \in elments of above $$
+$$ \left({f}^{}\circ {f}^{-1}\right)\left(x\right) $$
+$$ 4^{-1} $$
 
 
-### Regression
+## Not working:
 
-#### Population Regression Line
+Verbatim, illustrating spaces
+\begin{verbatim*}
+Spaces in this text should be indicated.
+\end{verbatim*}
 
-$$E(y) = \alpha + \beta{x}$$
+Here is regular text.
+\begin{quote}
+\it{This is indented because it is quoted.}
+\end{quote}
+Back to regular.
 
-$$var(y) = \sigma^2$$
-
-#### Least Squares Line
-
-$$\hat{y} = a + bx$$
-
-where 
-
-$$b = \frac {{SS}_{xy}}{{SS}_{xx}}$$
-
-and 
-
-$$\bar{y} = a + b\bar{x}$$
-
-
-#### Residual Sum of Squares
-
-$$SSResid = \sum (y - \hat{y})^2 = \sum y^2 - a\sum y - b \sum xy$$
-
-#### Standard Errors
-
-$$s_{e} = \sqrt \frac {SSResid}{n - 2}$$
-
-$$s_{b} = \frac {s_{e}}{\sqrt {{SS}_{xx}}}$$
-
-$$s_{a + bx} = s_{e} \sqrt {1 + \frac {1}{n} + \frac {(x - \bar{x})^2}{{SS}_{xx}}}$$
-
-for prediction:
-
-$$se(y - \hat{y}) = s_{e} \sqrt {1 + \frac {1}{n} + \frac {(x - \bar{x})^2}{{SS}_{xx}}}$$
+%
+% $$ 
+% Regular text.
+% \begin{quotation} 
+% Here I am using verb quotation.
+% \begin{flushright}
+% {\it - the Author}
+% \end{flushright}
+% \end{quotation}
+% Return to regular text.
+% $$
 
 
-### Variance
 
-$$SSTr = \frac {T_{1}^2}{n_{1}} + \frac {T_{2}^2}{n_{2}} + ... + \frac {T_{k}^2}{n_{k}} - \frac {T^2}{n}$$
+\begin{flushleft}
+This is flush left.
+\end{flushleft}
 
-$$SSTo = x_{1}^2 + x_{2}^2 + ... + x_{k}^2 - \frac {T^2}{n}$$
+## Raw latex
+  *  REF:  rmarkdown-cookbook, pandoc will leave as latex
+```{=latex}
+\begin{tabular}{ll}
+A & B \\
+A & B \\
+\end{tabular}
 
-$$SSE = SSTo - SSTr$$
-
-/newpage
-
-```{r plot_density, eval=FALSE  }
-density_object <- density(mpg$hwy)
-pdf("~/Downloads/print_and_delete/out.pdf")
-plot(density_object)
-dev.off()
-```
-
-```{r plot_png_example, eval=FALSE  }
-filename  <- "~/Downloads/print_and_delete/out.png"
-png(filename = filename,
-         width = 480, height = 480, units = "px", pointsize = 12)
-plot(density_object)
-dev.off()
-```
 ```{r render, eval=FALSE, include=FALSE 	} 
-# TODO:  file is found when knitr runs (see above)
+# for debugging
+options(tinytex.verbose = TRUE)
 
-# file must be of form:
-# dir/name_of_this_file    where dir is relative to project root
-
-file  <- "0004_math_equations_using_depends.Rmd" 
-library(here)
+{
+  file  <- "0004_math_equations_using_depends.Rmd" 
+  file  <- here("MATH", file)
+  file  
+}
 # NOTE:   .tex only works with PDF
 # NOTE:    tex will NOT work with html
 # in general, pdf will look nicer
 
-
+output_dir= Sys.getenv("OUTPUT_DIR")
+output_dir
 rmarkdown::render(file,
                   output_format = "pdf_document",
                   #output_format = "html_document",
-                  output_file = "~/Downloads/print_and_delete/out")
-# html works!
+                  output_dir = output_dir)
 ```

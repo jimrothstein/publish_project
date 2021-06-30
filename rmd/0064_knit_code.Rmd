@@ -52,9 +52,23 @@ c_INCLUDE = FALSE
 
 ```
 
+### print line numbers
+```{r, attr.source='.numberLines'}
+if (TRUE) {
+  x <- 1:10
+  x + 1
+}
+knitr::knit_exit()
+```
+
 ### 2-test chunk, include=FALSE 
 ```{r label=first, include=FALSE}
 print("label = first")
+```
+```{r begin, attr.source='.numberLines'}
+print("line1")
+print("line2")
+
 ```
 
 ### 3-use knit_code$get() on test chunk!
@@ -213,17 +227,15 @@ knitr::knit_exit()
 render from code, to html
 ```{r eval=FALSE}
 
-file  <- "00064_knitr_chunk_practice.Rmd"
+file  <- "0064_knit_code.Rmd"
 file  <- here("rmd", file)
 file
-out  <- here("out.html")
-out
+
 rmarkdown::render(
 	file, 
-	rmarkdown::html_document(), 
-#	rmarkdown::pdf_document() ,
-  output_file=out)
-
-  #output_file="~/Downloads/print_and_delete/out") 
+	#rmarkdown::html_document(), 
+	rmarkdown::pdf_document() ,
+  output_file="~/Downloads/print_and_delete/out") 
+  
 ```
 
