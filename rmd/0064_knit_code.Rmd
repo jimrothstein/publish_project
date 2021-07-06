@@ -174,7 +174,78 @@ x  <- knitr::read_chunk("file_for_read_chunk.R")
 ```{r, echo = !c_ECHO, eval = !c_EVAL, include=!c_INCLUDE, code=knitr::knit_code$get("7B")}
 
 ```
+### create tempfiles and tempdir (original:  see jimTools)
+```{r fake}
 
+## returns names of proposed fake files
+create_fake_files  <- function() {
+  pattern=paste0(1:5,"_")
+  pattern
+
+  tempdir = tempdir()
+  tempdir
+
+  fileext = ".mp3"
+
+  tempfile(pattern , tempdir, fileext) 
+}
+
+fake_files  <- create_fake_files()
+fake_files
+
+fake_files[1]
+writeLines(con = fake_files[1], 
+           c( "```{r chunk}", 
+             "\n",
+          "knitr::current_input()",
+           "```")
+           )
+
+remove_fake_files   <- function() {
+  unlink(fake_files)
+
+```
+
+```{r knit_fake_fils}
+# can't find file
+knitr::knit(fakes_files[1])
+
+```
+
+```{r question, eval=F, include=F}
+
+In a file named `my_file.Rmd` I use kntr::current_input() in both:
+
+yaml:
+---
+title: "`r knitr::current_input()`"
+---
+
+and in a code chunk:
+```{r file}
+file  <- knitr::current_input()
+```
+
+Works great when I run this one line to render:
+
+rmarkdown::render(input="my_file.Rmd")
+
+
+
+But I am lazy and prefer knitr figure the file name to render, ie PRIOR to knitting the  document, even if this requires two passes.
+
+My confusion may be conceptual and appreciate any documentation suggestions.
+
+(I nvim and not Rstudio.)
+
+
+
+```
+
+
+
+
+---
 
 (I stole this code)
 figure this out!

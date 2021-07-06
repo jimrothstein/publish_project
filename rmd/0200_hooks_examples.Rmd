@@ -36,7 +36,6 @@ problem  <- FALSE
 
 ```{r patterns}
 old  <- knit_patterns$get()
-old
 ```
 ```{r all_patterns}
 apats  <- all_patterns

@@ -1,0 +1,112 @@
+
+---
+title: "`r knitr::current_input()`"
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"
+output:   
+  html_document:  
+        code_folding: show
+        toc: true 
+        toc_depth: 2
+        toc_float: true
+        mathjax: default
+  pdf_document:   
+    latex_engine: xelatex  
+    toc: true
+    toc_depth:  2   
+fontsize: 11pt   
+geometry: margin=0.4in,top=0.25in   
+TAGS:  line_numbers,chunk_hook
+---
+
+REF:
+[knit_hooks](https://bookdown.org/yihui/rmarkdown-cookbook/chunk-hooks.html)
+
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = T   ) # T easier to read
+```
+
+#### create hook_function, called `greet`; `greet` ALSO becomes chunk option 
+used to trigger call.
+```{r hook_function}
+knitr::knit_hooks$set(greet = function(before) {
+  if (before)
+    "Hello!" else "Bye!"
+})
+```
+#### here knit option is greet
+```{r greet=T}
+```
+
+#### knitr reserves these hook function names:
+```{r reserved}
+names(knitr:::.default.hooks)
+#  [1] "source"          "output"          "warning"        
+#  [4] "message"         "error"           "plot"           
+#  [7] "inline"          "chunk"           "text"           
+# [10] "evaluate.inline" "evaluate"        "document"       
+```
+#### options
+```{r options}
+options()
+# options$params.src
+```
+
+no luck with current_input
+```{r expand}
+
+knitr::knit_expand(text = "The value of `pi` is {{pi}}.")
+# FAILS ... nothing
+knitr::knit_expand(text = "File name is {{knitr::current_input()}}")
+```
+```{r}
+report_template <- :ystem.file("rmarkdown", "templates", "report", "skeleton", "skeleton.Rmd", package = "myReportPkg")
+```
+
+### print line numbers (pdf only?)
+```{r, attr.source='.numberLines'}
+if (TRUE) {
+  x <- 1:10
+  x + 1
+}
+```
+
+```{r library 		}
+# print all labels
+file  <- knitr::current_input() 
+print(knitr::all_labels())
+library(jimTools)
+``` 
+
+
+
+```{r skeleton, include=F, eval=F}
+file="/home/jim/.config/nvim/templates/skeleton.Rmd"
+```
+
+```{r render, eval=FALSE, include=FALSE 	} 
+{
+file <- "rmd/0100_knit_hook_examples.Rmd"  
+file  <- basename(file)
+file  <- file.path("~/code", "publish_project","rmd", file)
+#file  <- here("rmd", file)
+file
+}
+
+output_dir  <- Sys.getenv("OUTPUT_DIR")
+output_dir
+
+
+rmarkdown::render(file,
+    #output_format = "pdf_document",
+    output_format = "html_document",
+    #output_format=c("html_document", "md_document"),
+    output_dir = output_dir)
+    #output_file = "out")
+
+
+```
