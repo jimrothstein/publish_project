@@ -16,6 +16,7 @@ output:
     extra_dependencies: ["amssymb", "bbm", "threeparttable"]
 fontsize: 11pt   
 geometry: margin=0.5in,top=0.25in   
+TAGS: latex, latex: extra_dependencies, 
 ---
 
 

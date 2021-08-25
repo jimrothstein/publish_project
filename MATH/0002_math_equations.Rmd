@@ -20,6 +20,7 @@ geometry: margin=0.5in,top=0.25in
 
 ### Embed `modified` latex equations inside Rmd; compile with knitr
 ### Seems to work Great (as long as no latex packages needed)
+**SEE 0004** for adding dependencies to YAML.
 
 ```{r setup, include=FALSE		}
 knitr::opts_chunk$set(echo = TRUE,

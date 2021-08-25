@@ -20,14 +20,16 @@ geometry: margin=0.5in,top=0.25in
 TAGS:  math, latex
 ---
 
-## This file:  mostly cheat sheet.
-## More equations in 0004B
+
+###  USES Dependenices in YAML.
 
 #### Embed `modified` latex equations inside Rmd; compile with knitr
 Seems to work Great (as long as no latex packages needed)
 
   *  REF: https://gist.github.com/derekmcloughlin/896da22518ef2f3d81b0
   *  Best, so far:   https://www.overleaf.com/learn
+
+
 
 
 ### Special
@@ -37,6 +39,15 @@ $\newcommand{\Z}{\mathbb{Z}}$
 $\Z$
 
 $\N \quad \Z \quad \Q \quad \R \quad \C$
+
+
+
+inline:
+NOTICE:  `$` immediately adjacent - no spaces.
+$\sum x_{i}$
+
+BUT `$$` less strict on spaces.  However, no blank lines allowed. 
+
 -->
 
 In unicode-math,

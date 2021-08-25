@@ -1,0 +1,61 @@
+---
+title: "`r knitr::current_input()`"
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"
+output:
+  html_document: 
+    code_folding: show
+    highlight: tango
+    number_sections: yes
+    theme: sandstone
+    toc: yes
+    toc_depth: 2
+    toc_float: true
+  pdf_document:
+    toc: yes
+    number_sections: TRUE
+geometry: margin=1in
+editor_options: 
+  chunk_output_type: console
+TAGS:   knitr
+---
+
+
+## 0-setup, no output
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,  
+                      comment="      ##", 
+                      z=TRUE, 
+                      collapse=TRUE)
+library(knitr)
+```
+
+#### knitr::knitr_current_input()
+```{r what_is_my_name}
+this_file  <- knitr::current_input()
+
+
+}
+
+```
+
+
+
+render from code, to html
+```{r eval=false}
+
+output_dir  <- sys.getenv("output_dir")
+output_dir
+
+{
+file <- "KNITR/0310_knitr_reprex_current_file.Rmd"
+file  <- basename(file)
+file  <- here("KNITR", file)
+file
+}
+
+rmarkdown::render(file,
+                  output_dir = output_dir)
+  
+```
+
