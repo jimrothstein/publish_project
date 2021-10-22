@@ -24,25 +24,27 @@ knitr::opts_chunk$set(echo = TRUE,
                       collapse = FALSE   ) # easier to read
 library(here)
 ```
-
+$$
 Claim:  This will not work,  mixing .tex and Rmd
+(To fix:   use R to create .tex file -- inline)
 
-\documentclass{article}
+\\documentclass{article}
 
-\usepackage[utf8]{inputenc}
+\\usepackage[utf8]{inputenc}
 
-\title{My beautiful PDF document}
-\author{Ed Rubin}
-\date{February 2017}
+\\title{My beautiful PDF document}
+\\author{Ed Rubin}
+\\date{February 2017}
 
-\begin{document}
+\\begin{document}
 
-\maketitle
+\\maketitle
 
 What a beautiful PDF.
 
-\end{document}
+\\end{document}
 
+$$
 
 ### knitr unhappy about preamble; latex can't compile
 ```{r library, include=FALSE		}
@@ -63,12 +65,6 @@ file  <- knitr::current_input()
 
 /newpage
 
-```{r plot_density, eval=FALSE  }
-density_object <- density(mpg$hwy)
-pdf("~/Downloads/print_and_delete/out.pdf")
-plot(density_object)
-dev.off()
-```
 
 ```{r plot_png_example, eval=FALSE  }
 filename  <- "~/Downloads/print_and_delete/out.png"
@@ -86,6 +82,7 @@ dev.off()
 here()
 file   <- here("rmd", "0230_embed_latex.Rmd")
 file  <- base(file)
+file
 # NOTE:   .tex only works with PDF
 # NOTE:    tex will NOT work with html
 # in general, pdf will look nicer

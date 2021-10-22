@@ -21,24 +21,18 @@ output:
     toc: true
     toc_depth:  4 
     extra_dependencies: ["amssymb", "bbm", "threeparttable", "forest"]
-fontsize: 12pt   
-geometry: 
-  -  margin=0.5in  
-  -  top=0.25in   
+fontsize: 11pt   
+geometry: margin=0.5in,top=0.25in   
 TAGS:  math, latex, trees, forest
 ---
 
-\fontfamily{cmr}
-\fontsize{10}{22}
-\fontseries{b}
-\selectfont
-
 <!--  
 as of August 2021
--PDF works
--HTML does NOT work
--->
+KLUGE to embed the trees (.pdf) in .html file
 
+Step #1   create .pdf file from 0100_latex_trees.Rmd
+Step #2   run this file as .html (Take care with location of .pdf) 
+-->
 
 #### Embed `modified` latex equations inside Rmd; compile with knitr
 Seems to work Great (pdf:  even installs needed latex packages )
@@ -72,6 +66,10 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 
+```{r  pdf_goes_here, out.height = "460px", out.width='800px', echo=F}
+## check working dir !   (note:  do not use absolute paths, per Yihui)
+knitr::include_graphics("0100_latex_trees.pdf")
+```
 
 #### Raw latex
   *  REF:  rmarkdown-cookbook, pandoc will leave as latex
@@ -86,11 +84,11 @@ A & B \\
 # for debugging
 options(tinytex.verbose = TRUE)
 
+getwd()
 {
-  file  <- "0100_latex_trees.Rmd" 
-  file  <- file.path(paste0("~/code/publish_project/MATH/", file))
-  #file  <- here("MATH", file)
-  file  
+  file <- "MATH/0100_HTML_latex_trees.Rmd"
+  file   <-  paste0("~/code/publish_project/", file)
+  file
 }
 # NOTE:   .tex only works with PDF
 # NOTE:    tex will NOT work with html
@@ -99,8 +97,8 @@ options(tinytex.verbose = TRUE)
 output_dir= Sys.getenv("OUTPUT_DIR")
 output_dir
 rmarkdown::render(file,
-                  output_format = "pdf_document",
-                  #output_format = "html_document",
+                  #output_format = "pdf_document",
+                  output_format = "html_document",
                   output_dir = output_dir
 )
 ```

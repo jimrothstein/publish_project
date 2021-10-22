@@ -1,3 +1,4 @@
+This is an .R file.
 This is a special R script which can be used to generate a report. You can
 write normal text in roxygen comments.
 
