@@ -8,6 +8,7 @@ output:
     toc: yes
 editor_options:
   chunk_output_type: console
+TAGS:  fs,kableExtra,latex
 ---
 
  =====================

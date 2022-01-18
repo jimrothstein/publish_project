@@ -58,7 +58,7 @@ if (TRUE) {
   x <- 1:10
   x + 1
 }
-knitr::knit_exit()
+#   knitr::knit_exit()
 ```
 
 ### 2-test chunk, include=FALSE 
@@ -88,19 +88,31 @@ library(data.table)
 dt  <- data.table(knitr::all_labels())
 dt
 ```
-```{r exit}
-knitr::knit_exit()
-```
-```{r render, eval=FALSE}
 
-file  <- here("rmd", "0064_knit_code.Rmd")
-file
-rmarkdown::render(
-	file, 
-	rmarkdown::html_document(), 
-#	rmarkdown::pdf_document() ,
-  output_file="~/Downloads/print_and_delete/out") 
+
+####    Small font?
+```{r, size='small'}
+#   What size?
+``` 
+
+####    Tiny font?
+```{r, size='tiny'}
+#   What size?
 ```
+
+#### Once more with footnotesize?
+
+\footnotesize{this is footnotesize}
+
+```{r footnotesize}
+# Is this footnotesize?? 
+```
+
+
+```{r exit}
+# knitr::knit_exit()
+```
+
 ### LEGACY
 
 ## 2-output, but do not evaluate
@@ -174,43 +186,7 @@ x  <- knitr::read_chunk("file_for_read_chunk.R")
 ```{r, echo = !c_ECHO, eval = !c_EVAL, include=!c_INCLUDE, code=knitr::knit_code$get("7B")}
 
 ```
-### create tempfiles and tempdir (original:  see jimTools)
-```{r fake}
 
-## returns names of proposed fake files
-create_fake_files  <- function() {
-  pattern=paste0(1:5,"_")
-  pattern
-
-  tempdir = tempdir()
-  tempdir
-
-  fileext = ".mp3"
-
-  tempfile(pattern , tempdir, fileext) 
-}
-
-fake_files  <- create_fake_files()
-fake_files
-
-fake_files[1]
-writeLines(con = fake_files[1], 
-           c( "```{r chunk}", 
-             "\n",
-          "knitr::current_input()",
-           "```")
-           )
-
-remove_fake_files   <- function() {
-  unlink(fake_files)
-
-```
-
-```{r knit_fake_fils}
-# can't find file
-knitr::knit(fakes_files[1])
-
-```
 
 ```{r question, eval=F, include=F}
 
@@ -222,6 +198,7 @@ title: "`r knitr::current_input()`"
 ---
 
 and in a code chunk:
+
 ```{r file}
 file  <- knitr::current_input()
 ```
@@ -237,8 +214,6 @@ But I am lazy and prefer knitr figure the file name to render, ie PRIOR to knitt
 My confusion may be conceptual and appreciate any documentation suggestions.
 
 (I nvim and not Rstudio.)
-
-
 
 ```
 
@@ -296,7 +271,7 @@ knitr::knit_exit()
 ```
 
 render from code, to html
-```{r eval=FALSE}
+```{r eval=FALSE, include=F}
 
 file  <- "0064_knit_code.Rmd"
 file  <- here("rmd", file)
@@ -306,7 +281,9 @@ rmarkdown::render(
 	file, 
 	#rmarkdown::html_document(), 
 	rmarkdown::pdf_document() ,
-  output_file="~/Downloads/print_and_delete/out") 
+    output_dir = "~/Downloads/print_and_delete")
+
+    #output_file="~/Downloads/print_and_delete/out") 
   
 ```
 

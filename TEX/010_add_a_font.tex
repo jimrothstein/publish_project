@@ -1,0 +1,28 @@
+%  file <- "010_add_a_font.tex "
+%   GOAL:   Copied this from tex.stackexchnage.
+%   Find the steps to get everything installed.   NO R, NO knitr, 
+%
+%   TOOLS:  lualatex *.tex  | > (in R() tinytex::lualatex("....*.tex) 
+%
+%   PROBLEM 1:
+%   says:  "English" is unknown , english.ldf ?
+%   So removed it and now :
+%   lualatex works!
+
+
+%   PROBLEM 2:
+%   todonotes missing  | open R (inside nvim terminal !), ran tinytex::lualatex("010_add_a_font.tex")
+%   a little slow,  but it WORKED!   pdf created!   
+%
+\documentclass[a4paper,10pt]{article}
+% \usepackage[english]{babel}
+% \usepackage[polish]{babel}
+\usepackage{todonotes}
+\usepackage{fontspec}       % for fonts
+\setmainfont{Roboto Light}[ItalicFont=Roboto-LightItalic]
+
+\begin{document}
+Hallo \textit{Hello, World!}
+
+\todo{Rewrite this answer \ldots}
+\end{document}
