@@ -54,6 +54,22 @@ knitr::current_input()
 ```
 
 
+Tiny Font?  Nope
+```{r tinyfont, size="\\tiny"}
+print("hi")
+```
+
+Tiny Font?  Nope
+```{r tinyfont3, size="tiny"}
+print("hi")
+```
+
+\tiny{this is tiny}
+Tiny Font?  Only for pdf
+```{r tinyfont2 }
+print("hi")
+```
+
 ```{r TAGS, eval=FALSE, echo=FALSE}
 TAGS <- c("collapse", "chunks", "examples")
 ```
@@ -208,18 +224,14 @@ render from code, to html
 ```{r eval=FALSE}
 {
 file  <- "00064_knitr_chunk_practice.Rmd"
-file  <- here("rmd", file)
+file  <- normalizePath(file)
 file
 }
 
-rmarkdown::render(file,
-  rmarkdown::html_document())
-
 rmarkdown::render(
 	file, 
-	rmarkdown::html_document(), 
-#	rmarkdown::pdf_document() ,
-#  output_file="~/Downloads/print_and_delete/out") 
-  output_file="out")
+	#rmarkdown::html_document(), 
+	rmarkdown::pdf_document() ,
+    output_dir="~/Downloads/print_and_delete/") 
 ```
 
