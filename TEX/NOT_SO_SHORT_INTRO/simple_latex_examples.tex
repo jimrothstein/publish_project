@@ -1,0 +1,68 @@
+
+%
+%   First, install pkg:   tlmgr install ulem
+%   2nd pandoc balks, b/c tex to pdf done by pdflatex
+%   OK, pdflatex %  works !
+
+%   pandoc % -t latex -o out.pdf 
+
+
+\documentclass{article}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{amssymb}
+    extra_dependencies: ["amssymb", "bbm", "threeparttable"]
+%  check syntax - no errors = good?
+\usepackage{syntonly}
+%  \syntaxonly
+
+\begin{document}
+%>% comment
+hello \emph{world}.
+\sout{strike out}
+
+\textsc{small caps}
+
+\color{blue}   Is this blue.
+
+
+%>% \textcolor{blue}{important}
+
+
+% single quote x, strange.  1st character is grave accent.
+`x'
+
+``Double quote this text.''
+
+%  use ldots  and double backslash says end line.
+%  something weird with next 2 lines, alignment breaks if remove empty line
+WRONG:   and on and on .... \\
+
+RIGHT:   and on and on \ldots
+
+
+
+\fbox{Put this in a box.}
+
+
+Note: \footnote{this could be important footnote}
+
+
+%   center
+\begin{center}
+    Is this Centered?
+\end{center}
+
+
+%   quote, and change font.
+
+Perhaps one day:
+
+\begin{quote}
+    \footnotesize{Something very famous will appear here?}
+\end{quote}
+
+But not right now.
+
+
+\end{document}

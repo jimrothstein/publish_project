@@ -19,8 +19,10 @@ Using regex, stringr to gather knitr chuncks
 Neatly rename the chunks!
 
 ```{r include=FALSE }
-knitr::opts_chunk$set(echo = TRUE, comment = "")
-library(here)
+
+knitr::opts_chunk$set(echo= TRUE, include= TRUE,
+                          comment = "")
+
 library(fs)
 library(lubridate)
 library(magrittr)
@@ -30,8 +32,6 @@ library(dplyr)
 
 print current dir, clean up time
 ```{r}
-knitr::opts_chunk$set(echo= TRUE, include= TRUE)
-
 # dir_info, capture as_tibble
 # convert Positct date-time to simple date
 

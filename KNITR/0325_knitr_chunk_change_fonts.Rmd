@@ -1,0 +1,105 @@
+---
+title: "`r knitr::current_input()`"  
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"   
+output:   
+  html_document:  
+    code_folding: hide
+    toc: true 
+    toc_depth: 2
+    toc_float: true
+  pdf_document:   
+    latex_engine: lualatex    
+    toc: true
+    toc_depth:  2   
+    keep_tex:  true
+    keep_md:    true
+fontsize: 11pt   
+geometry: margin=0.5in,top=0.25in   
+---
+
+##  PURPOSE:   Two methods to change font in just 1 chunk.
+First, latex wrap around chunk.  Works.
+
+Second, use knitr_hooks to write function triggered by a chunk. Works.
+
+Available latex sizes:
+
+\footnotesize
+normalsize \
+small \
+footnotesize \
+scriptsize \
+tiny \
+
+
+
+knitr functions (pdf): https://cran.r-project.org/web//packages/knitr/knitr.pdf
+knitr home:  https://yihui.org/knitr/ and various sections
+source code:  https://github.com/yihui/knitr/tree/master/R
+
+\normalsize
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = TRUE   ) # 
+library(knitr)
+```
+
+
+<!-- knitr::current_input() -->
+```{r current_input, include=F }
+this_file  <- knitr::current_input() 
+print(this_file)
+
+this_file  <- knitr::current_input(dir = TRUE)
+print(this_file)
+``` 
+```{r regular}
+mtcars |> head()
+```
+
+\tiny
+```{r tiny}
+mtcars |> head()
+```
+\normalsize
+
+
+```{r set_hooks}
+# foo1 will be a function
+library(knitr)
+knit_hooks$set(foo1 = function(before, options, envir) {
+  if (before) {
+      
+    '\\tiny _I appear before a chunk!_\n\n'
+  } else {
+    '\\normalsize  \n\n_I am after a chunk..._'
+  }
+})
+
+```
+
+<!-- trigger foo1 -->
+```{r foo1='whatever'}
+1+1
+```
+```{r render, eval=FALSE, include=F	} 
+
+file <- "0325_knitr_chunk_change_fonts.Rmd"
+file  <- normalizePath(file)
+file
+
+rmarkdown::render(file,
+                  output_format = "pdf_document",
+                  #output_format = "html_document",
+                  intermediates_dir = "tmp", 
+                  output_dir  = "~/Downloads/print_and_delete/")
+```
+
+
+
+
+
