@@ -64,7 +64,7 @@ knitr::knit_expand(text = "The value of `pi` is {{pi}}.")
 knitr::knit_expand(text = "File name is {{knitr::current_input()}}")
 ```
 ```{r}
-report_template <- :ystem.file("rmarkdown", "templates", "report", "skeleton", "skeleton.Rmd", package = "myReportPkg")
+report_template <- System.file("rmarkdown", "templates", "report", "skeleton", "skeleton.Rmd", package = "myReportPkg")
 ```
 
 ### print line numbers (pdf only?)

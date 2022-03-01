@@ -50,7 +50,7 @@ library(knitr)
 
 
 <!-- knitr::current_input() -->
-```{r current_input, include=F }
+```{r current_input, include=F, eval=F }
 this_file  <- knitr::current_input() 
 print(this_file)
 
@@ -74,9 +74,9 @@ library(knitr)
 knit_hooks$set(foo1 = function(before, options, envir) {
   if (before) {
       
-    '\\tiny _I appear before a chunk!_\n\n'
+    '\\tiny _I appear before a chunk!_\n\n \\hrule \n\n '
   } else {
-    '\\normalsize  \n\n_I am after a chunk..._'
+    '\\hrule \n\n \\normalsize  \n\n_I am after a chunk..._'
   }
 })
 
@@ -88,15 +88,18 @@ knit_hooks$set(foo1 = function(before, options, envir) {
 ```
 ```{r render, eval=FALSE, include=F	} 
 
-file <- "0325_knitr_chunk_change_fonts.Rmd"
+{
+file <- "0325_knitr_chunk_change_fonts_hooks.Rmd"
 file  <- normalizePath(file)
 file
+}
 
 rmarkdown::render(file,
-                  output_format = "pdf_document",
-                  #output_format = "html_document",
-                  intermediates_dir = "tmp", 
-                  output_dir  = "~/Downloads/print_and_delete/")
+                  output_format = "pdf_document")
+
+                  #output_format = "html_document")
+                  #intermediates_dir = "tmp")
+#                  output_dir  = "~/Downloads/print_and_delete/")
 ```
 
 

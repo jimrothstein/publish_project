@@ -1,0 +1,46 @@
+--- 
+title: Template for .Rmd 
+date: "`r paste('last updated', 
+    format(lubridate::now(), '%H:%M, %d %B %Y'))`"
+output: 
+  pdf_document: 
+    latex_engine: xelatex
+toc: TRUE 
+toc_depth:  1 
+fontsize: 12pt 
+geometry: margin=0.5in,top=0.25in 
+TAGS:  httr,
+---
+
+PURPOSE:    DiagrammeR sketches for API, R talk
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = TRUE)
+library(DiagrammeR)
+```
+```{r graph}
+DiagrammeR::grViz("
+  digraph rmarkdown {
+    vector -> atomic -> character
+    atomic -> numeric
+    atomic -> logical
+    numeric -> double
+    numeric -> integer
+    integer -> factor
+    double  -> date
+    double -> POSIXct
+    vector -> list
+  }
+  ", height=600)
+```
+```{r client_server}
+
+DiagrammeR::grViz("
+  digraph rmarkdown {
+      server  -> client
+  }
+  ", height=600)
+```

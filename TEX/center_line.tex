@@ -1,8 +1,7 @@
 %
-%   First, install pkg:   tlmgr install ulem
-%   2nd pandoc balks, b/c tex to pdf done by pdflatex
-%   OK, pdflatex %  works !
-
+%  file <- "center_line.tex "
+%   PURPOSE:    Center a small horizontal line.
+%   USAGE:      :!pdflatex %        
 %   pandoc % -t latex -o out.pdf 
 
 
@@ -11,15 +10,18 @@
 \usepackage{xcolor}
 \begin{document}
 
+\centerline{\rule{2cm}{0.4pt}}
+
 %>% comment
 
-hello \emph{world}.
+Hello \emph{world}.
 \sout{strike out}
 
 \textsc{small caps}
 
 \color{blue}   Is this blue.:   
 
+\centerline{\rule{2cm}{0.4pt}}
 %>% \textcolor{blue}{important}
 
 \end{document}

@@ -18,6 +18,7 @@ output:
 TAGS:  knit_patterns,get,set
 ---
 
+PURPOSE:    knit_patterns objects in knitr::,   GET/SET
 knitr functions (pdf): https://cran.r-project.org/web//packages/knitr/knitr.pdf
 
 knitr home:  https://yihui.org/knitr/ and various sections
@@ -78,9 +79,6 @@ str(knit_patterns$get())
 # return to original
 knit_patterns$set(old)
 ```
-
-
-
 
 
 LEGACY

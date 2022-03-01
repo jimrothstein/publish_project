@@ -1,0 +1,119 @@
+---
+title: "`r knitr::current_input()`"
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"
+output:   
+  html_document:  
+        code_folding: hide
+        toc: true 
+        toc_depth: 4
+        toc_float: false
+        number_sections:  true
+  pdf_document:   
+    latex_engine: lualatex  
+    toc: true
+    toc_depth:  4    
+    number_sections:  true
+fontsize: 10pt   
+geometry: margin=0.4in,top=0.15in, bottom=.15in
+TAGS:  vector, switch, DiagrammeR, 
+editor_options: 
+  chunk_output_type: console
+---
+
+###  Vectors and Lists: 
+  -  Vectors (atomic & lists)
+  -  Simple vector examples
+  -  Use of lapply* family, unlist
+  -  Notation for subset, contents etc
+  -  Common patterns
+  -  Use of purrr .... and analogus base functions
+  -  Vectorize a function, with mapper functions
+
+
+```{r setup, include=FALSE		}
+
+knitr::opts_chunk$set(
+                      echo = TRUE,
+                      eval=F,
+                      include=F,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = T   ) # easier to read
+
+```
+
+#### Vector hierachy
+  *  REF:  r4ds 20.2, adv-r ch3,4
+  *  adv-r (https://adv-r.hadley.nz/index.html) Chapter 3, Chapter4
+```{r graph}
+
+library(DiagrammeR)
+library(webshot)
+
+#webshot::install_phantomjs(force=TRUE)
+DiagrammeR::grViz("
+  digraph rmarkdown {
+    vector -> atomic -> character
+    atomic -> numeric
+    atomic -> logical
+    numeric -> double
+    numeric -> integer
+    integer -> factor
+    double  -> date
+    double -> POSIXct
+    vector -> list
+  }
+  ", height=600)
+```
+
+```{r mermaid}
+mermaid("
+graph LR
+  A-->B
+  A-->C
+  C-->E
+  B-->D
+  C-->D
+  D-->F
+  E-->F
+")
+```
+```{r node}
+mermaid("
+graph LR
+  A(node text)
+")
+
+```
+```{r}
+
+mermaid("
+sequenceDiagram
+  customer->>ticket seller: ask ticket
+  ticket seller->>database: seats
+  alt tickets available
+    database->>ticket seller: ok
+    ticket seller->>customer: confirm
+    customer->>ticket seller: ok
+    ticket seller->>database: book a seat
+    ticket seller->>printer: print ticket
+  else sold out
+    database->>ticket seller: none left
+    ticket seller->>customer: sorry
+  end
+")
+
+```
+```{r render, eval=FALSE, include=FALSE 	} 
+file <- "/home/jim/code/publish_project/DIAGRAMS/0010_base_vector_intro.Rmd"
+file  <- normalizePath(file)
+file
+
+output_dir = "~/Downloads/print_and_delete"
+# in general, pdf will look nicer
+rmarkdown::render(file,
+                  output_dir = output_dir,
+                  output_format = "pdf_document")
+                  #output_format = "html_document")
+```
