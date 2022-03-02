@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.27)  28 FEB 2022 22:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.28)  1 MAR 2022 22:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**center_line.tex
-(./center_line.tex
+**01_hello.tex
+(./01_hello.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/home/jim/.TinyTeX/texmf-dist/tex/latex/base/article.cls
@@ -56,46 +56,50 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 )
+(/home/jim/.TinyTeX/texmf-dist/tex/latex/base/syntonly.sty
+Package: syntonly 2017/06/30 v2.1e Standard LaTeX2e package
+)
+\output=\toks17
+
 (/home/jim/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count194
 \l__pdf_internal_box=\box53
 )
-(./center_line.aux)
-\openout1 = `center_line.aux'.
+(./01_hello.aux)
+\openout1 = `01_hello.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
- [1
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
-{/home/jim/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./center_li
-ne.aux) ) 
+! Undefined control sequence.
+l.17 \jim
+         {fail}
+? 
+! Emergency stop.
+l.17 \jim
+         {fail}
+End of file on the terminal!
+
+ 
 Here is how much of TeX's memory you used:
- 1156 strings out of 480236
- 16708 string characters out of 5895861
- 307929 words of memory out of 5000000
- 19172 multiletter control sequences out of 15000+600000
- 469666 words of font info for 30 fonts, out of 8000000 for 9000
+ 1175 strings out of 480236
+ 17288 string characters out of 5895861
+ 306640 words of memory out of 5000000
+ 19193 multiletter control sequences out of 15000+600000
+ 469391 words of font info for 30 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,5n,47p,173b,110s stack positions out of 5000i,500n,10000p,200000b,80000s
-</home/jim/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.
-pfb></home/jim/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on center_line.pdf (1 page, 23360 bytes).
-PDF statistics:
- 18 PDF objects out of 1000 (max. 8388607)
- 10 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 34i,0n,47p,175b,36s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

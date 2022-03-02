@@ -1,0 +1,31 @@
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021)  (format=lualatex 2022.2.28)  2 MAR 2022 03:01
+ restricted system commands enabled.
+**01_knitr_lua.tex
+(./01_knitr_lua.tex
+LaTeX2e <2021-11-15> patch level 1
+Lua module: luaotfload 2022-02-27 3.20 Lua based OpenType font support
+Lua module: lualibs 2021-05-20 2.74 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2021-05-20 2.74 ConTeXt Lua libraries -- extended c
+ollection.
+luaotfload | conf : Root cache directory is "/home/jim/.TinyTeX/texmf-var/luatex
+-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2022-02-24.lua" from kpse-res
+olved path "/home/jim/.TinyTeX/texmf-dist/tex/luatex/luaotfload/fontloader-2022-
+02-24.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.119
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' at position 1 in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "/home/jim/.TinyTeX/texmf-var/luatex
+-cache/generic/names".
+luaotfload | load : FATAL ERROR
+luaotfload | load :   × Failed to load "luaotfload" module "features".
+luaotfload | load :   × Error message:
+luaotfload | load :     × "...texmf-dist/tex/luatex/luaotfload/luaotfload-featu
+res.lua:835: module 'lua-uni-normalize' not found:".
+luaotfload | load :     × "no field package.preload['lua-uni-normalize']".
+luaotfload | load :     × "[kpse lua searcher] file not found: 'lua-uni-normali
+ze'".

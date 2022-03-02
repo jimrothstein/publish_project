@@ -3,12 +3,19 @@
 %   2nd pandoc balks, b/c tex to pdf done by pdflatex
 %   OK, pdflatex %  works !
 
+% :!lualatex %
 %   pandoc % -t latex -o out.pdf 
 
 
 \documentclass{article}
 \usepackage{ulem}
 \usepackage{xcolor}
+%   package to check syntax? 
+\usepackage{syntonly}
+
+%   comment when ready to produce output    
+\syntaxonly
+
 \begin{document}
 
 %>% comment
