@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage[margin=1cm]{geometry}
+
+\title{basic project}
+\author{jim rothstein}
+\today
+
+
+% define \set to insert vertical space in enumeration
+\newcommand{\set}[1]{\setlength\itemsep{#1em}}
+
+% lualatex now working
+%
+%
+\begin{document}
+\maketitle
+\today
+
+\begin{enumerate}
+\item one.
+% lot of vertical space !
+\set{6}
+\item two.
+\item three.
+\set{1}
+\item four.
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+    Hello World.  This is an example of $(x+1)$ of inline math mode, but
+    because it is in a regular paragrpah be careful of indentation.
+
+
+    Sometimes presentation math mode is better:  
+    Hello World.  This is an example of $$(x+1)$$ of presentation math mode, but
+    because it is in a regular paragrpah be careful of indentation.
+
+Line2
+
+\end{center}
+
+
+::: latex ignores, but prints
+
+\LaTeX\
+
+%  SOFT vs HARD return
+
+This is one line.  \\
+That was a soft return, which is  why this is NOT a new paragraph. And outdent
+is because it second line of paragraph.
+
+
+%       HARD
+But this is also one line.
+That was hard return.  Difference?
+
+
+\begin{center}
+$$\sqrt{2}$$
+
+% cubic root
+$$\sqrt[3]{2}$$
+
+$$\ln x$$
+
+% works, but ...
+        $$2\frac{1}{x^2+1}$$
+        
+% make bigger, error
+% $$2\left(\frac{1}{x^2+1})\right$$
+
+        $$\left\angle{v}\right\angle$$
+
+\end{center}
+
+
+
+\end{document}
+
