@@ -1,5 +1,5 @@
 %
-%		PURPOSE:		color, syntax check?, font: strike out, emph, ...
+%		PURPOSE:		color
 %
 %   First, install pkg:   tlmgr install ulem
 %   2nd pandoc balks, b/c tex to pdf done by pdflatex

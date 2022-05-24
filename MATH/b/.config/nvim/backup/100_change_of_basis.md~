@@ -1,0 +1,63 @@
+
+file <- "100_change_of_basis.tex"
+
+This is markdown file.
+Using print_pdf.sh %  out.pdf   pandoc will produce .pdf files with appropriate
+latex packages.
+
+Let V be vector space and B be basis.
+
+$$	\vec{p} $$
+
+dot product
+
+    $$ \vec{p}\cdot\vec{q}=|\vec{p}|\vec{q}|cos\theta $$
+
+magnitude
+$$ \left| \vec{a} \right| $$
+
+unit vector
+$$ \hat{a}=\frac{\vec{a}}{\left | \vec{a} \right |} $$
+
+matrix:
+
+$$
+  \begin{matrix}
+    a & b\\
+    c & d 
+  \end{matrix}
+$$
+
+matrix with subscripts
+$$
+  \begin{matrix}
+    a_{11} & a_{12}\\ 
+    a_{21} & a_{22}
+  \end{matrix}
+$$
+
+matrix with square brackets (bmatrix)
+\begin{equation}
+\begin{bmatrix}
+     1\\ 
+     0\\
+     0 
+\end{bmatrix}
+\end{equation}
+
+
+
+\begin{document}
+\begin{equation}
+ \begin{bmatrix} 
+   a_{1} \\ \vdots \\ a_{n} 
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+\begin{bmatrix}
+     a_{11} & a_{12} & a_{13}\\ 
+     a_{21} & a_{22} & a_{23}\\
+     a_{31} & a_{32} & a_{33} 
+\end{bmatrix}
+\end{equation}
