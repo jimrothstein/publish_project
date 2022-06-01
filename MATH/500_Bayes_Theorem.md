@@ -6,6 +6,10 @@ Using print_pdf.sh %  out.pdf   pandoc will produce .pdf files with appropriate
 latex packages.
 -->
 
+%	latex comment
+
+\therefore
+
 This classic problem of population where each individual is either  Healthy or
 has a Disease.
 
@@ -50,6 +54,54 @@ $\Pr{A=a} = \Pr{B=b \given C=c}$
 
 -->	
 
+
+\newpage
+Suppose 3% of population plays decent chess (is 'good' player or better).
+And suppose that 1% of the population drives a truck.   We are told that for
+every 300 trucker drivers, 1 plays decent chess. 
+
+Now you are asked what percent of descent chess players also drives a truck.
+
+Diagram
+
+
+
+$$	
+T = set of trucker drivers
+C = set of descent chess players
+
+N_T = Number of trucker drivers
+N_C = Number of decent chess players
+
+N = entire population
+
+N_T = 1% * N
+N_C = 3% * N
+
+N_T,_C = 1/300 * N_T
+$$
+
+Solution I
+
+If T is set of truck drivers, the problem tells us that 1 our of 300 will also
+play descent chess.   In math terms,  $\intersect{T}{C}$ is 1 out of 300
+drivers.
+
+If you think about it, this is the same number as the number of descent chess players who
+drive a truck.  This same as 
+$$\intersect{C}{T}$$
+
+
+In other words, 
+$$\intersect{C}{T} = \intersect{C}{T}$$
+
+$$\frac{1}{300}*N_T = x * N_C$$
+
+
+
+
+
+\newpage
 $$P(\theta \mid X)$$
 
 Let V be vector space and B be basis.
