@@ -13,3 +13,10 @@
     \draw (0,-1.75) -- ++(5,2.5) node [fill=white] {Environment Contact};
     \node at (0,-2) (nodeA) {5.1};
 \end{tikzpicture}
+
+
+We are working on
+\begin{tikzpicture}
+  \draw (-1.5,0) -- (1.5,0);
+  \draw (0,-1.5) -- (0,1.5);
+\end{tikzpicture}.
