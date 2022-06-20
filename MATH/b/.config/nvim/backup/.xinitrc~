@@ -1,4 +1,0 @@
-#		PURPOSE:	maps ChromeBox "capslock" key to Escape.
-#		-	133 to find this use > kev
-#
-xmodmap -e "keycode 133 = Escape"
