@@ -5,8 +5,10 @@ As of \today
 
 file <- "/home/jim/code/publish_project/MATH/100_math_examles.md"
 
+```	
 PURPOSE:	Collect examples of math/latex here:  vectors, equations, align,
 symbols etc.
+```
 
 <!--	This is comment to pandoc
 

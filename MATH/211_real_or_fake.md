@@ -9,14 +9,68 @@ As of \today
 %			file <- "210_bayes_summary.md"\par
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\par
 
-:::TODO:::  
 
--	set matrix A equal to matrix B, in equation.  
--	in math mode double /  ends the line  
-- in non-math mode us p a r  
--	under Event Space add to 2nd line `first flip is H`  
-- short text needs to be verbatum  
--	powerset  
+
+```.latex
+tabular
+
+\begin{tabular}{l*{6}{c}r}
+Team              & P & W & D & L & F  & A & Pts \\
+\hline
+Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
+\end{tabular}
+```
+
+\begin{tabular}{l*{6}{c}r}
+Team              & P & W & D & L & F  & A & Pts \\
+\hline
+Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
+\end{tabular}
+
+\begin{tabular}{l l l | l}
+News			& Fake & Real & Total \\
+\hline
+-!				& 44 & 88 & 132 \\
+!		      & 16 & 2  &  18 \\
+\hline
+Total		 &	60 & 90 & 150 \\
+\end{tabular}
+
+
+
+$$
+	\begin{matrix}
+	44 & 88\\
+	16 & 2 
+	\end{matrix}
+$$
+
+Or as a proportion of total:
+$$
+	\begin{matrix}
+		\frac{44}{150} & \frac{88}{150}\\
+		\frac{16}{ 150 } & \frac{2}{150}
+	\end{matrix}
+$$
+
+$$
+	\begin{matrix}
+		\frac{44}{150} & \frac{88}{150}\\
+		\frac{16}{ 150 } & \frac{2}{150}
+	\end{matrix}
+$$
+
+
+
+####			LEGACY
+
+:::TODO:::  
 
 %  comment in .tex, but not comment to pandoc - WILL appear in .pdf
 
@@ -92,27 +146,6 @@ B = event article is fake
 Join probability\par
 $$P(A \cap B)$$
 
-$$
-	\begin{matrix}
-	44 & 88\\
-	16 & 2 
-	\end{matrix}
-$$
-
-Or as a proportion of total:
-$$
-	\begin{matrix}
-		\frac{44}{150} & \frac{88}{150}\\
-		\frac{16}{ 150 } & \frac{2}{150}
-	\end{matrix}
-$$
-
-$$
-	\begin{matrix}
-		\frac{44}{150} & \frac{88}{150}\\
-		\frac{16}{ 150 } & \frac{2}{150}
-	\end{matrix}
-$$
 
 Using Bayes, 
 \begin{equation}
