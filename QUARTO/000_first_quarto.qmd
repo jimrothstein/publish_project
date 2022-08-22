@@ -1,0 +1,13 @@
+---
+title: "Quarto Basics"
+format:
+  html:
+---
+
+
+
+```{r}
+#| label: hello 
+
+print("hello")
+```

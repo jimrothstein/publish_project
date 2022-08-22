@@ -1,17 +1,21 @@
 ---
 Title:  003_markdown_examples (in ~docs)
 Date:  14 DEC 2020
+---
+
+<!--
+something wrong with yaml?
 output:  
   pdf_document  
     pdf-engine:  xelatex
     number_sections:  true 
----
-
+-->
 <!--
 vim:linebreak:spell:nowrap tw=79 fo=tqlnr foldcolumn=3 
 -->
 
 <!--
+!pandoc % -t latex --toc -V linkcolor:blue -V fontsize=12pt -V geometry:margin=0.4in -o ~/Downloads/print_and_delete/out.pdf
 !pandoc % -t latex --toc -V linkcolor:blue -V fontsize=12pt -V geometry:margin=0.4in -o ~/Downloads/print_and_delete/out.pdf
 
 -H header
@@ -30,6 +34,36 @@ vim: to format all urls for md
 s/https.*/[&]()/g
 
 -->
+
+
+##	grave symbol
+
+```
+code:
+``quote''
+```
+``quote''
+
+---
+
+
+##	dots
+```
+code:	\ldots
+```
+\dots
+
+---
+
+
+##	quote within a quote
+```
+code:		``Please say `a h'.''
+```
+``Please say `ah'.''
+
+---
+
 *italics*
 
 **To Run this** (block quote)
