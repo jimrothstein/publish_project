@@ -51,7 +51,7 @@ $$X \in \mathcal{P}(A)$$
 
 ###	Bayes Rule:
 
-A = Event
+A = Event\
 B = Event
 
 $$P(A \mid  B) = \frac{P(B \mid A) P(A)} {P(B)}$$
@@ -150,3 +150,8 @@ The problems asks us to find P (fake |  \!)
 
 <!--
 -->
+**Using Bayes, **
+
+\begin{equation}
+	P(F \mid E) = \frac{P(E \mid F) P(F)}{P(F)}
+\end{equation}

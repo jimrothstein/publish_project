@@ -220,47 +220,6 @@ $$\ln x$$
 
 \newpage
 
-### Probability
-
-$$X \in \mathcal{P}(A)$$
-
-|number of elments | = $2^k$
-
-$$A \cup B$$ 
-$$ \cup_{i=1}^{n}A_{i} $$
-$$ \bigcup_{i=1}^{n}A_{i} $$
-
-$$A \cap B$$
-$$ \bigcap_{i=1}^{n}A_{i} $$
-
- 
-$$ N_h = N * P(H) $$
-
-$$	P(A \mid B)$$
-
-$$p(\theta | D) = \frac{p(D|\theta) p(\theta)} {p(D)}$$
-
-
-Let $\pi \in [0,1]$ be a random variable.
-Then function f($\pi$) is probability density function (pdf) if
-
-$$f(\pi) >0  \forall \pi$$
-
-(write P (a-b))
-$$\int_\pi f = 1 $$
-
-
-
-One model for pdf   of f is **Beta**
-which often used in **conjugacy** (same family of distributions for both prior
-and posterior,  with only parameters varying)
-
-
-**Using Bayes, **
-
-\begin{equation}
-	P(F \mid E) = \frac{P(E \mid F) P(F)}{P(F)}
-\end{equation}
 
 ###	Binary Functions
 
