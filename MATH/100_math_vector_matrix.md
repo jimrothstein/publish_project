@@ -7,7 +7,7 @@ file <- "/home/jim/code/publish_project/MATH/100_math_examles.md"
 
 ```	
 PURPOSE:	Collect examples of math/latex here:  vectors, equations, align,
-symbols etc.
+symbols etc. cases (x= 0 or 1)
 ```
 
 <!--	This is comment to pandoc

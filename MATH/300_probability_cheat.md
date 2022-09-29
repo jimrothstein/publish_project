@@ -1,4 +1,5 @@
 
+Turn on lsp/latex by using `ft=tex` on bottom vim line
 
 ### Probability
 
@@ -51,5 +52,5 @@ $$p(\theta | D) = \frac{p(D|\theta) p(\theta)} {p(D)}$$
 
 
 
-vim:linebreak:nospell:nowrap:cul tw=78 fo=ntl foldcolumn=3 cc=+1
+vim:linebreak:nospell:nowrap:cul tw=78 fo=ntl foldcolumn=3 cc=+1 ft=tex
 

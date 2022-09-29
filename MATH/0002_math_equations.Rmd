@@ -17,6 +17,7 @@ fontsize: 11pt
 geometry: margin=0.5in,top=0.25in   
 ---
 
+sums, regression
 
 ### Embed `modified` latex equations inside Rmd; compile with knitr
 ### Seems to work Great (as long as no latex packages needed)

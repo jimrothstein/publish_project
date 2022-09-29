@@ -158,5 +158,4 @@ The problems asks us to find P (fake |  \!)
 \begin{equation}
 	P(F \mid E) = \frac{P(E \mid F) P(F)}
 \end{equation}
-
 vim:linebreak:nospell:nowrap:cul ft=tex tw=78 fo=ntl foldcolumn=3 cc=+1
