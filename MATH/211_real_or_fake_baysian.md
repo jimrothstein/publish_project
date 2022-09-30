@@ -143,11 +143,11 @@ Suppose we examine $N=150$ news articles and record the following information:
 A = event article uses !\par
 B = event article is fake
 
-Join probability\par
+Join probability \par
 $$P(A \cap B)$$
 
 
-Using Bayes, 
+Using Bayes, \
 \begin{equation}
 	P(F \mid E) = \frac{P(E \mid F) P(F)}{P(F)}
 \end{equation}
