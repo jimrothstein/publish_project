@@ -39,12 +39,12 @@ and posterior,  with only parameters varying)
 
 ###	Bayes	
 
-Let A, B be set of events, such that 
+Let A, B be set of events, such that \
 $$	A \cap B \neq \emptyset$$
 Joint probability: \
 $$P(A \cap B) = P(A \hspace{10pt} and \hspace{10pt} B)$$
 Conditional probability (show!) $$P(B \lvert A) = \frac{P(A \cap B)}{P(A)}$$
-Bayes Thm (show!) 
+Bayes Thm (show!) \ 
 
 $$ P(B \lvert A) = \frac{P(A \lvert B)P(B)}{P(A)}$$
 
