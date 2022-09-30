@@ -24,7 +24,7 @@ $$	P(A \mid B)$$
 
 
 Let $\pi \in [0,1]$ be a random variable.
-Then function $f(\pi)$ is probability density function (pdf) if
+Then function $ f(\pi) $ is probability density function (pdf) if
 
 $$f(\pi) >0    \hspace{10pt} \forall \pi$$
 
@@ -41,9 +41,11 @@ and posterior,  with only parameters varying)
 
 Let A, B be set of events, such that 
 $$	A \cap B \neq \emptyset$$
-Joint probability: $$P(A \cap B) = P(A \hspace{10pt} and \hspace{10pt} B)$$
+Joint probability: \
+$$P(A \cap B) = P(A \hspace{10pt} and \hspace{10pt} B)$$
 Conditional probability (show!) $$P(B \lvert A) = \frac{P(A \cap B)}{P(A)}$$
 Bayes Thm (show!) 
+
 $$ P(B \lvert A) = \frac{P(A \lvert B)P(B)}{P(A)}$$
 
 
