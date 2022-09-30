@@ -140,10 +140,10 @@ $$L(A | B= unknown) = P(B=unknown | A)$$
 
 Suppose we examine $N=150$ news articles and record the following information:
 
-A = event article uses !\par
+A = event article uses ! \
 B = event article is fake
 
-Join probability \par
+Join probability \
 $$P(A \cap B)$$
 
 
@@ -152,9 +152,7 @@ Using Bayes, \
 	P(F \mid E) = \frac{P(E \mid F) P(F)}{P(F)}
 \end{equation}
 
-\begin{equation}
-	=	\frac{ \frac{16}{60} .4}{\frac{18}{150} }
-\end{equation}
+$$=	\frac{ \frac{16}{60} .4}{\frac{18}{150} }$$
 
 	Prior(fake) was 0.4
 	Posterior(fake) = P(fake | !) = 90%
