@@ -140,7 +140,7 @@ $$L(A | B= unknown) = P(B=unknown | A)$$
 
 Suppose we examine $N=150$ news articles and record the following information:
 
-A = event article uses ! \
+A = event article uses ! (*exclaimation mark*) \
 B = event article is fake
 
 Join probability \
