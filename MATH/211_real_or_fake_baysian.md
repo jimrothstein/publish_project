@@ -138,11 +138,14 @@ $$
 
 In general, E subset of powerset (S)
 ````{.latex}
+Attempt 1 \
 $$X \in \mathcal{P}(A)$$
 ````
 
 ---
+
 ```math
+Attempt 2 \
 X \in \mathcal{P}(A)
 ```
 
