@@ -63,9 +63,10 @@ $$
 	\end{matrix}
 $$
 
-Or as a proportion of total: \
 
 ---
+
+Or as a proportion of total: \
 
 $$
 	\begin{matrix}
@@ -104,15 +105,19 @@ S = {HH,HT, TH, TT}
 
 ###	Event Space
 This actually a bit more complicated:
+
+$$	
 \begin{equation}
 	E_1 = {H} \\
 	E_2 = {HH, HT}   
 \end{equation}
+$$
 
+---
 
 In general, E subset of powerset (S)
 ````{.latex}
-$X \in \mathcal{P}(A)$
+$$X \in \mathcal{P}(A)$$
 ````
 
 $$X \in \mathcal{P}(A)$$
