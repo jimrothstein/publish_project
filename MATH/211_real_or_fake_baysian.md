@@ -115,6 +115,21 @@ $$
 
 ---
 
+\begin{equation}
+	E_1 = {H} \\
+	E_2 = {HH, HT}   
+\end{equation}
+
+---
+
+```latex
+\begin{equation}
+	E_1 = {H} \\
+	E_2 = {HH, HT}   
+\end{equation}
+```
+---
+
 In general, E subset of powerset (S)
 ````{.latex}
 $$X \in \mathcal{P}(A)$$
