@@ -149,6 +149,7 @@ Attempt 2 \
 X \in \mathcal{P}(A)
 ```
 
+Attempt 3 \
 $$X \in \mathcal{P}(A)$$
 ---
 
