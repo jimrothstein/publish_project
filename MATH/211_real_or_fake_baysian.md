@@ -9,6 +9,8 @@ As of \today
 %			file <- "210_bayes_summary.md" \
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \
 
+```markdown
+-	tabular fails
 
 ---
 
@@ -50,7 +52,9 @@ News			& Fake & Real & Total \\
 Total		 &	60 & 90 & 150 \\
 \end{tabular}
 
+---
 
+###	matrix
 
 $$
 	\begin{matrix}
@@ -59,13 +63,9 @@ $$
 	\end{matrix}
 $$
 
-Or as a proportion of total:
-$$
-	\begin{matrix}
-		\frac{44}{150} & \frac{88}{150}\\
-		\frac{16}{ 150 } & \frac{2}{150}
-	\end{matrix}
-$$
+Or as a proportion of total: \
+
+---
 
 $$
 	\begin{matrix}
@@ -74,6 +74,14 @@ $$
 	\end{matrix}
 $$
 
+$$
+	\begin{matrix}
+		\frac{44}{150} & \frac{88}{150}\\
+		\frac{16}{ 150 } & \frac{2}{150}
+	\end{matrix}
+$$
+
+---
 
 
 ####			LEGACY
