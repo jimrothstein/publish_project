@@ -12,6 +12,9 @@ As of \today
 
 ---
 
+
+###	Attempt for Tables
+
 ```.latex
 tabular
 
@@ -25,6 +28,7 @@ FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
 \end{tabular}
 ```
 
+$$
 \begin{tabular}{l*{6}{c}r}
 Team              & P & W & D & L & F  & A & Pts \\
 \hline
@@ -33,6 +37,7 @@ Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
 Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
 FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
 \end{tabular}
+$$
 
 ---
 
