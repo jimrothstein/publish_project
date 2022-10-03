@@ -9,6 +9,11 @@ As of \today
 %			file <- "210_bayes_summary.md" \
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \
 
+```
+Math in Github
+SEE: https://stackoverflow.com/a/72310304/5057251
+```
+
 ```markdown
 -	tabular fails
 
@@ -106,10 +111,11 @@ S = {HH,HT, TH, TT}
 ###	Event Space
 This actually a bit more complicated:
 
+
 $$	
 \begin{equation}
-	E_1 = {H} \\
-	E_2 = {HH, HT}   
+	E_1 = {H} \
+	E_2 = {HH, HT}  \
 \end{equation}
 $$
 
@@ -135,7 +141,13 @@ In general, E subset of powerset (S)
 $$X \in \mathcal{P}(A)$$
 ````
 
+---
+```math
+X \in \mathcal{P}(A)
+```
+
 $$X \in \mathcal{P}(A)$$
+---
 
 |number of elments | = $2^k$
 
