@@ -1,10 +1,10 @@
 ---
 title: "Quarto Basics"
-format:
-  html:
+description:  |
+  Multiline verbage.  Continue. This is second line.
 ---
 
-
+To render:	> quarto render *.qmd  --to pdf
 
 ```{r}
 #| label: hello 
