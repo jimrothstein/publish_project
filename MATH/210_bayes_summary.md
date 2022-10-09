@@ -32,7 +32,17 @@ All possible outcomes from 1 experiment.
 Ex: toss 2 coins
 S = {HH,HT, TH, TT}
 
-###	Event Space
+###	Event Space is set of sets.  
+
+For example:  if we ask what is probability that 2 flips will be the same.
+The `event` E = { {HH}, {TT} }.   Can not ask what is probability of element in
+sample space, makes no sense.  In general, the event space is power set of E
+or certain subsets.
+
+Example:  Throw one Die.   Sample space, S = {1,2,3,4,5,6}  The event `throw
+6` is { {6}} and is subset of power set.  Another event might E = { {5}, {6}
+}, the event that die is 5 or greater. 
+
 This actually a bit more complicated:
 \begin{equation}
 	E_1 = {H} \\
