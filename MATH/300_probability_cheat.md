@@ -24,7 +24,7 @@ $$	P(A \mid B)$$
 
 
 Let $\pi \in [0,1]$ be a random variable.
-Then function $ f(\pi) $ is probability density function (pdf) if
+Then function $f(\pi)$ is probability density function (pdf) if
 
 $$f(\pi) >0    \hspace{10pt} \forall \pi$$
 
@@ -56,6 +56,19 @@ hypothesis):
 $$p(\theta | D) = \frac{p(D|\theta) p(\theta)} {p(D)}$$
 
 
+---
+
+**Axiom of Choice**
+:	Given a family of sets, how to pick ONE representative example from each
+set?	
+
+:	Example:	Suppose pool many bags of m&ms and create a family of sets in
+which all the browns are in one set; all the blues in another and so.  Because
+all the elements of brown set are the same, how do we pick ONE, ie what is the
+rule?
+
+:	For finite sets, can create a rule (proof?).  For infinite, trouble begins.
+Hence the need for this axiom.  
 
 vim:linebreak:nospell:nowrap:cul tw=78 fo=ntl foldcolumn=3 cc=+1 ft=tex
 
