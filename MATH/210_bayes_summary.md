@@ -26,6 +26,7 @@ As of \today
 
 -->
 
+
 ###	Sample Space
 All possible outcomes from 1 experiment.
 
