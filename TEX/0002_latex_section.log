@@ -1,0 +1,99 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.7)  7 NOV 2022 15:06
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**0002_latex_section.tex
+(./0002_latex_section.tex
+LaTeX2e <2022-11-01>
+L3 programming layer <2022-11-02> (/home/jim/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/home/jim/.TinyTeX/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen140
+) (/home/jim/.TinyTeX/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+ (/home/jim/.TinyTeX/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count193
+\c@Blindtext=\count194
+\c@blind@countparstart=\count195
+\blind@countxx=\count196
+\blindtext@numBlindtext=\count197
+\blind@countyy=\count198
+\c@blindlist=\count199
+\c@blindlistlevel=\count266
+\c@blindlist@level=\count267
+\blind@listitem=\count268
+\c@blind@listcount=\count269
+\c@blind@levelcount=\count270
+\blind@mathformula=\count271
+\blind@Mathformula=\count272
+\c@blind@randomcount=\count273
+\c@blind@randommax=\count274
+\c@blind@pangramcount=\count275
+\c@blind@pangrammax=\count276
+) (/home/jim/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/home/jim/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+) (/home/jim/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count277
+\l__pdf_internal_box=\box51
+) (./0002_latex_section.aux)
+\openout1 = `0002_latex_section.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 18.
+ [1
+
+{/home/jim/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./0002_latex_section.aux) ) 
+Here is how much of TeX's memory you used:
+ 917 strings out of 476931
+ 15170 string characters out of 5825486
+ 350959 words of memory out of 5000000
+ 22221 multiletter control sequences out of 15000+600000
+ 475833 words of font info for 42 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 40i,6n,48p,159b,194s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/jim/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/jim/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/jim/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/jim/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
+Output written on 0002_latex_section.pdf (1 page, 23903 bytes).
+PDF statistics:
+ 99 PDF objects out of 1000 (max. 8388607)
+ 20 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
