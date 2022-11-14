@@ -1,13 +1,17 @@
 \documentclass{article}
-
+\usepackage{lipsum}
+%  lualatex wants:
+%\usepackage[base]{babel}
 \begin{document}
 
 %	PURPOSE:	Example of sections (number is auto).
-%	USAGE:		pdflatex %; zathura *.pdf
-						lualatex %: zathura .pdf
+%	USAGE:		lualatex %; zathura 
+%				Note:  pandoc will baulk since this is .tex file
 
 \section{Intro}
 Short description
+
+\lipsum[2]
 
 \section{Stuff 1}
 Short description

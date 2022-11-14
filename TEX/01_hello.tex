@@ -1,15 +1,7 @@
-%
-%   First, install pkg:   tlmgr install ulem
-%   2nd pandoc balks, b/c tex to pdf done by pdflatex
-%   OK, pdflatex %  works !
-
-% :!lualatex %
-%   !pandoc % -t latex -o out.pdf 
-
-
 \documentclass{article}
 \usepackage{ulem}
 \usepackage{xcolor}
+\usepackage{lipsum}
 %   package to check syntax? 
 \usepackage{syntonly}
 
@@ -18,6 +10,13 @@
 
 \begin{document}
 
+%
+%   First, install pkg:   tlmgr install ulem
+%   2nd pandoc balks, b/c tex to pdf done by pdflatex
+%   OK, pdflatex %  works !
+
+% :!lualatex %
+%   !pandoc % -t latex -o out.pdf 
 %>% comment
 
 hello \emph{world}.
