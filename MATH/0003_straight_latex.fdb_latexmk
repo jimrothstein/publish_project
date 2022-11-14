@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1667587357 "0003_straight_latex.tex" "0003_straight_latex.pdf" "0003_straight_latex" 1667587357
+["pdflatex"] 1668420267 "0003_straight_latex.tex" "0003_straight_latex.pdf" "0003_straight_latex" 1668420268
   "/home/jim/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm" 1136768653 1300 63a6111ee6274895728663cf4b4e7e81 ""
   "/home/jim/.TinyTeX/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm" 1136768653 520 4889cce2180234b97cad636b6039c722 ""
   "/home/jim/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1248133631 32001 6aeea3afe875097b1eb0da29acd61e28 ""
@@ -14,11 +14,11 @@
   "/home/jim/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1666901542 30426 f2fb69fcda4dc35ed0b7dee211bce679 ""
   "/home/jim/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty" 1655066402 56148 51a9a8571c07b9921892ae11063ae853 ""
   "/home/jim/.TinyTeX/texmf-dist/web2c/texmf.cnf" 1646502317 40171 cdab547de63d26590bebb3baff566530 ""
-  "/home/jim/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1667466302 92913 642ef56a67328798da32dfa7d4aae8ce ""
-  "/home/jim/.TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1667552668 1645711 bd06f0f244766fa04007e557dd418b0b ""
+  "/home/jim/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1668420258 92913 642ef56a67328798da32dfa7d4aae8ce ""
+  "/home/jim/.TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1668420265 1645713 43f36095e83a11e3137a6b0beb96a893 ""
   "/home/jim/.TinyTeX/texmf.cnf" 1660388855 679 e95db49b3971c649270bd42ba2e598f9 ""
-  "0003_straight_latex.aux" 1667587357 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "0003_straight_latex.tex" 1667587357 468 83bdb40f1f60fc0c39ed51c06f568a11 ""
+  "0003_straight_latex.aux" 1668420268 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "0003_straight_latex.tex" 1668415629 478 4803f2c1314c0827cbbc8254c527678d ""
   (generated)
   "0003_straight_latex.aux"
   "0003_straight_latex.log"
