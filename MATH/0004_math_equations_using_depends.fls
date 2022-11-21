@@ -1,8 +1,0 @@
-PWD /home/jim/code/code_publish/MATH
-INPUT /home/jim/.TinyTeX/texmf.cnf
-INPUT /home/jim/.TinyTeX/texmf-dist/web2c/texmf.cnf
-INPUT /home/jim/.TinyTeX/texmf-var/web2c/pdftex/latex.fmt
-INPUT 0004_math_equations_using_depends.Rmd
-OUTPUT 0004_math_equations_using_depends.log
-INPUT /home/jim/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
-INPUT /home/jim/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
