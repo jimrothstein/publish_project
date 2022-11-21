@@ -35,6 +35,11 @@ s/https.*/[&]()/g
 
 -->
 
+<!--  to run next line, must have -H ~/dotfiles/tex/geometry.tex in pandoc call.
+geometry.tex includes necessary \usepackage
+
+-->
+\lipsum[1]
 
 ##	grave symbol
 

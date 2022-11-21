@@ -16,6 +16,7 @@ MARKDOWN GUIDE:
 https://www.markdownguide.org/basic-syntax/
 
 -->
+
 **To Run this** 
 
 > pandoc 003_markdown_examples.md  -t latex
@@ -28,12 +29,10 @@ Other useful pandoc commands:
 * -V geometry:margin=0.25in 
 * -H 010_header.tex
 
----
 
 <!-- link works, but no color or highlight --> 
 
 [new york](http://nytimes.com)
-list1?
 
 - one 
 - two
@@ -41,21 +40,18 @@ list1?
 
 ***
 
-list2?
 
 *	one 
 *	two 
 *	three
 
 *** 
-list3?  
 
 -	one 
 -	two 
 -	three
 
 *** 
-list4?
 
 	-	one
 	- two
@@ -72,6 +68,7 @@ list4?
 Code block, called fenced code block.
 }
 ```
+
 ### Verbatim quote
 
 `this is a quote`
@@ -133,7 +130,6 @@ line 6 (Tab)
 
 `"this is also a quote"`
 
----
 
 ### Blockquotes (insert > )
 
