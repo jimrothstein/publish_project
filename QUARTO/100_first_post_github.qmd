@@ -1,0 +1,16 @@
+---
+title: "Quarto Basics"
+description:  |
+  Multiline verbage.  Continue. This is second line.
+---
+project:
+  type: website
+  output-dir: docs
+
+To render:	> quarto render *.qmd  --to pdf
+
+```{r}
+#| label: hello 
+
+print("hello")
+```
