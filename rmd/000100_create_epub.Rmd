@@ -1,4 +1,4 @@
-	 vim:linebreak:nowrap:nospell tw=78 fo=tqlnr foldcolumn=3 
+	 im:linebreak:nowrap:nospell tw=78 fo=tqlnr foldcolumn=3 
 --- 
 # Spaces, no Tabs
 title: Template for .Rmd 
