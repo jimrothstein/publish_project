@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{amssymb}
+\newcommand{\dg}{^\circ}
+% \newcommand{\prob}{P(A $\mid$ B)}
+
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\begin{document}
+
+% cmd name, number args, what it does
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\prob}[2]{P({#1} $\mid$ {#2})}
+% this is to highlight words that are being defined and enter.
+\newcommand{\define}[1]{\textbf{#1}}
+
+ 
+As of \today
+
+new dg command:  $\dg$
+
+
+
+prob \prob{A}{Z}
+
+Complex command:
+$$
+Complex: \bb{C}
+$$
+
+%
+%   pdflatex %  works !
+
+% :!lualatex % 
+%   !pandoc % -t latex -o out.pdf 
+
+%   pandoc does it, but complains
+%   !pandoc % -f latex -t pdf -o - | zathura -
+%>% comment
+
+
+% \tableofcontents
+
+
+\begin{verbatim}
+file <- "/home/jim/code/publish_project/MATH/100_math_examles.md"
+
+\end{verbatim}
+PURPOSE:	Collect examples of math/latex here:  vectors, equations, align,
+symbols etc.
+
+<!--	This is comment to pandoc
+
+%  comment in .tex, but not comment to pandoc
+
+-->
+
+
+```
+Exercise 2.1 (Comparing the prior and posterior) For each scenario below, you’re given a pair of events, A
+and B. Explain what you believe to be the relationship between the posterior and prior probabilities of B: P(B|A)>P(B) or P(B|A)<P(B)
+.
+
+    A
+(a)
+A = you just finished reading Lambda Literary Award-winning author Nicole Dennis-Benn’s first novel, and you enjoyed it! 
+
+B = you will also enjoy Benn’s newest novel.
+
+A = it’s 0 degrees Fahrenheit in Minnesota on a January day. 
+B = it will be 60 degrees tomorrow.
+
+A
+= the authors only got 3 hours of sleep last night. B
+= the authors make several typos in their writing today.
+A
+= your friend includes three hashtags in their tweet. B = the tweet gets retweeted. 
+```
+
+
+We are told A, and asked to consider B:  P(B | A)
+Prior is A.
+P(B | A) =  L(A | B)
+
+
+(b) \\
+Prior is P(A)  Posterior is P(B | A )\\
+Of all possible outcomes, B, seems that P(B | A) is quite low.\\
+
+\section{Terms $\&$ Definitions}
+Y outcomes random variable, based upon X inputs, model parameters \\
+Because of error,  we refer to P(Y $\mid$ X,  $\pi$ ), where $\pi$ is model parameter\\
+
+Joint
+Conditional
+Event
+Sample Space
+Partition
+Marginal
+
+Categorical vs Binary vs Discrete variable
+
+\begin{definition}[test]  
+$$
+(\Omega, \mathcal{F}, P ) \\
+$$
+Consider all the subsets of $\Omega$\\
+
+Then $\mathcal{F}$ contains family of such such subsets, containng  $\emptyset, \Omega,$ 
+
+and if $x \in \mathcal{F}$ then $x^\complement \in \mathcal{F}$
+
+For example, $\Omega$ is  unit square and consider simple curve st $\in \mathcal{F}$ .  
+though  could be $\mathcal{P}(\Omega)$ \\
+
+Elements of $\mathcal{F} \sigma$ algebra (if countable) or algebra if finite and
+maps between subsets of $\Omega$ \\
+Rules:  
+\end{definition}
+
+\begin{definition}[Probability Triple]  
+$$
+$$
+$$
+$$ 
+\end{definition}
+
+
+
+
+\section{linear regression}
+
+
+\end{document}
+
+vim:linebreak:nospell:nowrap:cul tw=78 fo=ntl foldcolumn=3 cc=+1 ft=tex

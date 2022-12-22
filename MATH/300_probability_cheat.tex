@@ -1,14 +1,36 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor}
+\usepackage{ulem}
 
-Turn on lsp/latex by using `ft=tex` on bottom vim line
 
-### Probability
+%	PURPOSE:	simple, standalone .tex
+% USAGE:		pandoc % -o out.pdf
 
-Power Set: \ 
-$$X \in \mathcal{P}(A)$$
+\begin{document}
+ %! TEX root = ~/code/code_publish/MATH/*.tex 
+Turn on lsp/latex by using `ft=tex` on bottom vim line (be sure preamble in
+place)
+
+
+\section{Definitions}
+Casual Inference - Example patient trials.   Comparing observed outcome. Because
+pt can **not be both** w/ treatment and w/o treatment.
+
+Parameter:   Need to estimate.   Maybe mostly **observable** (coef in linear
+model, params in model)
+
+Exchangeable:  In joint probability,  $P(x_1,x_2) = P(x_2,x_1)$
+
+\section{Probability}
+
+Power Set: \ $$X \in \mathcal{P}(A)$$
 
 |number of elments | = $2^k$
 
-#### union/intersection
+\section{union/intersection}
+
 $$A \cup B$$ 
 $$ \cup_{i=1}^{n}A_{i} $$
 $$ \bigcup_{i=1}^{n}A_{i} $$
@@ -33,11 +55,22 @@ $$\int_\pi f = 1 $$
 
 
 
+\section{Measure Space}
+
+\section{Compare Measure Space and Topological Space}
+
+\section{Probability Space}
+
+The Axiom $P(\cup A_i) = \sum P(A_i)$ for countable unions can be viewed as
+can sum each indivual element of sample space.
+
+In particular, one 
+
 One model for pdf   of f is **Beta**
 which often used in **conjugacy** (same family of distributions for both prior
 and posterior,  with only parameters varying)
 
-###	Bayes	
+\section{Bayes}
 
 Let A, B be set of events, such that \
 
@@ -45,10 +78,11 @@ $$A \cap B \neq \emptyset$$
 
 Joint probability: \
 $$P(A \cap B) = P(A \hspace{10pt} and \hspace{10pt} B)$$
-Conditional probability (show!) $$P(B \lvert A) = \frac{P(A \cap B)}{P(A)}$$
+Conditional probability (show!) 
+$$P(B \lvert A) = \frac{P(A \cap B)}{P(A)}$$
 Bayes Thm (show!) \ 
 
-$$P(B \lvert A) = \frac{P(A \lvert B)P(B)}{P(A)}$$
+$$P(B \mid A) = \frac{P(A \lvert B)P(B)}{P(A)}$$
 
 
 If D respresents data, and $\theta$ an unknown parameter in our model (ie
@@ -62,7 +96,7 @@ $$p(\theta | D) = \frac{p(D|\theta) p(\theta)} {p(D)}$$
 :	Given a family of sets, how to pick ONE representative example from each
 set?	
 
-:	Example:	Suppose pool many bags of m&ms and create a family of sets in
+:	Example:	Suppose pool many bags of m\&ms and create a family of sets in
 which all the browns are in one set; all the blues in another and so.  Because
 all the elements of brown set are the same, how do we pick ONE, ie what is the
 rule?
@@ -70,5 +104,4 @@ rule?
 :	For finite sets, can create a rule (proof?).  For infinite, trouble begins.
 Hence the need for this axiom.  
 
-vim:linebreak:nospell:nowrap:cul tw=78 fo=ntl foldcolumn=3 cc=+1 ft=tex
-
+\end{document}

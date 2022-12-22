@@ -1,0 +1,17 @@
+# Fdb version 4
+["pdflatex"] 1671089696 "001_lualatex_first.tex" "001_lualatex_first.pdf" "001_lualatex_first" 1671089696 0
+  "/home/jim/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/home/jim/.TinyTeX/texmf-dist/tex/latex/base/article.cls" 1667332637 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
+  "/home/jim/.TinyTeX/texmf-dist/tex/latex/base/size10.clo" 1667332637 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
+  "/home/jim/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1666901542 30426 f2fb69fcda4dc35ed0b7dee211bce679 ""
+  "/home/jim/.TinyTeX/texmf-dist/web2c/texmf.cnf" 1646502317 40171 cdab547de63d26590bebb3baff566530 ""
+  "/home/jim/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1669879716 92913 642ef56a67328798da32dfa7d4aae8ce ""
+  "/home/jim/.TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1669879727 1645717 95dc3f67f8afa8620e358935b730f9e5 ""
+  "/home/jim/.TinyTeX/texmf.cnf" 1660388855 679 e95db49b3971c649270bd42ba2e598f9 ""
+  "001_lualatex_first.aux" 1671089696 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "001_lualatex_first.tex" 1671089696 217 756bac9f0503d80ca42579bad65ff91c ""
+  (generated)
+  "001_lualatex_first.aux"
+  "001_lualatex_first.log"
+  "001_lualatex_first.pdf"
+  (rewritten before read)
