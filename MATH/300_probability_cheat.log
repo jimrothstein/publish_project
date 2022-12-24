@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.30)  20 DEC 2022 20:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  23 DEC 2022 01:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **300_probability_cheat.tex
 (./300_probability_cheat.tex
-LaTeX2e <2022-11-01>
-L3 programming layer <2022-11-02> (/home/jim/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2022-12-17> (/home/jim/.TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (/home/jim/.TinyTeX/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
@@ -19,8 +19,8 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \c@subparagraph=\count190
 \c@figure=\count191
 \c@table=\count192
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
 \bibindent=\dimen140
 ) (/home/jim/.TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
@@ -28,7 +28,7 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@posthook=\toks17
 ) (/home/jim/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip49
+\@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
 (/home/jim/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -85,8 +85,8 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \totwidth@=\dimen148
 \lineht@=\dimen149
 \@envbody=\toks21
-\multlinegap=\skip50
-\multlinetaggap=\skip51
+\multlinegap=\skip51
+\multlinetaggap=\skip52
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
@@ -120,7 +120,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 ) (/home/jim/.TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box53
 \UL@hyphenbox=\box54
-\UL@skip=\skip52
+\UL@skip=\skip53
 \UL@hook=\toks23
 \UL@height=\dimen150
 \UL@pe=\count271
@@ -149,34 +149,34 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
  (/home/jim/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
  (/home/jim/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (8.66461pt too wide) in paragraph at lines 50--50
+Overfull \hbox (8.66461pt too wide) in paragraph at lines 60--60
 []\OT1/cmr/bx/n/14.4 Compare Mea-sure Space and Topo-log-i-cal Space 
  []
 
 [1
 
-{/home/jim/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./300_probability_cheat.aux) ) 
+{/home/jim/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./300_probability_cheat.aux) ) 
 Here is how much of TeX's memory you used:
- 2480 strings out of 476931
- 34613 string characters out of 5825485
- 377148 words of memory out of 5000000
- 23747 multiletter control sequences out of 15000+600000
- 471669 words of font info for 39 fonts, out of 8000000 for 9000
+ 2480 strings out of 478053
+ 34613 string characters out of 5840947
+ 1854793 words of memory out of 5000000
+ 22625 multiletter control sequences out of 15000+600000
+ 514697 words of font info for 43 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 54i,5n,62p,236b,112s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 54i,6n,62p,236b,122s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/jim/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/jim/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/jim/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/jim/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/jim/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/jim/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/jim/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on 300_probability_cheat.pdf (2 pages, 85415 bytes).
+Output written on 300_probability_cheat.pdf (3 pages, 89240 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 49 PDF objects out of 1000 (max. 8388607)
+ 29 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

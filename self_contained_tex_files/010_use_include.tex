@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{amssymb}
+
+\begin{document}
+
+$$
+x^2 + y^2 = z^2
+$$
+
+% child.tex no preamble, no begin/end
+\include{010_child.tex}
+%
+%   First, install pkg:   tlmgr install ulem
+%   2nd pandoc balks, b/c tex to pdf done by pdflatex
+%   OK, pdflatex %  works !
+
+% :!lualatex %
+%   !pandoc % -t latex -o out.pdf 
+%>% comment
+
+hello \emph{world}.
+\sout{strike out}
+
+\textsc{small caps}
+
+\color{blue}   Is this blue.:   
+
+%>% \textcolor{blue}{important}
+
+\end{document}
