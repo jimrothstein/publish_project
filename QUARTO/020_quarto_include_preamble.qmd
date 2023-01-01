@@ -1,0 +1,25 @@
+---
+title: "using easystats notes"
+date:  \today 
+pdf-engine: lualatex
+format:
+  pdf: 
+    include-in-header:  
+      -  geometry.tex  
+---
+
+
+
+
+\section{To run:}
+
+- quarto preview <file> --to pdf    # (opens in a viewer)
+- quarto render %	; zathura         # not quite right cli
+
+- math mode latex,  seems to work if *outside* R chunk
+$$
+x^2
+$$
+
+## Air Quality
+
