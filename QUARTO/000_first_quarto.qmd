@@ -10,4 +10,5 @@ To render:	> quarto render *.qmd  --to pdf
 #| label: hello 
 
 print("hello")
+plot(x=1:10)
 ```
