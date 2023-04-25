@@ -1,0 +1,16 @@
+{
+  "hash": "7890202f11cec5a689f5c9996776f5aa",
+  "result": {
+    "markdown": "---\ntitle: \"Quarto Basics\"\ndescription:  |\n  Multiline verbage.  Continue. This is second line.\n---\n\n\nTo render:\t> quarto render *.qmd  --to pdf\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"hello\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"hello\"\n```\n:::\n\n```{.r .cell-code}\nplot(x=1:10)\n```\n\n::: {.cell-output-display}\n![](000_first_quarto_files/figure-html/hello-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "000_first_quarto_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

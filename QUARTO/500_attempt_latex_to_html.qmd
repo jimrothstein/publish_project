@@ -1,0 +1,104 @@
+---
+title: "latex"
+format: html 
+output-dir:  docs
+editor_options: 
+  chunk_output_type: console
+---
+<!-- 
+Quarto, out the box, CAN use some latex commands when producing html  (b/c pandoc can?).
+But several latex commands are ignored.  Note:  math, equations are not a problem.
+This FILE is example.
+
+Question remains:
+To produce html, when is better to switch to CSS?
+-->
+
+\usepackage{amsmath} 
+\usepackage[top=.5in, bottom=.5in, left=.5in, right=.5in]{geometry}
+\usepackage{amsmath,amssymb,amstext,amsfonts}
+\usepackage{lipsum}
+\usepackage{singlespace}
+
+::: callout-note
+This is a **qmd* file rendered in Rstudio as html.
+There is no preamble. No header.
+
+:::
+
+***
+\lipsum[1]
+***
+
+\textbf{Hello World!} Today I am learning LaTeX. 
+
+\LaTeX{} is a great program for writing math. I can write in line math such as $a^2+b^2=c^2$ 
+
+***
+\footnotesize
+This should be footnotesize. \
+
+\small
+This should be small. \
+
+***
+
+
+Today is \today \
+
+*** 
+
+`r Sys.Date()`
+
+***
+
+
+\section{To run:}
+This should be a latex section, titled "To run:"
+
+***
+
+\begin{singlespace}
+
+    In order to manipulate symbols we need a new element in our language: the
+    ability to quote a data object. Suppose we want to construct the list (a
+    b). We can’t accomplish this with (list a b), because this expression
+    constructs a list of the values of a and b rather than the symbols
+    themselves. This issue is well known in the context of natural languages,
+    where words and sentences may be regarded either as semantic entities or as
+    character strings (syntactic entities). The common practice in natural
+    languages is to use quotation marks to indicate that a word or a sentence
+    is to be treated literally as a string of characters. For instance, the
+    first letter of “John” is clearly “J.” If we tell somebody “say your name
+    aloud,” we expect to hear that person’s name. However, if we tell somebody
+    “say ‘your name’ aloud,” we expect to hear the words “your name.” Note that
+    we are forced to nest quotation marks to describe what somebody else might
+    say. We can follow this same practice to identify lists and symbols that
+    are to be treated as data objects rather than as expressions to be
+    evaluated. However, our format for quoting differs from that of natural
+    languages in that we place a quotation mark (traditionally, the single
+    quote symbol ’) only at the beginning of the object to be quoted. We can
+    get away with this in Scheme syntax because we rely on blanks and
+    parentheses to delimit objects. Thus, the meaning of the single quote
+    character is to quote the next object. Now we can distinguish between
+    symbols and their values:
+
+    https://stackoverflow.com/questions/8846628/what-exactly-is-a-symbol-in-lisp-scheme
+
+\end{singlespace}
+
+***
+***
+***
+
+I can also give equations their own space: 
+
+\begin{equation} % Creates an equation environment and is compiled as math
+\gamma^2+\theta^2=\omega^2
+\end{equation}
+
+If I do not leave any blank lines \LaTeX{} will continue  this text without making it into a new paragraph.  Notice how there was no indentation in the text after equation (1).  
+Also notice how even though I hit enter after that sentence and here $\downarrow$
+\LaTeX{} formats the sentence without any break.  Also   look  how      it   doesn't     matter          how    many  spaces     I put     between       my    words.
+
+For a new paragraph I can leave a blank space in my code. 

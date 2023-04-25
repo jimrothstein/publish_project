@@ -1,3 +1,6 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - 100_html_CSS_examples.qmd
+  
