@@ -1,0 +1,59 @@
+---
+title: "![](https://cipher.guslipkin.me/logo.png){width=40%}"
+author: "Gus Lipkin"
+date: today 
+date-format: iso
+format:
+  html:
+    #theme: default
+    theme: cosmos
+    
+    controls: true
+    self-contained: true
+---
+
+# What is cipheR and why?
+
+```{r}
+#| echo: false
+```
+
+-   [`cipheR`](https://cran.r-project.org/web/packages/cipheR/index.html) is a package for simple text ciphers.
+    -   A cipher is text that has been transformed by some method with the intention of hiding its meaning
+-   I made it because I needed a flexible [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher) for [Advent of Code](https://adventofcode.com/)
+
+To install from CRAN
+
+``` r
+install.packages("cipheR")
+```
+
+# What I'm hoping you learn
+
+-   Some cool new text ciphers perfect for passing notes in class
+-   Base R methods to deal with text
+-   Writing speedy code with `apply`
+
+# What I'm hoping to get feedback on
+
+-   Error handling (and if we have time, testing)
+-   UX and how best to work with vector inputs
+-   What kinds of code comments people expect in open source
+-   Any spots where I can swap an `apply` for vectorization
+
+# Caesar Cipher
+
+-   Description: This can be used to create (encrypt) and solve (decrypt) a Caesar cipher. The function does not differentiate between the two.
+-   Differentiator: You can choose your dictionary to shift by.
+
+
+
+## Parameters {.smaller}
+
+-   `x` A vector to be shifted
+-   `n` The number of places to shift by. This can be either positive or negative. Zero returns x as it was given to the function.
+-   `preserve_spaces` (Default: `TRUE`) A boolean describing if spaces should be preserved. This is helpful when working with sentences.
+-   `dict` The dictionary used for shifting. This defaults to NULL in which case a dictionary is built from the sorted unique values of `x`.
+-   `preset` A pre-made dictionary using ASCII codes from [ascii-code.com](https://www.ascii-code.com/). Note that `delete` is excluded as a character.
+  - The options are to only use provided characters (`NULL`), `alphanumeric`, `keyboard`, `letters`, `lowercase`, `uppercase`. Characters are US English.
+
