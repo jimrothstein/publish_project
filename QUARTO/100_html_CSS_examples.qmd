@@ -1,0 +1,68 @@
+---
+title: "Untitled"
+format: 
+  html:
+    fontsize: 9px
+    css: quarto_example_CSS.css
+editor: source 
+editor_options: 
+  chunk_output_type: console
+---
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+We can use CSS or SASS to style individual words or [phrases](https://google.com){style="font-size: 24px"} (spans), paragraphs (divs) or or formatting elements (e.g. header 2)
+
+------------------------------------------------------------------------
+
+span
+
+[red text]{style="color:red"}
+
+[background yellow]{style="background-color: yellow"}
+
+[both red & background yellow]{style="color: red; background-color:yellow"}
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+::: {style="font-size: 8px; color:green"}
+This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f .
+
+::: blueish
+:::
+
+This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f
+:::
+
+`r Sys.Date()`
+
+------------------------------------------------------------------------
+
+```{r}
+#| echo: false
+#| 
+print("second")
+Sys.Date()
+```
+
+::: {.foo style="color: forestgreen; font-size: 32px"}
+<!-- `:::` begins a Div -->
+
+yukb goo
+:::
+
+Here are some plain words that are not subject to any styling CSS or SCSS
+
+<!-- Next:  apply a CSS style to a Span.  In this case the `special-words` -->
+
+my [special-words]{style="color: goldenrod; font-size: 24px"}
+
+## small header size two {style="color: red; font-size: 7px"}
+
+## regular header size two
+
+what else [can we do without]{style="color: darkorange; font-size: 12px"}going crazy
+
+Also, be sure to render the document into an HTML so that you get the full effect.hope it helps. (edited)

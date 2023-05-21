@@ -1,0 +1,14 @@
+{
+  "hash": "b2b1524f5cf44d096fed40b106b9ee38",
+  "result": {
+    "markdown": "---\ntitle: \"Untitled\"\nformat: \n  html:\n    fontsize: 9px\n    css: quarto_example_CSS.css\neditor: source \neditor_options: \n  chunk_output_type: console\n---\n\n\nThe `echo: false` option disables the printing of code (only output is displayed).\n\nWe can use CSS or SASS to style individual words or [phrases](https://google.com){style=\"font-size: 24px\"} (spans), paragraphs (divs) or or formatting elements (e.g. header 2)\n\n------------------------------------------------------------------------\n\nspan\n\n[red text]{style=\"color:red\"}\n\n[background yellow]{style=\"background-color: yellow\"}\n\n[both red & background yellow]{style=\"color: red; background-color:yellow\"}\n\n------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n::: {style=\"font-size: 8px; color:green\"}\nThis paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f .\n\n::: blueish\n:::\n\nThis paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f\n:::\n\n2023-04-18\n\n------------------------------------------------------------------------\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"second\"\n```\n:::\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"2023-04-18\"\n```\n:::\n:::\n\n\n::: {.foo style=\"color: forestgreen; font-size: 32px\"}\n<!-- `:::` begins a Div -->\n\nyukb goo\n:::\n\nHere are some plain words that are not subject to any styling CSS or SCSS\n\n<!-- Next:  apply a CSS style to a Span.  In this case the `special-words` -->\n\nmy [special-words]{style=\"color: goldenrod; font-size: 24px\"}\n\n## small header size two {style=\"color: red; font-size: 7px\"}\n\n## regular header size two\n\nwhat else [can we do without]{style=\"color: darkorange; font-size: 12px\"}going crazy\n\nAlso, be sure to render the document into an HTML so that you get the full effect.hope it helps. (edited)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
