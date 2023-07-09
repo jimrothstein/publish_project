@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Untitled</title>
+<title>100_html_CSS_examples.qmd</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,20 +62,22 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="quarto_example_CSS.css">
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-search-results"></div>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Untitled</h1>
+<h1 class="title">100_html_CSS_examples.qmd</h1>
 </div>
 
 
@@ -90,49 +92,69 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
-<p>We can use CSS or SASS to style individual words or <a href="https://google.com" style="font-size: 24px">phrases</a> (spans), paragraphs (divs) or or formatting elements (e.g.&nbsp;header 2)</p>
+<p>PURPOSE: .qmd files, markdown, r code (knitr), CSS (via external CSS), embeded CSS in this page</p>
+<p>USAGE1: quarto preview &lt;file.qmd&gt; renders and displays in browser</p>
+<p>USAGE2: quarto render &lt;file.qmd&gt;; To view xdg-open &lt;file.html&gt;</p>
+<p>_quarto.xml controls output dir for <em>.html </em>**</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">An <em>aside</em> puts a note in right margin</span></div></div>
 <hr>
-<p>span</p>
+<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
+<p>We can use CSS or SASS to style individual words, or link <a href="https://google.com" style="font-size: 24px">phrases</a> for spans (in-line), paragraphs divs (see <code>selector</code>) or or formatting elements (e.g.&nbsp;header 2)</p>
+<hr>
+<p><a href="https://nytimes.com" style="color:pink">pink link to nytimes.com</a></p>
+<p>using angle brackets: <a href="https://nytimes.com" class="uri">https://nytimes.com</a></p>
 <p><span style="color:red">red text</span></p>
 <p><span style="background-color: yellow">background yellow</span></p>
 <p><span style="color: red; background-color:yellow">both red &amp; background yellow</span></p>
 <hr>
-<hr>
 <div style="font-size: 8px; color:green">
 <p>This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f .</p>
-<div class="blueish">
-
 </div>
-<p>This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f</p>
-</div>
-<p>2023-04-18</p>
 <hr>
+<!-- TODO: -->
+<p><span class=".blueish"> This uses class from .css file, .blueish</span></p>
+<p>
+&lt;.blueish&gt;what color am I? &lt;/.blueish&gt;
+</p>
+<hr>
+<p><greenish> This is “greenish” from external .css file </greenish></p>
+<hr>
+<p>::: This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f :::</p>
+<hr>
+<p>inline R: 2023-07-09</p>
+<hr>
+<section id="r-chunk" class="level1">
+<h1>R chunk</h1>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "second"</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-04-18"</code></pre>
+<pre><code>[1] "2023-07-09"</code></pre>
 </div>
 </div>
-<div class="foo" style="color: forestgreen; font-size: 32px">
+<hr>
+<p>::: {.foo style=“color: forestgreen; font-size: 32px”}</p>
 <!-- `:::` begins a Div -->
+<example of="" div="">
 <p>yukb goo</p>
-</div>
-<p>Here are some plain words that are not subject to any styling CSS or SCSS</p>
+<p>:::</p>
+<hr>
+<p>Here are some plain words that are not subject to any styling CSS or SCSS ***</p>
 <!-- Next:  apply a CSS style to a Span.  In this case the `special-words` -->
 <p>my <span style="color: goldenrod; font-size: 24px">special-words</span></p>
+<hr>
 <section id="small-header-size-two" class="level2" style="color: red; font-size: 7px">
 <h2 style="color: red; font-size: 7px" class="anchored" data-anchor-id="small-header-size-two">small header size two</h2>
 </section>
 <section id="regular-header-size-two" class="level2">
 <h2 class="anchored" data-anchor-id="regular-header-size-two">regular header size two</h2>
-<p>what else <span style="color: darkorange; font-size: 12px">can we do without</span>going crazy</p>
+<p>what else <span style="color: darkorange; font-size: 12px">can we do without</span>going crazy ***</p>
 <p>Also, be sure to render the document into an HTML so that you get the full effect.hope it helps. (edited)</p>
 
 
 </section>
+</example></section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

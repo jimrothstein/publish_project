@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "100_html_CSS_examples.qmd"
 format: 
   html:
     fontsize: 9px
@@ -8,14 +8,30 @@ editor: source
 editor_options: 
   chunk_output_type: console
 ---
+PURPOSE:    .qmd files, markdown, r code (knitr), CSS (via external CSS), embeded CSS in this page 
+
+USAGE1:     quarto preview <file.qmd>    renders and displays in browser
+
+USAGE2:      quarto render  <file.qmd>;   To view xdg-open <file.html>
+
+_quarto.xml   controls output dir for *.html
+***
+
+[An *aside* puts a note in right margin]{.aside}
+
+***
 
 The `echo: false` option disables the printing of code (only output is displayed).
 
-We can use CSS or SASS to style individual words or [phrases](https://google.com){style="font-size: 24px"} (spans), paragraphs (divs) or or formatting elements (e.g. header 2)
+We can use CSS or SASS to style individual words, or link
+[phrases](https://google.com){style="font-size: 24px"} for spans (in-line), paragraphs
+divs (see `selector`) or or formatting elements (e.g. header 2)
 
 ------------------------------------------------------------------------
 
-span
+[pink link to nytimes.com](https://nytimes.com){style="color:pink"}
+
+using angle brackets: <https://nytimes.com>
 
 [red text]{style="color:red"}
 
@@ -23,46 +39,70 @@ span
 
 [both red & background yellow]{style="color: red; background-color:yellow"}
 
-------------------------------------------------------------------------
-
-------------------------------------------------------------------------
+***
 
 ::: {style="font-size: 8px; color:green"}
 This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f .
+::: 
 
-::: blueish
+***
+
+<!-- TODO: -->
+<span class=".blueish"> This uses class from .css file, .blueish</span>
+
+<p>
+<.blueish>what color am I? </.blueish>
+</p>
+
+***
+
+<greenish>  This is "greenish" from external .css file </greenish>
+
+***
+
 :::
-
 This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f
 :::
 
-`r Sys.Date()`
+***
 
-------------------------------------------------------------------------
+inline R: `r Sys.Date()`
 
+***
+
+# R chunk
 ```{r}
 #| echo: false
 #| 
 print("second")
 Sys.Date()
 ```
+***
 
 ::: {.foo style="color: forestgreen; font-size: 32px"}
-<!-- `:::` begins a Div -->
 
+<!-- `:::` begins a Div -->
+<example of div>
 yukb goo
+
 :::
 
+***
+
 Here are some plain words that are not subject to any styling CSS or SCSS
+    ***
 
 <!-- Next:  apply a CSS style to a Span.  In this case the `special-words` -->
 
 my [special-words]{style="color: goldenrod; font-size: 24px"}
+
+***
 
 ## small header size two {style="color: red; font-size: 7px"}
 
 ## regular header size two
 
 what else [can we do without]{style="color: darkorange; font-size: 12px"}going crazy
+***
 
 Also, be sure to render the document into an HTML so that you get the full effect.hope it helps. (edited)

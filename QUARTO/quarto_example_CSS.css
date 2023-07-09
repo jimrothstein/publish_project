@@ -11,5 +11,11 @@ class:
 
 .blueish {
   color: blue;
+  font-weight: bold;
+  font-size: 10 px;
+}
+greenish {
+  color: green;
+  font-weight: bold;
   font-size: 10 px;
 }

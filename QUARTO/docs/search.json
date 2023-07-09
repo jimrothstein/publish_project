@@ -2,22 +2,22 @@
   {
     "objectID": "100_html_CSS_examples.html",
     "href": "100_html_CSS_examples.html",
-    "title": "Untitled",
+    "title": "100_html_CSS_examples.qmd",
     "section": "",
-    "text": "The echo: false option disables the printing of code (only output is displayed).\nWe can use CSS or SASS to style individual words or phrases (spans), paragraphs (divs) or or formatting elements (e.g. header 2)\nspan\nred text\nbackground yellow\nboth red & background yellow\n2023-04-18\n[1] \"second\"\n\n\n[1] \"2023-04-18\"\nHere are some plain words that are not subject to any styling CSS or SCSS\nmy special-words"
+    "text": "PURPOSE: .qmd files, markdown, r code (knitr), CSS (via external CSS), embeded CSS in this page\nUSAGE1: quarto preview &lt;file.qmd&gt; renders and displays in browser\nUSAGE2: quarto render &lt;file.qmd&gt;; To view xdg-open &lt;file.html&gt;\n_quarto.xml controls output dir for .html **\nThe echo: false option disables the printing of code (only output is displayed).\nWe can use CSS or SASS to style individual words, or link phrases for spans (in-line), paragraphs divs (see selector) or or formatting elements (e.g. header 2)\npink link to nytimes.com\nusing angle brackets: https://nytimes.com\nred text\nbackground yellow\nboth red & background yellow\nThis uses class from .css file, .blueish\n&lt;.blueish&gt;what color am I? &lt;/.blueish&gt;\nThis is “greenish” from external .css file\n::: This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f :::\ninline R: 2023-07-09"
   },
   {
     "objectID": "100_html_CSS_examples.html#small-header-size-two",
     "href": "100_html_CSS_examples.html#small-header-size-two",
-    "title": "Untitled",
+    "title": "100_html_CSS_examples.qmd",
     "section": "small header size two",
     "text": "small header size two"
   },
   {
     "objectID": "100_html_CSS_examples.html#regular-header-size-two",
     "href": "100_html_CSS_examples.html#regular-header-size-two",
-    "title": "Untitled",
+    "title": "100_html_CSS_examples.qmd",
     "section": "regular header size two",
-    "text": "regular header size two\nwhat else can we do withoutgoing crazy\nAlso, be sure to render the document into an HTML so that you get the full effect.hope it helps. (edited)"
+    "text": "regular header size two\nwhat else can we do withoutgoing crazy ***\nAlso, be sure to render the document into an HTML so that you get the full effect.hope it helps. (edited)"
   }
 ]
