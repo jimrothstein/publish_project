@@ -1,5 +1,28 @@
+body {
+<!--   background-color: lightgrey; -->
+}
+
+<!--  <p>  used INSIDE <div> -->
+<!-- div does not work -->
+div  p {
+  background-color: green;
+}
+
+.intro {
+  background-color: white;
+  color: green;
+  font-size: 18px;
+}
+
 .test h4 {
   text-align: center;
+  color: green;
+}
+
+<!--  affects BOTH h4 and class=special   -->
+h4,
+.special {
+  color: lightblue;
 }
 
 class:
@@ -18,4 +41,10 @@ greenish {
   color: green;
   font-weight: bold;
   font-size: 10 px;
+}
+
+/* default hover effect */
+a:hover {
+  color: black;
+  background: white;
 }

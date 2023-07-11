@@ -58,6 +58,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="quarto_example_CSS.css">
 </head>
@@ -92,13 +108,32 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>PURPOSE: .qmd files, markdown, r code (knitr), CSS (via external CSS), embeded CSS in this page</p>
-<p>USAGE1: quarto preview &lt;file.qmd&gt; renders and displays in browser</p>
-<p>USAGE2: quarto render &lt;file.qmd&gt;; To view xdg-open &lt;file.html&gt;</p>
-<p>_quarto.xml controls output dir for <em>.html </em>**</p>
+<hr>
+1
+<div class="intro">
+<p>
+PURPOSE: .qmd files, markdown, r code (knitr), CSS (via external CSS), embeded CSS in this page
+</p>
+<p>
+USAGE1: quarto preview &lt;file.qmd&gt; renders and displays in browser
+</p>
+<p>USAGE2: quarto render &lt;file.qmd&gt;;<br>
+To view xdg-open &lt;file.html&gt;</p>
+<p>_quarto.xml controls output dir for *.html</p>
+</div>
+<hr>
+<p>2</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">An <em>aside</em> puts a note in right margin</span></div></div>
 <hr>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
+<p>3</p>
+<p><span class="math display">\bar{y}</span><br>
+<span class="math display">\Reals</span></p>
+<hr>
+<p>3.1</p>
+<p><a href="#">Hover example</a></p>
+<p><a href="http://www.nytimes.com">Hover example</a></p>
+<hr>
+<p>3.2 The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
 <p>We can use CSS or SASS to style individual words, or link <a href="https://google.com" style="font-size: 24px">phrases</a> for spans (in-line), paragraphs divs (see <code>selector</code>) or or formatting elements (e.g.&nbsp;header 2)</p>
 <hr>
 <p><a href="https://nytimes.com" style="color:pink">pink link to nytimes.com</a></p>
@@ -107,22 +142,28 @@ ul.task-list li input[type="checkbox"] {
 <p><span style="background-color: yellow">background yellow</span></p>
 <p><span style="color: red; background-color:yellow">both red &amp; background yellow</span></p>
 <hr>
+<p>3.3</p>
 <div style="font-size: 8px; color:green">
 <p>This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f .</p>
 </div>
 <hr>
+<p>4</p>
 <!-- TODO: -->
-<p><span class=".blueish"> This uses class from .css file, .blueish</span></p>
-<p>
-&lt;.blueish&gt;what color am I? &lt;/.blueish&gt;
+<p><span class="blueish"> This <code>span</code> uses class from .css file, .blueish</span></p>
+<p class="blueish">
+In CSS file <code>.blueish</code> becomes <code>class="blueish"</code> in HTML
 </p>
 <hr>
+<p>5</p>
 <p><greenish> This is “greenish” from external .css file </greenish></p>
 <hr>
+<p>6</p>
 <p>::: This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f :::</p>
 <hr>
-<p>inline R: 2023-07-09</p>
+<p>7</p>
+<p>inline R: 2023-07-10</p>
 <hr>
+<p>8</p>
 <section id="r-chunk" class="level1">
 <h1>R chunk</h1>
 <div class="cell">
@@ -130,26 +171,40 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>[1] "second"</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-07-09"</code></pre>
+<pre><code>[1] "2023-07-10"</code></pre>
 </div>
 </div>
 <hr>
+<p>9</p>
+<h4 class="anchored">
+plain h4
+</h4>
+<h4 class=".special anchored">
+h4 with class=.special
+</h4>
+<h4 class=".test anchored">
+h4 with class=.test
+</h4>
+<hr>
+<p>10</p>
 <p>::: {.foo style=“color: forestgreen; font-size: 32px”}</p>
 <!-- `:::` begins a Div -->
 <example of="" div="">
 <p>yukb goo</p>
 <p>:::</p>
 <hr>
+<pre><code>11</code></pre>
 <p>Here are some plain words that are not subject to any styling CSS or SCSS ***</p>
 <!-- Next:  apply a CSS style to a Span.  In this case the `special-words` -->
 <p>my <span style="color: goldenrod; font-size: 24px">special-words</span></p>
 <hr>
+<p>12</p>
 <section id="small-header-size-two" class="level2" style="color: red; font-size: 7px">
 <h2 style="color: red; font-size: 7px" class="anchored" data-anchor-id="small-header-size-two">small header size two</h2>
 </section>
 <section id="regular-header-size-two" class="level2">
 <h2 class="anchored" data-anchor-id="regular-header-size-two">regular header size two</h2>
-<p>what else <span style="color: darkorange; font-size: 12px">can we do without</span>going crazy ***</p>
+<p>what else <span style="color: darkorange; font-size: 12px">can we do without</span>going crazy *** 13</p>
 <p>Also, be sure to render the document into an HTML so that you get the full effect.hope it helps. (edited)</p>
 
 

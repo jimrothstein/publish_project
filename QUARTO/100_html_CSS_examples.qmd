@@ -2,25 +2,44 @@
 title: "100_html_CSS_examples.qmd"
 format: 
   html:
-    fontsize: 9px
+    fontsize: 12px
     css: quarto_example_CSS.css
+    html-math-method: katex
 editor: source 
 editor_options: 
   chunk_output_type: console
 ---
-PURPOSE:    .qmd files, markdown, r code (knitr), CSS (via external CSS), embeded CSS in this page 
-
-USAGE1:     quarto preview <file.qmd>    renders and displays in browser
-
-USAGE2:      quarto render  <file.qmd>;   To view xdg-open <file.html>
+***
+1
+<div class="intro">
+<p>PURPOSE:    .qmd files, markdown, r code (knitr), CSS (via external CSS), embeded CSS in this page </p>
+<p>USAGE1:     quarto preview <file.qmd>    renders and displays in browser </p>
+USAGE2:      quarto render  <file.qmd>;   
+        To view xdg-open <file.html>
 
 _quarto.xml   controls output dir for *.html
+</div>
+
 ***
+2
 
 [An *aside* puts a note in right margin]{.aside}
 
 ***
+3
 
+$$\bar{y}$$  
+$$\Reals$$
+
+***
+3.1
+
+<a href="#">Hover example</a>
+
+<a href="http://www.nytimes.com">Hover example</a>
+
+***
+3.2
 The `echo: false` option disables the printing of code (only output is displayed).
 
 We can use CSS or SASS to style individual words, or link
@@ -40,35 +59,39 @@ using angle brackets: <https://nytimes.com>
 [both red & background yellow]{style="color: red; background-color:yellow"}
 
 ***
+3.3
 
 ::: {style="font-size: 8px; color:green"}
 This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f .
 ::: 
 
 ***
+4
 
 <!-- TODO: -->
-<span class=".blueish"> This uses class from .css file, .blueish</span>
+<span class="blueish"> This `span` uses class from .css file, .blueish</span>
 
-<p>
-<.blueish>what color am I? </.blueish>
-</p>
+<p class="blueish">In CSS file `.blueish`  becomes `class="blueish"` in HTML</p>
 
 ***
+5
 
 <greenish>  This is "greenish" from external .css file </greenish>
 
 ***
+6
 
 :::
 This paragrpah should be in very small font. ;aldkjf dsaf;ldsa fsa fdsa. lkajf sal;df as. adfljdf . adsflkjaf sa. a;lkdfj ad;f
 :::
 
 ***
+7
 
 inline R: `r Sys.Date()`
 
 ***
+8
 
 # R chunk
 ```{r}
@@ -78,6 +101,16 @@ print("second")
 Sys.Date()
 ```
 ***
+9
+
+<h4> plain h4 </h4>
+
+<h4 class=.special>h4 with class=.special </h4>
+
+<h4 class=.test>h4 with class=.test </h4>
+
+***
+10
 
 ::: {.foo style="color: forestgreen; font-size: 32px"}
 
@@ -88,6 +121,7 @@ yukb goo
 :::
 
 ***
+    11
 
 Here are some plain words that are not subject to any styling CSS or SCSS
     ***
@@ -97,6 +131,7 @@ Here are some plain words that are not subject to any styling CSS or SCSS
 my [special-words]{style="color: goldenrod; font-size: 24px"}
 
 ***
+12
 
 ## small header size two {style="color: red; font-size: 7px"}
 
@@ -104,5 +139,6 @@ my [special-words]{style="color: goldenrod; font-size: 24px"}
 
 what else [can we do without]{style="color: darkorange; font-size: 12px"}going crazy
 ***
+13
 
 Also, be sure to render the document into an HTML so that you get the full effect.hope it helps. (edited)
