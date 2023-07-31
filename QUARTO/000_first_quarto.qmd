@@ -12,3 +12,15 @@ To render:	> quarto render *.qmd  --to pdf
 print("hello")
 plot(x=1:10)
 ```
+
+```lua
+local f = function()
+print("hello lua")
+end
+```
+
+```lua
+
+f()
+```
+
