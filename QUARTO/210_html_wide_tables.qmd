@@ -1,6 +1,7 @@
 ---
 output: html_document
 ---
+TAGS: quarto, kable, kableExtra, width of HTML tables
 
 ## wide tables?
 REF: https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
