@@ -1,14 +1,15 @@
 ---
-title: "/home/jim/code/code_publish/QUARTO/600_first_scss.qmd"
+title: "250_quarto_cheat.qmd "
 author: "JR"
 date: today 
 pdf-engine: lualatex
+#format:  revealjs       # works, but only one format: at a time (?)
 format:
     html:
         code-fold: true
         toc: true
         html-math-method: katex
-        #css: styles.css
+        css: styles.css
         embed-resources: true ## if standalone, all 1 file 
         code-block-bg: true            # chunk outputs 
         code-block-border-left: "#31BAE9"       
@@ -16,10 +17,6 @@ format:
         number-sections: true
         code-link: true             # hyperlink R functions
         reference-location: margin
-        theme: 
-          -   cosmo
-#          -   test.scss
-          -   custom.scss
 output-dir: docs            ## NO indent, also _quarto.yml for entier project
 editor_options: 
   chunk_output_type: console
@@ -29,11 +26,12 @@ execute:
   collapse: true
   standalone: true
 ---
-:::     
 
-::: postbox
-The background of this text should be light grey (using custom.scss) 
-:::
+
+### Quarto & CSS | SCSS
+-   <https://quarto.org/docs/authoring/markdown-basics.html#divs-and-spans>
+-   More examples:  ~/code/publish_project/QUARTO    
+
 
 :::aside
 Date:  Set programmatically?
@@ -48,49 +46,24 @@ This is secret
 
 ::::
 
+***
+
+####  use SCSS, no longer need style tags
+
 
 ```{=html}
 <style>
 
-#title-block-header {
-  margin-block-end: 1rem;
-  position: relative;
-  margin-top: -1px;
-  height: 75px;
-}
-.quarto-title-banner {
-  margin-block-end: 1rem;
-  position: relative;
-  margin-top: -30px;
-  height: 85%;
-}
-.myDiv {
+.myDiv1 {
   border: 5px outset red;
   background-color: lightblue;
   text-align: center;
 }
 
-.blackbox {
-  padding: 1em;
-  background: black;
-  color: white;
-  border: 2px solid orange;
-  border-radius: 10px;
-}
-
-.greybox {
-  padding: 1em;
-  background: grey;
-  color: white;
-  border: 2px solid orange;
-  border-radius: 10px;
-}
-
-.center {
-  text-align: center;
-}
 </style>
 ```
+***
+
 ::: myDiv
 PURPOSE: Collect of HTML and PDF inline commands to control output
 
@@ -112,17 +85,18 @@ NOTE: No documentation here
 SEE References
 :::
 
-#   Header 1
-##  Header 2
-### Header 3
 
-## Quarto: Examples for HTML, PDF {style="color: lime"}
+#### Quarto: Examples for HTML, PDF {style="color: lime"}
 
 ***
 
 ------------------------------------------------------------------------
 
 <font size="1"> Very small </font>
+
+::: very_small
+Also small (using SCSS)
+:::
 
 
 ### Inline {style="color: black"}
@@ -144,10 +118,6 @@ Need footnote one here: [^1]
 
 ------------------------------------------------------------------------
 
-### 
-::: callout-note
-future callout note!
-:::
 
 ```{r}
 #| label: mtcars
@@ -204,9 +174,6 @@ create class "myColor" | use in paragraph | and div block|
 
 <p class="myColor"> myColor  </p>
 
-::: {class="myColor"}
- !-- {{< include _future_work.qmd >}} -->
-:::
 
 ***
 

@@ -1,0 +1,15 @@
+---
+title: "Post 2"
+format: html
+css: posts.css
+---
+
+This text should be red. If so `styles.scss` is being applied as expected.
+
+```{r}
+1 + 1
+```
+
+::: postbox
+The background of this text should be light blue. If so `posts/posts.css` is being applied as expected.
+:::

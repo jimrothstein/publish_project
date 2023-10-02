@@ -1,0 +1,17 @@
+---
+title: "test-website"
+---
+
+This text should be red. If so `styles.scss` is being applied as expected.
+
+```{r}
+1 + 1
+```
+
+::: custombox
+The background of this text should be pink. If so `styles.scss` is being applied as expected.
+:::
+
+::: custombox_blue
+The background of this text should be blue If so `styles.scss` is being applied as expected.
+:::
