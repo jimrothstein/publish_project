@@ -40,5 +40,11 @@
   },
   "600_first_scss.qmd": {
     "600_first_scss.html": "53d9374b"
+  },
+  "025_quarto_echo_fence.qmd": {
+    "025_quarto_echo_fence.html": "116ad52d"
+  },
+  "quarto_one_page/one_page.qmd": {
+    "one_page.html": "8a5d2502"
   }
 }
