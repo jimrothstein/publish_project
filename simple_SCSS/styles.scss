@@ -1,5 +1,13 @@
 /*-- scss:defaults --*/
 $body-color: #FF0000;
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;    /* variable */
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: lightgreen;
+}
 
 /*-- scss:rules --*/
 .custombox {
@@ -9,3 +17,5 @@ $body-color: #FF0000;
 .custombox_blue {
   background-color: lightblue;
 }
+
+

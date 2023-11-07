@@ -1,0 +1,18 @@
+
+---
+title: SCSS experiments 
+date: last-modified
+---
+
+homemade style?
+
+::: {style="color: lightblue; border: solid black; font-size: 20px;"}
+Goodbye, world:   different font-size
+:::
+
+::: {style="color: lightblue; border: solid black;"}
+Goodbye, world.
+:::
+
+
+vim:linebreak:nospell:nowrap:cul tw=78 fo=tqlnrc foldcolumn=1 cc=+1 filetype=r

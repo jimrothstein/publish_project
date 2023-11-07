@@ -8,6 +8,7 @@ website:
       - href: index.qmd
       - href: posts/post1.qmd
       - href: posts/post2.qmd
+      - href: posts/post3.qmd
 
 format:
   html:

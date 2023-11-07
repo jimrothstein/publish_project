@@ -1,0 +1,13 @@
+---
+title: /home/jim/code/code_publish/SCSS/010_simple.qmd 
+date: last-modified
+---
+
+####  Learn SCSS
+
+:::{ .postbox }
+and?
+:::
+<-
+vim:linebreak:nospell:nowrap:cul tw=78 fo=tqlnrc foldcolumn=1 cc=+1 filetype=r
+-->
