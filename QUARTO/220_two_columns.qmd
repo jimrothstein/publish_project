@@ -1,0 +1,109 @@
+---
+title:  Two Columns
+format:
+  html:
+    page-layout:  full  
+---
+
+TAGS: quarto, kable, kableExtra, width of HTML tables
+```
+## Header
+
+::::{.columns} <!-- open your columns on one row -->
+
+:::{.column} <!-- open your first column -->
+... <!-- content goes here -->
+::: <!-- close your first column -->
+
+
+:::{.column} <!-- open your second column -->
+... <!-- content goes here -->
+::: <!-- close your second column -->
+
+:::: <!-- close the columns on one row -->
+
+(I use :::: to preface the columns and ::: to preface each individual column . it’ll work just fine using the same for everything, I just find it easier to see what I’m doing if they are different.)So a fairly minimal example of a full document would be
+```
+
+
+
+## Row 1
+
+::::{.columns}
+
+Begin Row 1
+
+:::{.column} 
+
+
+Show code and commentary in this column. (no results)
+```{r eval=F}
+#| eval: false
+#| label: row1
+#| results: asis
+cat(sample(c(letters, LETTERS, rep(" ", 5)), 200, replace= TRUE), sep = "")
+```
+
+:::
+
+:::{.column}
+
+Results appear in this column.
+```{r}
+#| results: asis
+#| ref-label: row1
+cat(sample(c(letters, LETTERS, rep(" ", 5)), 200, replace= TRUE), sep = "")
+```
+:::
+
+
+::::
+
+-----------
+
+## Row 2
+
+::::{.columns}
+Begin Row 2
+
+:::{.column}
+
+```{r eval=F}
+#| results: asis
+plot(cars)
+```
+
+:::
+
+::: {.column}
+
+```{r }
+#| results: asis
+plot(cars)
+```
+:::
+
+::::
+
+## Row 3
+
+:::{.column}
+
+This is commentary and discussion
+```{r eval=F}
+plot(AirPassengers)
+```
+:::
+
+
+:::{.column}
+
+This is output
+```{r eval=T}
+plot(AirPassengers)
+```
+:::
+
+::::
+
+-----------

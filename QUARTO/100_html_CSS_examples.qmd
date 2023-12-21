@@ -5,13 +5,17 @@ format:
     fontsize: 12px
     css: quarto_example_CSS.css
     html-math-method: katex
+    toc:  true
 editor: source 
 editor_options: 
   chunk_output_type: console
 ---
+
+
 ***
-1
+### One 
 <div class="intro">
+Many ways to introduce css files in .qmd
 <p>PURPOSE:    .qmd files, markdown, r code (knitr), CSS (via external CSS), embeded CSS in this page </p>
 <p>USAGE1:     quarto preview <file.qmd>    renders and displays in browser </p>
 USAGE2:      quarto render  <file.qmd>;   
@@ -21,25 +25,29 @@ _quarto.xml   controls output dir for *.html
 </div>
 
 ***
-2
+### Two 
 
 [An *aside* puts a note in right margin]{.aside}
 
 ***
-3
+### Three
 
 $$\bar{y}$$  
 $$\Reals$$
 
+```{=html}
+<h3>H3</h3>
+```
+
 ***
-3.1
+### 3.
 
 <a href="#">Hover example</a>
 
 <a href="http://www.nytimes.com">Hover example</a>
 
 ***
-3.2
+### 3.2
 The `echo: false` option disables the printing of code (only output is displayed).
 
 We can use CSS or SASS to style individual words, or link
@@ -93,7 +101,7 @@ inline R: `r Sys.Date()`
 ***
 8
 
-# R chunk
+### R chunk
 ```{r}
 #| echo: false
 #| 
@@ -133,9 +141,9 @@ my [special-words]{style="color: goldenrod; font-size: 24px"}
 ***
 12
 
-## small header size two {style="color: red; font-size: 7px"}
+### small header size two {style="color: red; font-size: 7px"}
 
-## regular header size two
+### regular header size two
 
 what else [can we do without]{style="color: darkorange; font-size: 12px"}going crazy
 ***

@@ -46,5 +46,8 @@
   },
   "quarto_one_page/one_page.qmd": {
     "one_page.html": "8a5d2502"
+  },
+  "220_two_columns.qmd": {
+    "220_two_columns.html": "dabc20a6"
   }
 }
