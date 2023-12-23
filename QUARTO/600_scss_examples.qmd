@@ -29,7 +29,31 @@ execute:
   collapse: true
   standalone: true
 ---
-:::     
+***
+```{scss, echo=F}
+/* SCSS comment */
+/* Create SCSS inside quarto (in additional to external file) */
+
+  .X {
+  background: yellow;
+  }
+```
+This is some [yellow]{.X} using SCSS defined inside quarto file.
+
+***
+
+```{r }
+#| class: 
+print("yellow")
+```
+***
+
+:::{.X}
+<!-- yellow, including the r chunk -->
+```{r }
+print("yellow")
+```
+:::
 
 ::: postbox
 The background of this text should be light grey (using custom.scss) 

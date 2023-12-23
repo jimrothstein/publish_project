@@ -1,0 +1,70 @@
+
+---
+title: skeleton.qmd
+date: last-modified
+# Quarto requires title, if want date to appear
+# ~/.config/kickstart/skeleton/skeleton.qmd
+---
+
+```{r, 1}
+library(glue)
+
+colon_4  <- "::::"
+#lbr  <- `{`
+#rbr  <- `}`
+cols  <- ".columns"
+```
+
+#### want this
+```{r, 2}
+paste0(glue(colon_4), '{', glue(cols),'}')
+paste0(glue(colon_4), quote('{'), glue(cols),'}')
+```
+
+SEE: https://github.com/tidyverse/glue/issues/259
+```{r}
+a="two"
+glue({cols})
+glue("This is { quote(brackets) } ")
+glue("{colon_4} This is { quote(zero) }")
+glue("This is a word and this is {quote(a)}")
+glue("This is a word and this is {quote('{')}")  # WORKS 
+glue("This is a word and this is {quote('{}')}")  # WORKS 
+glue("This is a {a} and this is {quote('{}')}")  # WORKS 
+
+glue("{colon_4} just a test }") # Works
+glue("{colon_4}{{cols}")  # FAILS
+glue("{colon_4}{{cols}}")  # FAILS
+glue("{colon_4}{ {cols}}")  # no error ??
+glue("{colon_4}{cols}}")   # WORKS
+glue("{colon_4}{quote('{')}{cols}}")    # Works
+
+paste0(colon_4, '{', cols, '}')
+
+glue(colon_4,  {cols} )
+#glue(colon_4, {,  {cols} )
+
+#glue(colon_4, '\\{', {cols},'}' )
+glue::glue("{'{'}", .literal = TRUE)
+Error in glue_data(.x = NULL, ..., .sep = .sep
+
+glue::glue("{ quote('{')}")
+glue::glue("foo {quote('{}')}")
+# string constants
+  four_colons2 <- function(class = NULL) {
+    if (is.null(class)) {
+    return(colon4)
+    } else {
+    return(paste0("::::", "{", class, "}"))
+    }
+  }
+
+
+```
+
+#### knitr chunk
+```{glue, results = 'asis', echo = FALSE, 3}
+#### mtcars has **{nrow(mtcars)} rows** and _{ncol(mtcars)} columns_.
+```
+
+vim:linebreak:nospell:nowrap:cul tw=78 fo=tqlnrc foldcolumn=1 cc=+1
