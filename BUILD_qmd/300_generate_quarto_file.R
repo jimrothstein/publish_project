@@ -1,10 +1,17 @@
 ---
   title:  /home/jim/code/try_things_here/NSE_project/saveas 300_generate_quarto_file.R
 ---
-  ####  Functions to generate a quarto file
+
+##  PURPOSE (2023-12-22)   
+##  R Functions to generate a quarto file
+##  use glue, not paste0
+
 
   heading  <- function(){
-      paste0("---\n", "title:\n", "---\n")
+      glue::glue("---\n",
+                 "title:\n",
+                 "---\n")
+
   }
 
   four_colons <- function(class = NULL) {
@@ -13,6 +20,44 @@
     } else {
     return(paste0("::::", "{", class, "}"))
     }
+  }
+
+# ---------------
+  # knitr chunk
+# ---------------
+  chunk  <- function(chk=NULL){
+    glue::glue("```",
+               "{ quote('{') }",
+               "r,  {chk}",
+                "}\n",
+               "\n",
+               "```\n"
+               )
+  }
+
+name  <- "chunk01"
+chunk(chk = name)
+chunk(chk = "chunk02")
+# ----------------------
+#   Many chunks
+
+names  <- c("chunk01", "chunk02", "chunk03")
+unlist(lapply(names, chunk))
+# ----------------------------
+
+scss_class  <- function(){
+  glue::glue(".X",
+             "{quote('{')}\n",
+             "  background: yellow;\n",
+             "{quote('}')}\n",
+             )
+}
+scss_class()
+
+
+
+  .X {
+  background: yellow;
   }
 
 heading()
