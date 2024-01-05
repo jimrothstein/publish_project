@@ -15,12 +15,23 @@
   }
 
   four_colons <- function(class = NULL) {
+    # do not need ::::{.class}
     if (is.null(class)) {
-    return("::::")
+      glue::glue("::::\n")
     } else {
-    return(paste0("::::", "{", class, "}"))
+    glue::glue("::::{class}\n")
     }
   }
+
+  three_colons  <- function(class = NULL){
+    if (is.null(class)) {
+      glue::glue(":::\n")
+    } else {
+    #return(paste0(":::", "{", class, "}"))
+    glue::glue(":::{class}\n")
+    }
+  }
+
 
 # ---------------
   # knitr chunk
@@ -31,9 +42,27 @@
                "r,  {chk}",
                 "}\n",
                "\n",
-               "```\n"
                )
   }
+  end_chunk  <- function(){
+    glue::glue("```\n")
+  }
+
+  # testing
+  new_row  <- function(class = NULL){
+    print(
+         four_colons(class = "columns"),
+    three_colons(class = "column"),
+    chunk(chk = "chunk01"),
+    end_chunk(),
+    three_colons(),
+    four_colons()
+    )
+  }
+  
+l  <- new_row()
+l
+# almost
 
 name  <- "chunk01"
 chunk(chk = name)

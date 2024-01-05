@@ -36,7 +36,7 @@ Begin Row 1
 :::{.column} 
 
 
-Show code and commentary in this column. (no results)
+Show code and commentary in this left column. (no results)
 ```{r eval=F}
 #| eval: false
 #| label: row1
@@ -48,7 +48,7 @@ cat(sample(c(letters, LETTERS, rep(" ", 5)), 200, replace= TRUE), sep = "")
 
 :::{.column}
 
-Results appear in this column.
+Results appear in this right column.
 ```{r}
 #| results: asis
 #| ref-label: row1

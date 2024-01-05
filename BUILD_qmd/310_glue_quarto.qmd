@@ -1,10 +1,11 @@
 
 ---
-title: skeleton.qmd
+title: 310_glue_quarto.qmd
 date: last-modified
 # Quarto requires title, if want date to appear
 # ~/.config/kickstart/skeleton/skeleton.qmd
 ---
+##  Purpose:   examples of glue
 
 ```{r, 1}
 library(glue)
@@ -59,7 +60,12 @@ glue::glue("foo {quote('{}')}")
     }
   }
 
-
+##  Use glue in function
+getname  <- function(name) {
+  glue::glue("hello {name}")
+}
+getname("jim")
+getname("joe")
 ```
 
 #### knitr chunk
