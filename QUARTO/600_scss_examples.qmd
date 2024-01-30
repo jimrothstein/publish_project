@@ -29,7 +29,18 @@ execute:
   collapse: true
   standalone: true
 ---
+TAGS: SCSS, class.source=, class.output=
 ***
+
+
+PURPOSE:
+  SCSS in quarto.
+  - embed in chunk, OR  
+  - use external .scss file  
+
+NOTE:
+    SEE Yihui COOKBOOK
+  
 ```{scss, echo=F}
 /* SCSS comment */
 /* Create SCSS inside quarto (in additional to external file) */
