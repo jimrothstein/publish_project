@@ -1,0 +1,58 @@
+---
+title: "Habits"
+author: "John Doe"
+format: revealjs
+---
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+
+<!-- new slide -->
+---
+
+(slide with NO NAME) ...
+
+::: {.incremental}
+- Eat spaghetti
+- Drink wine
+:::
+
+## Slide with a pause
+
+content before the pause
+
+. . .
+
+content after the pause
+
+--- 
+
+## Quarto (slide1)
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets (slide2)
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code (slide3)
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+## Big Text {.center}
+
+[large]{.r-fit-text}
