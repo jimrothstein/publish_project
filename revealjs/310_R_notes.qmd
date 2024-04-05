@@ -16,6 +16,7 @@ execute:
   standalone: true
 css:  css_examples.css
 ---
+2024-03-17 Rename:  from ~/quarto/revealjs/310_R_notes.qmd to ~/quarto/revealjs/100_R_NSE_language_functional_notes.qmd
 2024-03-15 The file 310_R_notes.qmd was COPIED from docs/tech to Quarto/revealjs.   The original (untouched) file (at docs/tech) is NOW out-of-date.
 
 
