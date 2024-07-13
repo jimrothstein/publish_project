@@ -1,7 +1,7 @@
 ---
 title: "Untitled"
 format: revealjs
-editor: visual
+editor: source
 ---
 
 ## Quarto (slide1)

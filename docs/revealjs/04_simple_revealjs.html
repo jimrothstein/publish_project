@@ -10,9 +10,9 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.54">
 
-  <meta name="author" content="John Doe">
+  <meta name="author" content="jim">
   <meta name="dcterms.date" content="2023-12-20">
-  <title>misc – Habits</title>
+  <title>misc – simple</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -327,74 +327,20 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Habits</h1>
+  <h1 class="title">simple</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-John Doe 
+jim 
 </div>
 </div>
 </div>
 
   <p class="date">2023-12-20</p>
 </section>
-<section id="getting-up" class="slide level2">
-<h2>Getting up</h2>
-<ul>
-<li>Turn off alarm</li>
-<li>Get out of bed</li>
-</ul>
-</section>
-<section id="going-to-sleep" class="slide level2">
-<h2>Going to sleep</h2>
-<ul>
-<li>Get in bed</li>
-<li>Count sheep</li>
-</ul>
-<!-- new slide -->
-</section>
-<section class="slide level2">
-
-<p>(slide with NO NAME) …</p>
-<div>
-<ul>
-<li class="fragment">Eat spaghetti</li>
-<li class="fragment">Drink wine</li>
-</ul>
-</div>
-</section>
-<section id="slide-with-a-pause" class="slide level2">
-<h2>Slide with a pause</h2>
-<p>content before the pause</p>
-<div class="fragment">
-<p>content after the pause</p>
-</div>
-</section>
-<section id="quarto-slide1" class="slide level2">
-<h2>Quarto (slide1)</h2>
-<p>Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <a href="https://quarto.org/docs/presentations/" class="uri">https://quarto.org/docs/presentations/</a>.</p>
-</section>
-<section id="bullets-slide2" class="slide level2">
-<h2>Bullets (slide2)</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes:</p>
-<ul>
-<li>Content authored with markdown</li>
-<li>Output from executable code</li>
-</ul>
-</section>
-<section id="code-slide3" class="slide level2">
-<h2>Code (slide3)</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-</section>
-<section id="big-text" class="slide level2 center">
-<h2>Big Text</h2>
-<p><span class="r-fit-text">large</span></p>
+<section id="hello" class="slide level2">
+<h2>Hello</h2>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -612,44 +558,6 @@ John Doe
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

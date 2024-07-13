@@ -1,9 +1,8 @@
 ---
-title: "Habits"
-author: "John Doe"
+title: "Untitled"
 format: revealjs
+editor: source 
 ---
-
 ## Getting up
 
 - Turn off alarm
@@ -16,6 +15,7 @@ format: revealjs
 
 <!-- new slide -->
 ---
+
 
 (slide with NO NAME) ...
 
