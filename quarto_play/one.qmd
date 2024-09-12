@@ -3,7 +3,11 @@ title: "Play"
 editor: visual
 ---
 
+<div style="border: 2px solid green;"> in  a box </>
+
+:::{style="color: red"}
 ## jim Rothstein
+:::
 
 ### Clinical Trials Package Developer (R)
 
