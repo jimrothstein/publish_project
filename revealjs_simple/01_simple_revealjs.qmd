@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Simple Revealjs"
 format: revealjs
 editor: source
 ---

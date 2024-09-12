@@ -1,7 +1,8 @@
 /*-- scss:defaults --*/
-$body-color: #FF0000;
+$body-color: #FF0000;  /*   <-- use for RED */ 
+/*$body-color: black; */   /*   <-- use for BLACK */
 $font-stack: Helvetica, sans-serif;
-$primary-color: #333;    /* variable */
+$primary-color: #333;    /* variable */ 
 
 body {
   font: 100% $font-stack;
@@ -18,4 +19,8 @@ body {
   background-color: lightblue;
 }
 
+.custombox_black {
+  color: black; 
+  background-color: lightblue;
+}
 
