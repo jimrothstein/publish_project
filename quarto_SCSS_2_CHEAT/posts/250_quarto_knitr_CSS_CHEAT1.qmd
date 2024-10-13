@@ -92,7 +92,7 @@ SEE References
 
 ------------------------------------------------------------------------
 
-<font size="1"> Very small </font>
+<font size="1"> Very small (use inline font) </font>
 
 ::: very_small
 Also small (using SCSS)
