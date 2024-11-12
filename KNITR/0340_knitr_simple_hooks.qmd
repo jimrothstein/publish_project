@@ -23,21 +23,38 @@ output:
 fontsize: 10pt   
 geometry: margin=0.4in,top=0.25in   
 TAGS:  skeleton
+editor_options: 
+  chunk_output_type: console
 ---
 ~/code/MASTER_INDEX.md
 
 ```{r setup, include=FALSE		}
+library(knitr)
+library(ggplot2)
+
+## create custom hook `get_label`
+knitr::knit_hooks$set(get_label = local({
+  function(before, options) {
+    if (before) {
+      paste("LABEL: ", options$label)
+    }
+  }
+})
+)
+
+## global knitr options, including run above hook
 knitr::opts_chunk$set(echo = TRUE,
                       comment = "      ##",
                       tidy = "styler",
                       error = TRUE,
+                      get_label = TRUE,   # set to run get_label hook to run every chunk 
                       collapse = T   ) # T easier to read
+
 ```
 
-```{r library 		}
-library(jimTools)
-``` 
+
 <!-- new way to set CHUNK OPTIONS -->
+
 ```{r cars-plot, include=F,  eval=F}
 #| echo = FALSE,
 #| message = FALSE,
@@ -46,22 +63,45 @@ library(jimTools)
 #| fig.path = "figures/",
 #| fig.caption = "This is a long caption that fits better inside of a code chunk",
 #| fig.alt = "This is a long description that conveys the meaning of the visual."
-
-library(ggplot2)
 ```
+
+
+## create hook_function, called `greet`; `greet` ALSO becomes chunk option 
+used to trigger call.
+```{r hook_function}
+#| greet = TRUE
+# To use hook `greet` in a given chunk, specify greet=TRUE
+knitr::knit_hooks$set(greet = function(before) {
+  if (before) {
+    "Hello!" 
+    }
+})
+```
+
+## Example of using hook `greet`
+```{r greet=T}
+#| greet: TRUE
+print("Example of using hook greet")
+```
+
+
+***
+
 REF:  https://github.com/yihui/knitr-examples/blob/master/045-chunk-hook.Rmd
-# Three arguments in chunk hooks
+
+## Three arguments in chunk hooks
 
 A chunk hook has three arguments: `before`, `options` and `envir`. We show how they work through some simple examples.
 
-## The `before` argument
+## 1. The `before` argument
+
 
 It is a logical argument: `before == TRUE` executes code before a chunk.
+Note, first knitr_hooks$set() to set a hook, named `foo1`
 
 ```{r set_hooks}
 # foo1 will be a function
-library(knitr)
-knit_hooks$set(foo1 = function(before, options, envir) {
+knitr::knit_hooks$set(foo1 = function(before, options, envir) {
   if (before) {
     '_I appear before a chunk!_\n\n'
   } else {
@@ -72,7 +112,9 @@ knit_hooks$set(foo1 = function(before, options, envir) {
 ```
 
 
+## Misc info about knitr hooks
 ```{r examine}
+#| before = TRUE
 ## knit_hooks is list of functions
 knitr::knit_hooks$get("foo1")
 if (F) knit_hooks
@@ -82,12 +124,22 @@ str(knit_hooks)
 typeof(knit_hooks$get)
 ```
 
+## Example of using hook `foo1`
+
 <!-- trigger foo1 -->
 ```{r foo1='whatever'}
 1+1
 ```
 
-## The `options` argument
+
+```{r}
+#| foo1 = TRUE
+2+2
+```
+
+***
+
+## 2. The `options` argument
 
 It contains all the chunk options (include global options) for the current chunk.
 
