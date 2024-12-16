@@ -1,5 +1,7 @@
 ---
 title: "test-website"
+editor_options: 
+  chunk_output_type: console
 ---
 
 This text should be red. If so `styles.scss` is being applied as expected.
@@ -7,6 +9,12 @@ This text should be red. If so `styles.scss` is being applied as expected.
 ```{r}
 1 + 1
 ```
+
+:::: custombox_yellow
+::: center
+center
+::: 
+::::
 
 ::: custombox
 The background of this text should be pink. If so `styles.scss` is being applied as expected.

@@ -3,7 +3,7 @@ title: SCSS experiments
 date: last-modified
 ---
 
-## Why RED? See SCSS file in same directory.
+## Why RED? default $body color: See SCSS file in same directory.
 
 homemade style?
 
@@ -20,4 +20,7 @@ Goodbye, world.
 Is this black?
 :::
 
-vim:linebreak:nospell:nowrap:cul tw=78 fo=tqlnrc foldcolumn=1 cc=+1 filetype=r
+::: {.custombox_blue}
+Is this blue?
+:::
+
