@@ -1,4 +1,9 @@
 
+<!-- 
+	STOP;  do not use;
+	SEE ~/code/docs/tech_notes/400_MATH_notes.qmd   <-- USE
+	
+	-->
 ---
 title: "`r knitr::current_input()`"
 date: "`r paste('last updated', 
@@ -16,6 +21,8 @@ output:
 fontsize: 11pt   
 geometry: margin=0.5in,top=0.25in   
 ---
+
+<!-- STOP - do not use this file -->
 
 sums, regression
 
