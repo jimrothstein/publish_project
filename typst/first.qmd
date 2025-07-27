@@ -1,0 +1,12 @@
+---
+title: "Hello Typst!"
+format:
+  typst:
+    toc: true
+    section-numbering: 1.1.a
+    columns: 2
+---
+
+
+This renders as PDF.  It uses quarto via its built-in typst cli to render pdf.
+REF:   https://quarto.org/docs/output-formats/typst.html
