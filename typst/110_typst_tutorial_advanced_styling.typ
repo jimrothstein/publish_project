@@ -24,7 +24,7 @@
   float: true,
   scope: "parent",
   clearance: 2em,
-  )
+  
 [
 
 #grid(
@@ -40,7 +40,7 @@
     #link("mailto:doe@artos.edu")
   ]
 )
-]
+])
 
 
 #align(center)[
@@ -51,6 +51,9 @@
 
 
 
-#lorem(600)
+#lorem(550)
 
 
+#box(stroke: red, inset: 1em)[
+#lorem(5)
+]

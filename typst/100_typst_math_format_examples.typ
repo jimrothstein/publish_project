@@ -248,3 +248,10 @@ $lim_x = op("lim", limits: #true)x$
 =Introduction \
 +Chapter1 \
 +Chapter2
+
+
+// red box
+
+#box(stroke: red, inset: 1em)[
+#lorem(5)
+]
