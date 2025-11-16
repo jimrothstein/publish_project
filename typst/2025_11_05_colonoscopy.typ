@@ -57,19 +57,36 @@ Bus \# 67 (north)
 8 am DDS 
 
 
-Bus to PDX
-10:45 am  - xxxxx pm
+Amtrak Bus to PDX \
+10:45 am  - 1:40 pm
 
-Blue Line to xxxx \
-Bus xxxx to hotel
+Old/Chinatown \
+blue or red to SUNSET TC \
+-2:06 pm \ 
+-2:09 pm \
+-2:17 pm \
+-2:24 pm \
 
+Bus \# 48, exit NE Cornell/Stucki - every 15' \
+Extended Stay America- Suites- Portland - Hillsboro \
+Check in - Mon, Nov 3, 3:00 PM \
+Check out - Fri, Nov 7 \
+Address: 10081 Northeast Cornell Road, Hillsboro, OR 97124, USA \
++1 503-439-0706 \
 
 === Tuesday, 4 November 2025
 
 === Wednesday, 5 November 2025
 #box(stroke: red, inset: 1em)[
 
-9 am - *Bob* drives me to Salem (??)
+9 am - *Bob* drives me to Salem (??) \
+With: Christian A. Speer, MD \ 
+Date: Wednesday November 5, 2025 \
+Where to go: Skyline Ambulatory Surgery Center \
+Address: 5125 Skyline Rd, South \
+SALEM OR 97306-9427 \     
+Phone: 503-361-5400 \
+
 ...
 
 3 pm, 4pm ??
@@ -94,24 +111,3 @@ Bus to Car
 10:30 pm (LAST)
 
 === END  
-
-= Text Boxes
-
-#show heading: set text(navy)
-
-= This text goes into the box
-
-
-
-
-
-
-
-
-=Introduction \
-+Chapter1 \
-+Chapter2
-
-#alert(fill: blue)[
-  KEEP OFF TRACKS
-]
