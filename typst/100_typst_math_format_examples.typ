@@ -13,6 +13,15 @@ To render:
 
 typst compile array.typ
 
+= draw box around the answer
+
+#import "@preview/mannot:0.3.1": markrect 
+$
+  (2(1-2x^2)) / ((1-2x^2) sqrt(1-x^2)) =
+  markrect(2 / sqrt(1-x^2))
+$
+
+
 
 #block(
     fill: luma(230),
