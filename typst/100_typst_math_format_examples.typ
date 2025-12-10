@@ -8,10 +8,7 @@
   size: 10pt
 )
 
-This typst typ file.
-To render:
-
-typst compile array.typ
+To render: typst compile array.typ
 
 = draw box around the answer
 
@@ -21,7 +18,20 @@ $
   markrect(2 / sqrt(1-x^2))
 $
 
+= inline v display
+inline
+Let $x$ be unknown variable.
 
+display
+$ a^2 + b^2 $
+
+= fonts, colors
+blackboard /
+$bb(A), AA, bb(1)$
+
+== text
+lorem(10) \
+#lorem(10)
 
 #block(
     fill: luma(230),
@@ -61,6 +71,15 @@ Calc even
  let a = [jim]
  [My name is ] + a
 }
+
+= function
+
+#let f(name) = "Hello, " + name
+
+
+
+#f("world!") \
+#f("jim")
 
 = Linear Algebra
 
@@ -128,6 +147,7 @@ $
 forall v, w in V, alpha in KK: alpha dot (v + w) = alpha v + alpha w
 $
 
+
 == Indicator Function
 
 /*   throw an error
@@ -156,8 +176,17 @@ Tutorial: <https://typst.app/docs/tutorial/writing-in-typst/>
 
 = More math
 
+a/b \
+as fraction $a/b$ \ 
+as text $a\/b$ \
+
 $
 forall v, w in V, alpha in KK: alpha dot (v + w) = alpha v + alpha w
+$
+
+sum
+$
+sum_(k=1)^n k
 $
 
 $
@@ -165,12 +194,13 @@ $
 integral, integral.cont, integral.double, integral.square, sum.integral\
 
 // lt — less than, gt — greater than
-lt, lt.circle, lt.eq, lt.not, lt.eq.not, lt.tri, lt.tri.eq, lt.tri.eq.not, gt, lt.gt.eq, lt.gt.not
+lt, lt.o, lt.eq, lt.not, lt.eq.not, lt.tri, lt.tri.eq, lt.tri.eq.not, gt, lt.gt.eq, lt.gt.not
 $
 
-$arrow.b, triangle.r, angle.l$
+// use chevron.l, not angel.l
+$arrow.b, triangle.r, chevron.l$
 
-$arrow.r, triangle.r, angle.l$
+$arrow.r, triangle.r, chevron.l$
 
 = Text Boxes
 
@@ -264,3 +294,18 @@ $lim_x = op("lim", limits: #true)x$
 #box(stroke: red, inset: 1em)[
 #lorem(5)
 ]
+
+= set
+
+
+= show rule
+
+
+RULE: show "XX": text(green)[I am green] \
+#show "XX": text(green)[I am green]
+
+Do you see "XX" text?
+
+
+= References
+- (examples book)https://sitandr.github.io/typst-examples-book/book/about.html
