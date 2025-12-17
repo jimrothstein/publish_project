@@ -1,3 +1,5 @@
+// 100_typst_math_format_examples.typ
+// Basic examples:      https://sitandr.github.io/typst-examples-book/book/basics/scripting/basics.html
 #import "@preview/cetz:0.3.1"
 #import "@preview/cetz-plot:0.1.0": *
 
@@ -17,6 +19,13 @@ $
   (2(1-2x^2)) / ((1-2x^2) sqrt(1-x^2)) =
   markrect(2 / sqrt(1-x^2))
 $
+
+== red block
+#let block_text = block(stroke: red, inset: 1em)[This is red.]
+
+#block_text
+
+#figure(caption: "The block", block_text)
 
 = inline v display
 inline
@@ -80,6 +89,15 @@ Calc even
 
 #f("world!") \
 #f("jim")
+
+// The following syntaxes are equivalent
+#let f = (name) => "Hello, " + name
+#let f(name) = "Hello, " + name
+
+== function with content argument, using []
+#let f(name) = [Hello, #name]
+#f[World] // also don't forget we can use it to pass content!
+
 
 = Linear Algebra
 

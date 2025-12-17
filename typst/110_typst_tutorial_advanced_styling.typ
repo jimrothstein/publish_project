@@ -1,4 +1,7 @@
 
+
+// 110_typst_tutorial_advanced_styling.typ
+
 #let title = [
   A fluid dynamic model
   for glacier flow

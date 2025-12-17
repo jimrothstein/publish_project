@@ -1,0 +1,117 @@
+// Basic examples:      https://sitandr.github.io/typst-examples-book/book/basics/scripting/basics.html
+
+// NEXT:   debug in typst online editor
+
+#set page("us-letter")
+#set heading(numbering: "1.")
+#set text(
+  font: "New Computer Modern",
+  size: 8pt
+)
+
+To render: typst compile array.typ
+
+=Text
+
+== red block
+#let block_text = block(stroke: red, inset: 1em)[This is red.]
+
+#block_text
+
+#figure(caption: "The block", block_text)
+
+== lorem
+lorem(10) \
+#lorem(10)
+
+#block(
+    fill: luma(230),
+)
+
+/*
+== Content block
+[ *hello*  jim]
+
+== Content + code
+#{ let a = [jim]
+ [My name is ] + a
+}
+
+== red box + content
+
+#box(stroke: red, inset: 1em)[
+#lorem(5)
+]
+
+== function
+
+#let f(name) = "Hello, " + name
+#f("world!") \
+#f("jim")
+
+/*
+// The following syntaxes are equivalent
+#let f = (name) => "Hello, " + name
+#let f(name) = "Hello, " + name
+*/
+
+== function with content argument, using []
+#let f(name) = [Hello, #name]
+#f[World] // also don't forget we can use it to pass content!
+
+
+
+= R
+```r
+2+2
+```
+
+
+
+
+== Text Boxes
+
+#show heading: set text(navy)
+
+= This text goes into the box
+
+#let alert(body, fill: red) = {
+  set text(white)
+  set align(center)
+  rect(
+    fill: fill,
+    inset: 8pt,
+    radius: 4pt,
+    [*Warning:\ #body*],
+  )
+}
+
+#alert[
+  Danger is imminent!
+]
+
+#alert(fill: blue)[
+  KEEP OFF TRACKS
+]
+
+
+
+
+=Introduction \
++Chapter1 \
++Chapter2
+
+
+
+= set
+
+
+= show rule
+
+
+RULE: show "XX": text(green)[I am green] \
+#show "XX": text(green)[I am green]
+
+Do you see "XX" text?
+
+*/
