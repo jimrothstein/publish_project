@@ -34,8 +34,28 @@ To render: typst compile array.typ
 #format( on: true)[a line]  // body is [a line]
 #format(on: false)[a second line]
 
-== red block
+== red & color block
 #let block_text = block(stroke: red, inset: 1em)[This is red.]
+#line(length: 100%)
+#set text(blue)
+This is blue
+
+// begin
+#set par.line(numbering: "1.")
+This is a blue. \
+#set text(red)
+How do I change this to red? \
+Still red?!
+// end
+#set par.line(numbering: none)
+
+#align(right)[this is right aligned]
+
+#set text(black)
+#show "project": smallcaps
+I am working on special project.
+
+#line(length: 100%)
 
 #block_text
 
