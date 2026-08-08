@@ -1,0 +1,58 @@
+---
+title: "Hello Typst!"
+format:
+  typst:
+    toc: true
+    section-numbering: 1.1.a
+    columns: 2
+---
+
+
+```{=typst}
+#set page(width: auto, height: auto, margin: 1cm)
+
+#import "@preview/fletcher:0.5.8": diagram, node, edge
+
+#diagram(
+  node-stroke: 0.8pt,
+  node-fill: rgb("f9f9f9"),
+  spacing: (15mm, 10mm),
+
+  // Inputs and weights
+  node((0, 0), $x$, radius: 5mm),
+  node((0, 1), $w_1$, radius: 5mm),
+  node((0, 2.5), $w_2$, radius: 5mm),
+  node((0, 3.5), $y$, radius: 5mm),
+
+  // Multiplication
+  node((1.5, 0.5), $times$, radius: 6mm, name: <mul1>),
+  node((1.5, 3.0), $times$, radius: 6mm, name: <mul2>),
+
+  edge((0, 0), <mul1>, "->"),
+  edge((0, 1), <mul1>, "->"),
+  edge((0, 2.5), <mul2>, "->"),
+  edge((0, 3.5), <mul2>, "->"),
+
+  // Addition
+  node((3.0, 1.75), $+$, radius: 6mm, name: <add>),
+
+  edge(<add>, <act>, "->", label: $z$, label-pos: 0.5, label-side: auto),
+  edge(<mul2>, <add>, "->", label: $w_2 y$, label-pos: 0.4, label-side: right),
+
+  // Activation
+  node(
+    (4.5, 1.75),
+    $sigma$,
+    radius: 6mm,
+    fill: rgb("e6f2ff"),
+    stroke: blue + 1pt,
+    name: <act>,
+  ),
+
+  edge(<add>, <act>, "->", label: $z$, label-pos: 0.5, label-side: auto ),
+
+  // Output
+  node((6.0, 1.75), $f(x, y)$, stroke: none, fill: none, name: <out>),
+  edge(<act>, <out>, "->"),
+)
+```
