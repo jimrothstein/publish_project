@@ -1,0 +1,35 @@
+---
+title: "Untitled"
+format: html
+editor: source
+---
+<div class="text-box">This is some text inside a box.</div>
+
+.text-box {
+  border: 2px solid black; /* Creates a solid border */
+  padding: 10px;          /* Adds space inside the box */
+  margin: 20px;          /* Adds space outside the box */
+  border-radius: 5px;    /* Rounds the corners of the box */
+  background-color: #f9f9f9; /* Sets a background color */
+}
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).

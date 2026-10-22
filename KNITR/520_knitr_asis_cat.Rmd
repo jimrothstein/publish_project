@@ -1,0 +1,60 @@
+---
+title: "`r knitr::current_input()`"
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"
+output:   
+  pdf_document:   
+    latex_engine: lualatex  
+    toc: true
+    toc_depth:  4   
+    keep_md:  true 
+    keep_tex:  true
+geometry: margin=0.4in,top=0.25in   
+TAGS:  zsh,REGEX
+---
+~/code/MASTER_INDEX.md
+
+<!--
+!zathura ~/Downloads/print_and_delete/3010_zsh_knitr.pdf
+-->
+
+
+
+```{r setup, include=FALSE		}  
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = T   )  
+```
+
+
+#### normal
+
+```{r method1}
+cat(paste0("- ", names(iris)), sep="\n")
+```
+
+#### method="asis", produces markdown
+
+```{r method2, results='asis'}
+cat(paste0("- ",names(iris)), sep="\n")
+```
+
+
+```{r render, eval=FALSE, include=FALSE 	} 
+output_dir  <- Sys.getenv("OUTPUT_DIR")
+output_dir
+
+{
+file <- "520_knitr_asis_cat.Rmd"
+file  <- normalizePath(file)
+file
+}
+
+rmarkdown::render(file,
+                  #output_format="html_document",
+                  output_format="pdf_document",
+                  output_dir=output_dir
+                  )
+
+```

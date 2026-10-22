@@ -1,0 +1,80 @@
+
+---
+title: "`r knitr::current_input()`"
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"
+output:   
+  html_document:  
+        code_folding: show
+        toc: true 
+        toc_depth: 4
+        toc_float: true
+        mathjax: default
+  pdf_document:   
+    latex_engine: lualatex  
+    toc: true
+    toc_depth:  4   
+    keep_tex:  true
+  header-includes:  
+    -  \usepackage{helvet}  
+    -  \renewcommand{\familydefault}{\sfdefault}  
+    -  \usepackage{ulem}
+fontsize: 11pt   
+geometry: margin=0.4in,top=0.25in   
+TAGS:  skeleton
+---
+
+
+### PURPOSE
+Example of changing knitr chunk output with latex
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = T   ) # T easier to read
+```
+
+```{r library 		}
+library(jimTools)
+``` 
+
+\begingroup
+\definecolor{shadecolor}{rgb}{1, 1, 0.867}
+\footnotesize{begin footnotesize}
+```{r  test }
+    cat("hello \n")
+```
+\endgroup
+
+What size t4ex?
+
+```{r render, eval=FALSE, include=FALSE 	} 
+output_dir  <- Sys.getenv("OUTPUT_DIR")
+output_dir
+
+{
+file <- "change_chunk_output.Rmd"
+file  <- normalizePath(file)
+file
+}
+
+
+rmarkdown::render(file,
+                  #output_format="html_document",
+                  output_format="pdf_document",
+                  output_dir=output_dir
+                  )
+```
+
+```{r exit,  include=F}
+    knitr::knit_exit()
+```
+
+#### html ONLY (fonts)
+```{r, results = 'asis',echo = F}
+htmltools::h3("Test big font")
+htmltools::h4('Test medium font')
+htmltools::h5('Test smaller font')
+```
+`r htmltools::h3("Outside chunck")`

@@ -1,0 +1,20 @@
+---
+title: "Post 3"
+format:
+  html:
+    theme: posts.scss
+---
+
+This text should be red. If so `styles.scss` is being applied as expected.
+
+::: {#body}
+What color?
+:::
+
+```{r}
+1 + 1
+```
+
+::: postbox
+The background of this text should be light blue. If so `posts/posts.scss` is being applied as expected.
+:::

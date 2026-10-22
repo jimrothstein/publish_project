@@ -1,0 +1,18 @@
+% comment
+%
+% -------------------------------------------------------------------------
+%   PURPOSE:   Instead of $body$, here use \include{file.tex}
+%               pandoc is not useful here.
+%
+%   USAGE:
+%   pdflatex 004_trival_pandoc_template_include.tex
+%
+%   REF
+%   https://tex.stackexchange.com/questions/573431/how-do-i-adapt-a-standard-latex-template-for-pandoc-in-a-docker-container-not
+% -------------------------------------------------------------------------
+%
+\documentclass{article}
+\begin{document}
+%   be sure 004_content.tex exists (just simple 'Hello World')
+\include{004_content.tex}
+\end{document}

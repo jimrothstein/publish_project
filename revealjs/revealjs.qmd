@@ -1,0 +1,29 @@
+---
+title: "Habits"
+author: "John Doe"
+format: revealjs
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+```{r}
+1 + 1
+```
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+
+## Dinner
+
+::: {.incremental}
+- Eat spaghetti
+- Drink wine
+:::

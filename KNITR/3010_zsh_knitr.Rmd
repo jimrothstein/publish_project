@@ -1,0 +1,95 @@
+---
+title: "`r knitr::current_input()`"
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"
+output:   
+  pdf_document:   
+    latex_engine: lualatex  
+    toc: true
+    toc_depth:  4   
+    keep_md:  true 
+geometry: margin=0.4in,top=0.25in   
+TAGS:  zsh,REGEX
+---
+~/code/MASTER_INDEX.md
+
+<!--
+!zathura ~/Downloads/print_and_delete/3010_zsh_knitr.pdf
+-->
+
+
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = T   ) # T easier to read
+```
+
+### PURPOSE:   Use KNITR to capture zsh commands and output, such as GREP
+
+REGEX  
+*   0,1,n  
++   1,n  
+?   0,1  
+
+BEFORE
+
+echo foo | grep -oP --color=ALWAYS 'f'
+
+echo foo | grep -P  --color=ALWAYS 'f'
+
+```{zsh grep2}
+echo foo | grep -oP  'f'
+echo foo | grep -P   'f'
+```
+
+#### Color? pdf:NO
+HTML:  NO, shows the teriminal codes!
+ ## [01;31m[Kf[m[K
+ reason:  https://unix.stackexchange.com/questions/75527/how-can-i-keep-color-codes-with-grep-input
+```{zsh color}
+echo foo | grep -oP --color=ALWAYS 'f'
+```
+
+
+```{zsh lookback}
+
+echo foo | grep -P   '(?<=f)(o+)'
+echo foo | grep -oP   '(?<=f)(o+)'
+```
+
+
+
+
+```{zsh grep1}
+print -l * | grep -E 'Rmd$'
+```
+
+
+```{r render, eval=FALSE, include=FALSE 	} 
+
+
+output_dir  <- Sys.getenv("OUTPUT_DIR")
+output_dir
+
+{
+file <- "3010_zsh_knitr.Rmd"
+file  <- here("KNITR", file)
+file
+}
+
+rmarkdown::render(file,
+                  output_format="html_document",
+                  #output_format="pdf_document",
+                  output_dir=output_dir
+                  )
+
+
+## replacement for here
+if (F) {
+  the_dir  <- dirname(file)
+  file  <- file.path(the_dir, file)
+}
+
+```

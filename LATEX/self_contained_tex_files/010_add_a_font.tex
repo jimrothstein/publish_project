@@ -1,0 +1,35 @@
+%  file <- "010_add_a_font.tex "
+
+%%%%%%%%%%%%%%%
+%	 Example:		-	todonotes package
+%							-	setmainfont
+%%%%%%%%%%%%%%%
+
+%   TOOLS:  lualatex *.tex  | > (in R() tinytex::lualatex("....*.tex) 
+%
+
+%   PROBLEM 2:
+%   todonotes missing  | open R (inside nvim terminal !), ran tinytex::lualatex("010_add_a_font.tex")
+%   a little slow,  but it WORKED!   pdf created!   
+%%%%%%%%%%%%%%%
+%		without R:
+%		USAGE:	!lualatex %
+
+%		without R:
+%			missing sty?  then run tlmgr install <missing>
+
+%%%%%%%%%%%%%%%
+%
+\documentclass[a4paper,10pt]{article}
+\usepackage{todonotes}
+\usepackage{fontspec}       % for fonts
+\setmainfont{Roboto Light}[ItalicFont=Roboto-LightItalic]
+
+\begin{document}
+Hallo \textit{Hello, World!}
+
+\todo{Rewrite this answer \ldots}
+\end{document}
+
+
+vim:nospell

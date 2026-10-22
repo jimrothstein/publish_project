@@ -1,0 +1,27 @@
+%
+%  file <- "center_line.tex "
+%   PURPOSE:    Center a small horizontal line.
+%   USAGE:      :!pdflatex %        
+%   pandoc % -t latex -o out.pdf 
+
+
+\documentclass{article}
+\usepackage{ulem}
+\usepackage{xcolor}
+\begin{document}
+
+\centerline{\rule{2cm}{0.4pt}}
+
+%>% comment
+
+Hello \emph{world}.
+\sout{strike out}
+
+\textsc{small caps}
+
+\color{blue}   Is this blue.:   
+
+\centerline{\rule{2cm}{0.4pt}}
+%>% \textcolor{blue}{important}
+
+\end{document}

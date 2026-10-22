@@ -1,0 +1,88 @@
+---
+title: "`r knitr::current_input()`"
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"
+output:   
+  html_document:  
+        code_folding: show
+        toc: true 
+        toc_depth: 4
+        toc_float: true
+        mathjax: default
+  pdf_document:   
+    latex_engine: lualatex  
+    toc: true
+    toc_depth:  4   
+  header-includes:  
+    -  \usepackage{helvet}  
+    -  \renewcommand{\familydefault}{\sfdefault}  
+    -  \usepackage{ulem}
+fontsize: 11pt   
+geometry: margin=0.4in,top=0.25in   
+TAGS:  knitr, font
+---
+~/code/MASTER_INDEX.md
+
+
+hello \emph{world}.
+
+\textsc{small caps}
+
+\textsl{slanted}
+
+\large{Hello}
+
+\small{Hello}
+
+\tiny{Hello}   Rest of document, including chunks,  will be `tiny`
+
+
+
+
+
+```
+PURPOSE:    knitr (or render) .Rmd to pdf, but using tiny font
+
+```
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = T   ) # T easier to read
+```
+
+```{r simple}
+df  <- data.frame(x=rnorm(10))
+df
+```
+
+
+```{r render, eval=FALSE, include=FALSE 	} 
+output_dir  <- Sys.getenv("OUTPUT_DIR")
+output_dir
+
+{
+file  <- "0240_knitr_print_tiny_font.Rmd"
+file  <- normalizePath(c(".", file) )
+normalizePath(".")
+
+## dislike `here`?
+## get dir/file name separately, then combine
+ the_dir  <- dirname(file)
+ the_dir
+ file  <- basename(file)
+ file
+ file  <- file.path(the_dir, file)
+ file
+
+#   file  <- here("rmd", file)
+file
+}
+
+rmarkdown::render(file,
+                  #output_format="html_document",
+                  output_format="pdf_document",
+                  output_dir=output_dir
+                  )
+```

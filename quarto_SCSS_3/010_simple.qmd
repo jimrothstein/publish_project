@@ -1,0 +1,10 @@
+---
+title: code_publish/SCSS/010_simple.qmd 
+date: last-modified
+---
+
+####  Learn SCSS
+
+:::{ .postbox }
+and inside postbox scss
+:::

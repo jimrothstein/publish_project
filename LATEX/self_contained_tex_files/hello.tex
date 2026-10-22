@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{lipsum}
+
+
+\begin{document}
+
+%
+%   First, install pkg:   tlmgr install ulem
+%   2nd pandoc balks, b/c tex to pdf done by pdflatex
+%   OK, pdflatex %  works !
+
+% :!lualatex %
+%   !pandoc % -t latex -o out.pdf 
+%>% comment
+
+\lipsum[1]
+hello \emph{world}.
+\sout{strike out}
+
+\textsc{small caps}
+
+\color{blue}   Is this blue.:   
+
+%>% \textcolor{blue}{important}
+
+\end{document}

@@ -1,0 +1,83 @@
+---
+title: "`r knitr::current_input()`"
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"
+output:   
+  html_document:  
+        code_folding: show
+        toc: true 
+        toc_depth: 4
+        toc_float: true
+        mathjax: default
+  pdf_document:   
+    latex_engine: xelatex  
+    toc: true
+    toc_depth:  4   
+fontsize: 11pt   
+geometry: margin=0.4in,top=0.25in   
+TAGS:    verbatim, pdf:numberLines, bullets, indents, 
+---
+
+#### Bullets and indents.  (html + pdf) 
+-   Bullet 1  
+    Remember to indent.   And rememb1er to leave 2 spaces after prior line.  
+    This is a second part of builet 1.   How will it format?   Will it respect
+    Bullet 1 or will it think something else?  
+    This is a naother  part of builet 1.   How will it format?   Will it respect
+    Bullet 1 or will it think something else?  
+
+    This is still part of bullet 1.  
+-   Finally, Bullet 2.  
+
+~/code/MASTER_INDEX.md
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = T   ) # T easier to read
+```
+
+```{r library, include=F 		}
+# library(jimTools)
+``` 
+
+#### verbatim (html + pdf)
+```
+This is verbatim.   No mention of r.
+
+```
+
+#### print line numbers (pdf only!)
+```{r, attr.source='.numberLines'}
+if (TRUE) {
+  x <- 1:10
+  x + 1
+}
+```
+
+
+
+
+```{r render, eval=FALSE, include=FALSE 	} 
+output_dir  <- Sys.getenv("OUTPUT_DIR")
+output_dir
+
+{
+file <- "./KNITR/0320_knitr_verbatim.Rmd"
+file  <- basename(file)
+
+# the_dir  <- dirname(file)
+# file  <- file.path(the_dir, file)
+
+file  <- here("KNITR", file)
+file
+}
+
+rmarkdown::render(file,
+                  output_format="html_document",
+#                  output_format="pdf_document",
+                  output_dir=output_dir
+                  )
+
+```

@@ -1,0 +1,64 @@
+<!--
+	 vim:linebreak:nowrap:nospell:cul tw=78 fo=tqlnr foldcolumn=3 
+   -->
+--- 
+title: Template for .Rmd 
+date: "`r paste('last updated', 
+    format(lubridate::now(), '%H:%M, %d %B %Y'))`"
+output: 
+  pdf_document: 
+    latex_engine: xelatex
+toc: TRUE 
+toc_depth:  1 
+fontsize: 12pt 
+geometry: margin=0.5in,top=0.25in 
+TAGS:  current_input
+---
+
+
+### PURPOSE: determine name of current file, PRIOR to knit the document.
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = TRUE)
+```
+
+
+```{r library, include=FALSE		}
+library(knitr)
+library(jimTools)
+``` 
+
+Fails
+```{r current_input}
+x  <- knitr::current_input()
+# NULL
+
+
+> knitr:::knit_concord$get("infile")
+NULL
+
+```
+ERROR
+```{r knit}
+x  <- knitr::knit(current_input())
+```
+
+```{r write_file}
+
+```
+
+
+
+
+
+```{r render, eval=FALSE	} 
+file <- "00301_nested_chunks_literate_programming.Rmd"
+file  <- basename(file)
+dir <- "rmd"
+
+jimTools::ren_pdf(file,dir)
+jimTools::ren_github(file, dir)
+```

@@ -1,0 +1,67 @@
+--- 
+title: "0200_math_latex.Rmd"
+date: "`r paste('last updated', 
+    format(lubridate::now(), '%H:%M, %d %B %Y'))`"
+output: 
+    html_document:
+      mathjax: default
+
+#   pdf_document: 
+#     latex_engine: xelatex
+#     toc: TRUE 
+#     toc_depth:  4 
+fontsize: 10pt 
+geometry: margin=0.5in,top=0.25in 
+TAGS:  mathjax,latex,
+---
+
+### Simple latex (pdf + html)
+### To render html:
+  (1) include mathjax in yaml
+  (2) view in firefox (not w3m)
+##            
+
+### rmarkdown knows to use math_jax for html
+REF: https://gist.github.com/derekmcloughlin/896da22518ef2f3d81b0
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = TRUE)
+library(jimTools)
+```
+
+
+$\sum x_{i}$
+```{r begin}
+```
+### Independent Samples
+
+$$\mu_{\bar{x_{1}} - \bar{x_{2}}} = \mu_{1} - \mu_{2}$$
+
+
+#### Standard Errors
+
+$$s_{e} = \sqrt \frac {SSResid}{n - 2}$$
+***
+
+```{r knit_exit(), include=F, eval=F} 
+knitr::knit_exit()
+```
+
+
+```{r render, eval=FALSE	} 
+
+setwd("~/code/r_try_things_here")
+getwd()
+
+file <- "0200_math_latex.Rmd"
+file  <- basename(file)
+file  <- here("rmd", file)
+file
+
+rmarkdown::render(file)
+                
+                  #output_dir="~/Downloads/print_and_delete/")
+```

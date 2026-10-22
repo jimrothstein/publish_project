@@ -1,0 +1,5 @@
+PWD /home/jim/code/code_publish/self_contained_tex_files
+INPUT /home/jim/.TinyTeX/texmf.cnf
+INPUT /home/jim/.TinyTeX/texmf-dist/web2c/texmf.cnf
+INPUT /home/jim/.TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
+OUTPUT texput.log

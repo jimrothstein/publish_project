@@ -1,0 +1,27 @@
+---
+title: "Quarto Basics"
+description:  |
+  Multiline verbage.  Continue. This is second line.
+---
+
+To render:	> quarto render *.qmd  --to pdf
+
+```{r}
+#| label: hello 
+#| 
+library(quarto)
+print("hello")
+plot(x=1:10)
+```
+
+```lua
+local f = function()
+print("hello lua")
+end
+```
+
+```lua
+
+f()
+```
+

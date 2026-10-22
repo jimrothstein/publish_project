@@ -1,0 +1,67 @@
+---
+title: "`r knitr::current_input()`"  
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"   
+output:   
+  html_document:  
+    code_folding: hide
+    toc: true 
+    toc_depth: 2
+    toc_float: true
+  pdf_document:   
+    latex_engine: lualatex  
+    toc: true
+    toc_depth:  2   
+fontsize: 10pt   
+geometry: margin=0.5in,top=0.25in   
+---
+
+```
+PURPOSE:    Rmd to handle latex and non-latex
+```
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      collapse = TRUE   ) # FALSE  easier to read
+
+##  function to insert latex for newpage
+    newpage  <- function(){
+        if(knitr::is_latex_output()) 
+        return('\\newpage')
+    }
+```
+
+
+
+### knitr::current_input()
+```{r current_input }
+this_file  <- knitr::current_input() 
+print(this_file)
+
+this_file  <- knitr::current_input(dir = TRUE)
+print(this_file)
+``` 
+
+`r newpage()`
+
+If latex, then expect this on new page.
+If html, then will on SAME page.
+
+```{r render, eval=FALSE, include=F	} 
+file <- "/home/jim/code/publish_project/KNITR/0066_knitr_function_when_latex.Rmd"
+file  <- normalizePath(file)
+file
+
+
+rmarkdown::render(file,
+                  output_format = "pdf_document",
+                  #output_format = "html_document",
+                  output_dir = "~/Downloads/print_and_delete/")
+```
+
+
+
+
+

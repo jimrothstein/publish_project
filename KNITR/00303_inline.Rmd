@@ -1,0 +1,106 @@
+---
+title: "`r knitr::current_input()`"
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"
+output:   
+  html_document:  
+        code_folding: show
+        toc: true 
+        toc_depth: 4
+        toc_float: true
+        mathjax: default
+  pdf_document:   
+    latex_engine: lualatex  
+    toc: false
+    toc_depth:  4   
+fontsize: 11pt   
+geometry: margin=0.4in,top=0.25in   
+TAGS:    verbatim, pdf:numberLines, bullets, indents, 
+---
+~/code/MASTER_INDEX.md
+
+PURPOSE:    
+
+(pdf only) \
+Code chunk is used to set up code.  Not print or evaluate. \
+Instead, use inline r code to print. Use quote to gather unevaluated code;
+then eval to get result.   \
+Position output as I like or embellish with latex.
+
+USAGE:  rmarkdown::render as usual
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,
+                      comment = "      ##",
+                      error = TRUE,
+                      tidy = "styler",
+                      strip.white = TRUE,
+                      collapse = T   ) # T easier to read
+```
+
+```{r library, include=F 		}
+# library(jimTools)
+``` 
+<!-- this is new way to write chunk options -->
+
+```{r cars-plot, include=F,  eval=F}
+#| echo = FALSE,
+#| message = FALSE,
+#| fig.width = 6, 
+#| fig.height = 6,
+#| fig.path = "figures/",
+#| fig.caption = "This is a long caption that fits better inside of a code chunk",
+#| fig.alt = "This is a long description that conveys the meaning of the visual."
+
+library(ggplot2)
+ggplot2::ggplot(data = mtcars, aes(x = wt, y = mpg)) +
+  geom_point()
+
+```
+
+```
+This is verbatim.   No mention of r.
+```
+
+```{r, attr.source='.numberLines', echo=F}
+code  <- quote( if (T) { x <- 1:10; x + 1 })
+```
+
+<!-- the ending slash is equivalent to 2 spaces, to latex means end of line -->
+`r code` \
+
+Is `code` an R expression?
+`r is.expression(code)`
+
+Is `code` a call?
+`r is.call(code)` \ 
+
+`r typeof(code)` \
+
+
+\textcolor{red}{ `r eval(code)`}
+
+
+
+
+
+
+
+
+```{r render, eval=FALSE, include=FALSE 	} 
+output_dir  <- Sys.getenv("OUTPUT_DIR")
+output_dir
+
+{
+file <- "00303_inline.Rmd"
+file  <- normalizePath(file)
+file
+}
+
+rmarkdown::render(file,
+#                  output_format="html_document",
+                  output_format="pdf_document",
+                  output_dir=output_dir
+                  )
+
+```

@@ -1,0 +1,17 @@
+% comment
+%
+% -------------------------------------------------------------------------
+%   PURPOSE:   Show how pandoc fills in $body$ in pandoc template *.tex .
+%
+%   USAGE:
+%
+%  "Here is some text" | pandoc --template 003_trival_pandoc_template.tex -s --to latex
+%  REF:
+%
+%   https://tex.stackexchange.com/questions/573431/how-do-i-adapt-a-standard-latex-template-for-pandoc-in-a-docker-container-not
+% -------------------------------------------------------------------------
+%
+\documentclass{article}
+\begin{document}
+$body$
+\end{document}

@@ -1,0 +1,22 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% file <- "wrapping.tex%"
+% PURPOSE:   show wrapping,  but how??
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\usepackage[english]{babel} % To obtain English text with the blindtext package
+\usepackage{blindtext}
+\begin{document}
+
+\begin{description}
+   \item This is an entry \textit{without} a label.
+   \item[Something short] A short one-line description.
+   \item[Something long] A much longer description. \blindtext[1]
+\end{description}
+\end{document}
+
+\end{document}

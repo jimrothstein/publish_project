@@ -1,0 +1,7 @@
+
+#### using echo: fenced; output shows the options (EXCEPT fenced)
+```{r}
+#| echo: fenced
+#| include: true
+1+1
+```

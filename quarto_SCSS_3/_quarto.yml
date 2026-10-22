@@ -1,0 +1,48 @@
+##  LEARN SCSS
+## project level
+#  all *.qmd files inherit
+#
+project:
+  title: Learn SCSS
+  type: default
+  output-dir: docs            ## NO indent, also _quarto.yml for entier project
+
+## global
+author: "jim"  
+date: "5/22/2021"  
+pdf-engine: lualatex  
+number-sections: true
+toc: true
+# bibliography: references.bib  
+  
+execute:
+    error: true 
+    warning: true
+    collapse: true 
+    standalone: true
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - custom.scss
+    html-math-method: katex
+    code-fold: false
+    toc: true 
+    toc_depth: 3
+      #    toc-location: body
+    toc_float: true
+    embed-resources:  true
+      #code-block-bg: true
+      #code-block-border-left: "#31BAE9"       
+    indent: false
+      #number-sections: true
+      #number-depth: 5   book feature only?
+      #number-offset: 2
+    code-link: true             # hyperlink R functions
+  pdf:
+    documentclass: report
+    margin-left: 30mm
+    margin-right: 30mm
+
+
